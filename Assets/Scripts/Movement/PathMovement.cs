@@ -8,16 +8,23 @@ public class PathMovement : MonoBehaviour
 {
     public GameObject pointsParent;
     public Transform[] points;
-    public float distanceToPoint;
+
+    [Range(0.2f, 1.0f)]
+    public float distanceToPoint = 0.2f;
 
     [Range(1.0f, 2.0f)]
-    public float movementSpeed;
+    public float movementSpeed = 1f;
+
+    [Range(-1.0f, 1.0f)]
+    public float happiness;
 
     private int destPoint = 0;
     private NavMeshAgent agent;
     private Animator animator;
 
     public bool debug;
+
+
     public GameObject debugPrefab;
 
     void Start()
@@ -78,7 +85,14 @@ public class PathMovement : MonoBehaviour
 
     void Update()
     {
-        agent.speed = Mathf.Pow(movementSpeed, 2) + 0.5f;
+        agent.speed = 0.75f * Mathf.Pow(movementSpeed, 2) + 0.75f * movementSpeed;
+
+        if (happiness < 0)
+        {
+            //Walk animations of sad are slower
+            agent.speed += 0.7f * happiness * (1 - (movementSpeed - 1));
+        }
+        animator.SetFloat("Happiness", happiness);
         animator.SetFloat("Speed", movementSpeed);
 
         // Choose the next destination point when the agent gets

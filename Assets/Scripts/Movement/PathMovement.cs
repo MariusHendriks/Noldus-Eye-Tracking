@@ -9,23 +9,30 @@ public class PathMovement : MonoBehaviour
     public GameObject pointsParent;
     public Transform[] points;
     public float distanceToPoint;
+
+    [Range(1.0f, 2.0f)]
     public float movementSpeed;
+
     private int destPoint = 0;
     private NavMeshAgent agent;
+    private Animator animator;
 
     public bool debug;
     public GameObject debugPrefab;
 
     void Start()
     {
-        if (pointsParent != null) {
+        animator = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
+
+        if (pointsParent != null)
+        {
             Transform[] points = pointsParent.GetComponentsInChildren<Transform>();
             this.points = points;
             this.points[0] = null;
         }
+        animator.SetBool("isMoving", true);
 
-        agent = GetComponent<NavMeshAgent>();
-        agent.speed = movementSpeed;
 
         agent.autoBraking = false;
 
@@ -40,7 +47,7 @@ public class PathMovement : MonoBehaviour
 
     private void Debug()
     {
-        for(int i = 1; i < points.Length; i++)
+        for (int i = 1; i < points.Length; i++)
         {
             Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), points[i].position, Quaternion.identity);
         }
@@ -53,7 +60,8 @@ public class PathMovement : MonoBehaviour
         if (points.Length == 0)
             return;
 
-        if (points[destPoint] == null) {
+        if (points[destPoint] == null)
+        {
             destPoint = (destPoint + 1) % points.Length;
 
             GotoNextPoint();
@@ -70,7 +78,8 @@ public class PathMovement : MonoBehaviour
 
     void Update()
     {
-        agent.speed = movementSpeed;
+        agent.speed = Mathf.Pow(movementSpeed, 2) + 0.5f;
+        animator.SetFloat("Speed", movementSpeed);
 
         // Choose the next destination point when the agent gets
         // close to the current one.

@@ -226,11 +226,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: VR Rig
       objectReference: {fileID: 0}
-    - target: {fileID: 2382365423764966999, guid: 3ed872b979bdaaf49a0b10af8db1a2cd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2382365423764967004, guid: 3ed872b979bdaaf49a0b10af8db1a2cd,
         type: 3}
       propertyPath: m_RootOrder

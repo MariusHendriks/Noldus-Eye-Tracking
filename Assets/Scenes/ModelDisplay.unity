@@ -2126,6 +2126,7 @@ GameObject:
   - component: {fileID: 919132149367910455}
   - component: {fileID: 919132149367910454}
   - component: {fileID: 919132149367910453}
+  - component: {fileID: 919132149367910456}
   m_Layer: 0
   m_Name: Henk (can talk)
   m_TagString: Untagged
@@ -2148,6 +2149,7 @@ MonoBehaviour:
   isReady: 1
   users:
   - {fileID: 919132149367910452}
+  - {fileID: 919132149367910456}
   _blendables:
   - number: 0
     currentWeight: 0
@@ -2552,7 +2554,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149367910450}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78af285209ef8f84490024776e8d64aa, type: 3}
   m_Name: 
@@ -2583,6 +2585,74 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &919132149367910456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149367910450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c3c6345ee104b4695e6f7a2c098f3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blendSystem: {fileID: 919132149367910451}
+  blinkingEnabled: 1
+  blinkingControlMode: 0
+  blinkingShape:
+    blendShapes: 
+    blendableNames: []
+    weights: []
+    bones: []
+    verified: 1
+  leftEyeBlinkBlendable: 17
+  rightEyeBlinkBlendable: 18
+  minimumBlinkGap: 0.1
+  maximumBlinkGap: 3.099999
+  blinkDuration: 0.14
+  randomLookingEnabled: 0
+  lookingControlMode: 0
+  lookingUpShape:
+    blendShapes: 
+    blendableNames: []
+    weights: []
+    bones: []
+    verified: 1
+  lookingDownShape:
+    blendShapes: 
+    blendableNames: []
+    weights: []
+    bones: []
+    verified: 1
+  lookingLeftShape:
+    blendShapes: 
+    blendableNames: []
+    weights: []
+    bones: []
+    verified: 1
+  lookingRightShape:
+    blendShapes: 
+    blendableNames: []
+    weights: []
+    bones: []
+    verified: 1
+  _leftEyeLookAtBone: {fileID: 0}
+  _rightEyeLookAtBone: {fileID: 0}
+  eyeRotationRangeX: {x: -6.5, y: 6.5}
+  eyeRotationRangeY: {x: -17.2, y: 17.2}
+  eyeLookOffset: {x: 0, y: 0, z: 0}
+  eyeForwardAxis: 4
+  eyeTurnSpeed: 18
+  minimumChangeDirectionGap: 2
+  maximumChangeDirectionGap: 10
+  targetEnabled: 0
+  autoTarget: 0
+  autoTargetTag: EyeControllerTarget
+  autoTargetDistance: 10
+  viewTarget: {fileID: 0}
+  targetWeight: 1
+  boneUpdateAnimation: 0
 --- !u!4 &924313094750192094
 Transform:
   m_ObjectHideFlags: 0

@@ -2369,18 +2369,8 @@ MonoBehaviour:
     blendableNames:
     - Open (0)
     weights:
-    - 100
-    bones:
-    - bone: {fileID: 882335638602893030}
-      endPosition: {x: -0.015306113, y: 0.025709169, z: 0.0000013523033}
-      endRotation: {x: -0.0013455565, y: 0.008204225, z: 267.05222}
-      endScale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
-      lockPosition: 0
-      lockRotation: 0
-      lockScale: 0
-      neutralPosition: {x: -0.015306113, y: 0.025709169, z: 0.0000013523033}
-      neutralRotation: {x: -0.0013669938, y: 0.008203589, z: 270.00226}
-      neutralScale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
+    - 74.3
+    bones: []
     verified: 1
     phonemeName: O
     phoneme: 0

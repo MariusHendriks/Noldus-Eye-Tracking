@@ -2121,6 +2121,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 979504808}
     m_Modifications:
+    - target: {fileID: 3859223915602442828, guid: ca8578ff0afc31c49ac29a45dce564c0,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[3]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8165027325315442080, guid: ca8578ff0afc31c49ac29a45dce564c0,
         type: 3}
       propertyPath: m_Name
@@ -2131,6 +2136,71 @@ PrefabInstance:
       propertyPath: pointsParent
       value: 
       objectReference: {fileID: 1584563707}
+    - target: {fileID: 8165027325315442086, guid: ca8578ff0afc31c49ac29a45dce564c0,
+        type: 3}
+      propertyPath: emotions.Array.data[0].bones.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165027325315442086, guid: ca8578ff0afc31c49ac29a45dce564c0,
+        type: 3}
+      propertyPath: emotions.Array.data[0].weights.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165027325315442086, guid: ca8578ff0afc31c49ac29a45dce564c0,
+        type: 3}
+      propertyPath: emotions.Array.data[0].weights.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165027325315442086, guid: ca8578ff0afc31c49ac29a45dce564c0,
+        type: 3}
+      propertyPath: emotions.Array.data[0].blendShapes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165027325315442086, guid: ca8578ff0afc31c49ac29a45dce564c0,
+        type: 3}
+      propertyPath: emotions.Array.data[0].blendShapes.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165027325315442086, guid: ca8578ff0afc31c49ac29a45dce564c0,
+        type: 3}
+      propertyPath: emotions.Array.data[0].blendableNames.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165027325315442086, guid: ca8578ff0afc31c49ac29a45dce564c0,
+        type: 3}
+      propertyPath: emotions.Array.data[0].blendableNames.Array.data[0]
+      value: Open (0)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165027325315442086, guid: ca8578ff0afc31c49ac29a45dce564c0,
+        type: 3}
+      propertyPath: emotions.Array.data[0].bones.Array.data[0].endScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165027325315442086, guid: ca8578ff0afc31c49ac29a45dce564c0,
+        type: 3}
+      propertyPath: emotions.Array.data[0].bones.Array.data[0].endScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165027325315442086, guid: ca8578ff0afc31c49ac29a45dce564c0,
+        type: 3}
+      propertyPath: emotions.Array.data[0].bones.Array.data[0].endScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165027325315442086, guid: ca8578ff0afc31c49ac29a45dce564c0,
+        type: 3}
+      propertyPath: emotions.Array.data[0].bones.Array.data[0].neutralScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165027325315442086, guid: ca8578ff0afc31c49ac29a45dce564c0,
+        type: 3}
+      propertyPath: emotions.Array.data[0].bones.Array.data[0].neutralScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165027325315442086, guid: ca8578ff0afc31c49ac29a45dce564c0,
+        type: 3}
+      propertyPath: emotions.Array.data[0].bones.Array.data[0].neutralScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8798856898095398682, guid: ca8578ff0afc31c49ac29a45dce564c0,
         type: 3}
       propertyPath: m_RootOrder

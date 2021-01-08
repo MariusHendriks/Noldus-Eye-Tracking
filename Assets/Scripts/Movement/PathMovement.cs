@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
-
+using System.Collections.Generic;
 
 public class PathMovement : MonoBehaviour
 {
     public GameObject pointsParent;
-    public Transform[] points;
+    public List<Transform> points;
 
     [Range(0.2f, 1.0f)]
     public float distanceToPoint = 0.2f;
@@ -18,11 +18,13 @@ public class PathMovement : MonoBehaviour
     [Range(-1.0f, 1.0f)]
     public float happiness;
 
+    public bool resetOnLastWaypoint = true;
+
     private int destPoint = 0;
     private NavMeshAgent agent;
     private Animator animator;
 
-    public bool debug;
+
 
 
     public GameObject debugPrefab;
@@ -34,9 +36,10 @@ public class PathMovement : MonoBehaviour
 
         if (pointsParent != null)
         {
-            Transform[] points = pointsParent.GetComponentsInChildren<Transform>();
-            this.points = points;
-            this.points[0] = null;
+            foreach (Transform child in pointsParent.transform)
+            {
+                this.points.Add(child);
+            }
         }
         animator.SetBool("isMoving", true);
 
@@ -44,43 +47,31 @@ public class PathMovement : MonoBehaviour
         agent.autoBraking = false;
 
         GotoNextPoint();
-
-        if (debug)
-        {
-            Debug();
-        }
     }
 
-
-    private void Debug()
-    {
-        for (int i = 1; i < points.Length; i++)
-        {
-            Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), points[i].position, Quaternion.identity);
-        }
-    }
 
 
     void GotoNextPoint()
     {
         // Returns if no points have been set up
-        if (points.Length == 0)
+        if (points.Count == 0)
             return;
 
-        if (points[destPoint] == null)
+        if (resetOnLastWaypoint && destPoint == points.Count)
         {
-            destPoint = (destPoint + 1) % points.Length;
-
-            GotoNextPoint();
-            return;
+            transform.position = this.points[0].transform.position;
+            destPoint = 0;
         }
 
         // Set the agent to go to the currently selected destination.
+
         agent.destination = points[destPoint].position;
 
         // Choose the next point in the array as the destination,
         // cycling to the start if necessary.
-        destPoint = (destPoint + 1) % points.Length;
+        destPoint++;
+
+
     }
 
     void Update()

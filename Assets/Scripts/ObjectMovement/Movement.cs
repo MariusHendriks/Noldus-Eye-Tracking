@@ -55,7 +55,7 @@ public class Movement : MonoBehaviour
         {
             elipsedZ -= 1;
         }
-        defaultAlt = Random.Range(-1f, 4f);
+        defaultAlt = Random.Range(1f, 4f);
         verticalDelta = Random.Range(0f, 2f);
         offsetInMicros = Random.Range(0, 3000);
         float scale = Random.Range(0.1f, 1f);

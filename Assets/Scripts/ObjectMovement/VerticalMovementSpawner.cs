@@ -6,9 +6,12 @@ public class VerticalMovementSpawner : MonoBehaviour
 {
     //public GameObject mover;
     private readonly List<GameObject> objects = new List<GameObject>();
+    private bool lastOption;
 
     public int seed;
-    
+
+    public bool chaoticMovementEnabled;
+
     [Range(0, 25)]
     public int numberOfObjects;
     
@@ -18,7 +21,7 @@ public class VerticalMovementSpawner : MonoBehaviour
     [Range(1.5f, 25.0f)]
     public float speed;
     
-    [Range(0, 15)]
+    [Range(0, 7.5f)]
     public float height;
 
     public Vector3 Center { get; private set; }
@@ -29,14 +32,35 @@ public class VerticalMovementSpawner : MonoBehaviour
         // Making sure the object don't go under the floor
         height /= 2;
         Center = new Vector3(0, height, 0);
+        lastOption = chaoticMovementEnabled;
+        if (chaoticMovementEnabled)
+            numberOfObjects = Random.Range(0, 25);
         SpawnShapesAroundCenter(numberOfObjects, distance);
+    }
+
+    public void Update()
+    {
+        if (lastOption != chaoticMovementEnabled)
+        { 
+            foreach (var obj in objects)
+            {
+                Destroy(obj);
+            }
+            lastOption = !chaoticMovementEnabled;
+            height = 7.5f;
+            Start();
+        }
+        
     }
 
     public void SpawnShapesAroundCenter(int num, float radius)
     {
         for (int i = 0; i < num; i++)
         {
-            var spawnPos = ObjectPositionCalculator(i, radius, Center, num);
+            if (chaoticMovementEnabled)
+                radius = Random.Range(2f, 9f);
+            var spawnDir = CalculateSpawnDirection(i, num);
+            var spawnPos = Center + spawnDir * radius;
             var obj = PrimitiveTypeCreator(spawnPos, Center);
             obj.name = $"{i}";
             objects.Add(obj);
@@ -77,14 +101,13 @@ public class VerticalMovementSpawner : MonoBehaviour
         return obj;
     }
 
-    public static Vector3 ObjectPositionCalculator(int objectNr, float radius, Vector3 center, int nrOfObjects)
+    public static Vector3 CalculateSpawnDirection(int objectNr, int nrOfObjects)
     {
         var radians = 2 * Mathf.PI / nrOfObjects * objectNr;
         // Get the vector direction
         var vertrical = Mathf.Sin(radians);
         var horizontal = Mathf.Cos(radians);
-        var spawnDir = new Vector3(horizontal, 0, vertrical);
+        return new Vector3(horizontal, 0, vertrical);
         // Get the spawn position
-        return center + spawnDir * radius;
     }
 }

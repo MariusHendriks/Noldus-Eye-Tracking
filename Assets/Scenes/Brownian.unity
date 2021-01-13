@@ -216,7 +216,7 @@ PrefabInstance:
     - target: {fileID: 7050026797750305125, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7050026797750305127, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
         type: 3}
@@ -646,11 +646,11 @@ GameObject:
   - component: {fileID: 1442159535}
   m_Layer: 0
   m_Name: VerticalMovementManager
-  m_TagString: Untagged
+  m_TagString: VerticalMover
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1442159535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -663,7 +663,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e7d0481b62fe124d83526cb3b64c6d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mover: {fileID: 1442159534}
   seed: 5
   numberOfObjects: 25
   distance: 9

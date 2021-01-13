@@ -4,50 +4,66 @@ using UnityEngine;
 
 public class VerticalMovementSpawner : MonoBehaviour
 {
-    public GameObject mover;
-    
+    //public GameObject mover;
+    private readonly List<GameObject> objects = new List<GameObject>();
+    private bool lastOption;
+
     public int seed;
+
+    public bool chaoticMovementEnabled;
+
     [Range(0, 25)]
     public int numberOfObjects;
-    [Range(0, 9)]
+    
+    [Range(2, 9)]
     public int distance;
-    [Range(0.0f, 25.0f)]
+    
+    [Range(1.5f, 25.0f)]
     public float speed;
-    [Range(0, 15)]
+    
+    [Range(0, 7.5f)]
     public float height;
+
+    public Vector3 Center { get; private set; }
 
     public void Start()
     {
+        Random.InitState(seed);
         // Making sure the object don't go under the floor
         height /= 2;
-        // Centering the parent pived with the object
-        mover.transform.position = new Vector3(mover.transform.position.x, height, mover.transform.position.z);
-        Random.InitState(seed);
+        Center = new Vector3(0, height, 0);
+        lastOption = chaoticMovementEnabled;
+        if (chaoticMovementEnabled)
+            numberOfObjects = Random.Range(0, 25);
         SpawnShapesAroundCenter(numberOfObjects, distance);
     }
 
-    void Update()
+    public void Update()
     {
-        //calculate what the new Y position will be
-        float newY = Mathf.Sin(Time.time * speed) * height + height + 0.55f;
-        //set the object's Y to the new calculated Y
-        mover.transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+        if (lastOption != chaoticMovementEnabled)
+        { 
+            foreach (var obj in objects)
+            {
+                Destroy(obj);
+            }
+            lastOption = !chaoticMovementEnabled;
+            height = 7.5f;
+            Start();
+        }
+        
     }
 
     public void SpawnShapesAroundCenter(int num, float radius)
     {
-        var center = new Vector3(0, height, 0);
         for (int i = 0; i < num; i++)
         {
-            // Distance around the circle
-            var radians = 2 * Mathf.PI / num * i;
-            // Get the vector direction
-            var vertrical = Mathf.Sin(radians);
-            var horizontal = Mathf.Cos(radians);
-            var spawnDir = new Vector3(horizontal, 0, vertrical);
-            // Get the spawn position
-            var spawnPos = center + spawnDir * radius; // Radius is just the distance away from the point
-            PrimitiveTypeCreator(spawnPos, center);
+            if (chaoticMovementEnabled)
+                radius = Random.Range(2f, 9f);
+            var spawnDir = CalculateSpawnDirection(i, num);
+            var spawnPos = Center + spawnDir * radius;
+            var obj = PrimitiveTypeCreator(spawnPos, Center);
+            obj.name = $"{i}";
+            objects.Add(obj);
         }
     }
 
@@ -80,8 +96,18 @@ public class VerticalMovementSpawner : MonoBehaviour
         // Adjust height
         obj.transform.Translate(new Vector3(0, obj.transform.localScale.y / 2, 0));
         obj.GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
-        obj.transform.parent = mover.transform;
+        obj.AddComponent<VerticalMovementAdjuster>();
+        obj.transform.parent = transform;
         return obj;
     }
 
+    public static Vector3 CalculateSpawnDirection(int objectNr, int nrOfObjects)
+    {
+        var radians = 2 * Mathf.PI / nrOfObjects * objectNr;
+        // Get the vector direction
+        var vertrical = Mathf.Sin(radians);
+        var horizontal = Mathf.Cos(radians);
+        return new Vector3(horizontal, 0, vertrical);
+        // Get the spawn position
+    }
 }

@@ -4322,7 +4322,7 @@ MonoBehaviour:
   distanceToPoint: 0.2
   movementSpeed: 1
   happiness: 0
-  debug: 0
+  resetOnLastWaypoint: 1
   debugPrefab: {fileID: 0}
 --- !u!195 &8165027325315442087
 NavMeshAgent:

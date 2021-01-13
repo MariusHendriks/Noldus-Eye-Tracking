@@ -29,7 +29,7 @@ public class VerticalMovementSpawner : MonoBehaviour
     void Update()
     {
         //calculate what the new Y position will be
-        float newY = Mathf.Sin(Time.time * speed) * height + height + 0.5f;
+        float newY = Mathf.Sin(Time.time * speed) * height + height + 0.55f;
         //set the object's Y to the new calculated Y
         mover.transform.position = new Vector3(transform.position.x, newY, transform.position.z);
     }

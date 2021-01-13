@@ -12,7 +12,9 @@ public class PathMovement : MonoBehaviour
     [Range(0.2f, 1.0f)]
     public float distanceToPoint = 0.2f;
 
-    [Range(1.0f, 2.0f)]
+
+    //[Range(1.0f, 2.0f)]
+    [Range(1.0f, 10.0f)]
     public float movementSpeed = 1f;
 
     [Range(-1.0f, 1.0f)]
@@ -25,7 +27,7 @@ public class PathMovement : MonoBehaviour
     private Animator animator;
 
 
-
+    public Vector3 destinationOfAgent;
 
     public GameObject debugPrefab;
 
@@ -59,7 +61,7 @@ public class PathMovement : MonoBehaviour
 
         if (resetOnLastWaypoint && destPoint == points.Count)
         {
-            transform.position = this.points[0].transform.position;
+            agent.Warp(this.points[0].transform.position);
             destPoint = 0;
         }
 

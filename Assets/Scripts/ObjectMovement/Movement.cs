@@ -32,7 +32,7 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            time = 0; ;
+            time = 0;
         }
     }
 
@@ -43,27 +43,15 @@ public class Movement : MonoBehaviour
 
     public bool Randomizer()
     {
-        speed = Random.Range(1f, 4f);
-        amplitude = Random.Range(2f, 5f);
-        elipsedX = Random.Range(-0.5f, 1.5f);
-        if (elipsedX<0.5f)
-        {
-            elipsedX -= 1;
-        }
-        elipsedZ = Random.Range(-0.5f, 1.5f);
-        if (elipsedZ < 0.5f)
-        {
-            elipsedZ -= 1;
-        }
-        defaultAlt = Random.Range(1f, 4f);
-        verticalDelta = Random.Range(0f, 2f);
-        offsetInMicros = Random.Range(0, 3000);
-        float scale = Random.Range(0.1f, 1f);
-        this.transform.localScale = new Vector3(scale, scale, scale);
+       
         GameObject PrefObject = this.transform.GetChild(0).gameObject;
         RotationAroundOwnAxis rotation;
         rotation = (RotationAroundOwnAxis)PrefObject.GetComponent(typeof(RotationAroundOwnAxis));
         rotation.Randomize();
         return true;
+    }
+    public void StopMovement()
+    {
+        starter = false;
     }
 }

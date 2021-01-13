@@ -128,6 +128,86 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
+        type: 3}
+      propertyPath: Scale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
+        type: 3}
+      propertyPath: Scale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
+        type: 3}
+      propertyPath: Speed.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
+        type: 3}
+      propertyPath: Speed.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
+        type: 3}
+      propertyPath: IsRunning
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
+        type: 3}
+      propertyPath: ElipsedX.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
+        type: 3}
+      propertyPath: ElipsedX.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
+        type: 3}
+      propertyPath: ElipsedZ.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
+        type: 3}
+      propertyPath: ElipsedZ.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
+        type: 3}
+      propertyPath: Amplitude.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
+        type: 3}
+      propertyPath: Amplitude.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
+        type: 3}
+      propertyPath: NrOfObjects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
+        type: 3}
+      propertyPath: DefaultAlt.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
+        type: 3}
+      propertyPath: DefaultAlt.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
+        type: 3}
+      propertyPath: VerticalDelta.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
+        type: 3}
+      propertyPath: OffsetInMicros.y
+      value: 3000
+      objectReference: {fileID: 0}
     - target: {fileID: 7050026797750305125, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
         type: 3}
       propertyPath: m_Name
@@ -136,7 +216,7 @@ PrefabInstance:
     - target: {fileID: 7050026797750305125, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7050026797750305127, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
         type: 3}
@@ -570,7 +650,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1442159535
 MonoBehaviour:
   m_ObjectHideFlags: 0

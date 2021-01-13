@@ -14,30 +14,30 @@ public class Manager : MonoBehaviour
     public GameObject Sablon;
 
     [MinMaxSlider(0,10)]
-    public Vector2 Speed;
+    public Vector2 Speed = new Vector2(0.5f, 3f);
 
     [MinMaxSlider(0, 10)]
-    public Vector2 Amplitude;
+    public Vector2 Amplitude = new Vector2(2f, 5f);
 
 
     [MinMaxSlider(-5, 5)]
-    public Vector2 ElipsedX;
+    public Vector2 ElipsedX = new Vector2(-2f, 2f);
 
 
     [MinMaxSlider(-5, 5)]
-    public Vector2 ElipsedZ;
+    public Vector2 ElipsedZ = new Vector2(-2f, 2f);
 
     [MinMaxSlider(-5, 20)]
-    public Vector2 DefaultAlt;
-
-    [MinMaxSlider(0, 10)]
-    public Vector2 VerticalDelta;
-
-    [MinMaxSlider(0, 10000)]
-    public Vector2 OffsetInMicros;
+    public Vector2 DefaultAlt = new Vector2(1f, 4f);
 
     [MinMaxSlider(0, 5)]
-    public Vector2 Scale;
+    public Vector2 VerticalDelta = new Vector2(0f, 2f);
+
+    [MinMaxSlider(0, 10000)]
+    public Vector2 OffsetInMicros = new Vector2(0, 3000);
+
+    [MinMaxSlider(0, 3)]
+    public Vector2 Scale = new Vector2(0.2f, 1f);
 
     private Movement instance;
 
@@ -60,13 +60,13 @@ public class Manager : MonoBehaviour
             instance.amplitude = Random.Range(Amplitude.x, Amplitude.y);
 
             instance.elipsedX = Random.Range(ElipsedX.x, ElipsedX.y);
-            while ((instance.elipsedX < 0.3 && instance.elipsedX > -0.3) || (-1.5 < instance.amplitude * instance.elipsedX && instance.amplitude * instance.elipsedX < 1.5)) 
+            while ((instance.elipsedX < 0.3 && instance.elipsedX > -0.3) || (-2 < instance.amplitude * instance.elipsedX && instance.amplitude * instance.elipsedX < 2)) 
             {
                 instance.elipsedX = Random.Range(ElipsedX.x, ElipsedX.y);
             }
 
             instance.elipsedZ = Random.Range(ElipsedZ.x, ElipsedZ.y);
-            while ((instance.elipsedZ < 0.3 && instance.elipsedZ > -0.3)|| (-1.5 < instance.amplitude * instance.elipsedX && instance.amplitude * instance.elipsedX < 1.5))
+            while ((instance.elipsedZ < 0.3 && instance.elipsedZ > -0.3)|| (-2 < instance.amplitude * instance.elipsedZ && instance.amplitude * instance.elipsedZ < 2))
             {
                 instance.elipsedZ = Random.Range(ElipsedZ.x, ElipsedZ.y);
             }

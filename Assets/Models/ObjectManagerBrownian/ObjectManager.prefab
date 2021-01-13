@@ -43,6 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c185b2185ce231408cfb14caaddab4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsRunning: 0
   NrOfObjects: 8
   seed: 1111
   Sablon: {fileID: 7940435913425394118, guid: 3fa97e204cb0ac54b8ed98b0b75ca6ef, type: 3}
+  Speed: {x: 0, y: 0}
+  Amplitude: {x: 0, y: 0}
+  ElipsedX: {x: 0, y: 0}
+  ElipsedZ: {x: 0, y: 0}
+  DefaultAlt: {x: 0, y: 0}
+  VerticalDelta: {x: 0, y: 0}
+  OffsetInMicros: {x: 0, y: 0}
+  Scale: {x: 0, y: 0}

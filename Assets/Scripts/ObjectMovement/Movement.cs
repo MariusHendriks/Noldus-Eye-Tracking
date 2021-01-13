@@ -41,13 +41,13 @@ public class Movement : MonoBehaviour
         starter = true;
     }
 
-    public bool Randomizer()
+    public bool Randomizer(int MeshSet)
     {
        
         GameObject PrefObject = this.transform.GetChild(0).gameObject;
         RotationAroundOwnAxis rotation;
         rotation = (RotationAroundOwnAxis)PrefObject.GetComponent(typeof(RotationAroundOwnAxis));
-        rotation.Randomize();
+        rotation.Randomize(MeshSet);
         return true;
     }
     public void StopMovement()

@@ -9,6 +9,7 @@ public class Manager : MonoBehaviour
     public bool IsRunning = false;
     public int NrOfObjects;
     public int seed;
+    public int MeshSet;
 
     private List<GameObject> objects = null;
     public GameObject Sablon;
@@ -28,7 +29,7 @@ public class Manager : MonoBehaviour
     public Vector2 ElipsedZ = new Vector2(-2f, 2f);
 
     [MinMaxSlider(-5, 20)]
-    public Vector2 DefaultAlt = new Vector2(1f, 4f);
+    public Vector2 DefaultAlt = new Vector2(2f, 6f);
 
     [MinMaxSlider(0, 5)]
     public Vector2 VerticalDelta = new Vector2(0f, 2f);
@@ -76,10 +77,18 @@ public class Manager : MonoBehaviour
             instance.offsetInMicros = Random.Range(OffsetInMicros.x, OffsetInMicros.y);
 
             float scale = Random.Range(Scale.x, Scale.y);
+            if (MeshSet == 1)
+            {
+                scale+=3f;
+            }
+            else if (MeshSet == 2)
+            {
+                scale *= 200;
+            }
             instance.transform.localScale = new Vector3(scale, scale, scale);
 
 
-            instance.Randomizer();
+            instance.Randomizer(MeshSet);
         }
     }
 

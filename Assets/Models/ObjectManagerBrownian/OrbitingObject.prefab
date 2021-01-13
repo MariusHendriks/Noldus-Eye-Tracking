@@ -165,3 +165,12 @@ MonoBehaviour:
   - {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
   - {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
   - {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 4300000, guid: d8c8787ffb0f3b5468fd65d51731b7de, type: 3}
+  - {fileID: 4300000, guid: 4e6db54670ea84d4298ec673c60ca3c7, type: 3}
+  - {fileID: 4300000, guid: 2faafd7c39cf18b4d83d3d729c4f9a04, type: 3}
+  - {fileID: 4300000, guid: 6c24037ad5bed7e428ade751ad02702c, type: 3}
+  - {fileID: 4300000, guid: b9a1c0a49b015804e83705d2e66fa591, type: 3}
+  - {fileID: 4300000, guid: 49a09859e5b53d74b8038a042b0e7d3b, type: 3}
+  - {fileID: 4300000, guid: 43dd9523f76f5d4448be24e15c4a347c, type: 3}
+  - {fileID: 4300000, guid: 6a987db90277a804ca12763b4edaac0d, type: 3}
+  material: {fileID: 2100000, guid: 06c585e7039efff42864b0283216c6f6, type: 2}

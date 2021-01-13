@@ -29,7 +29,7 @@ public class VerticalMovementSpawner : MonoBehaviour
     void Update()
     {
         //calculate what the new Y position will be
-        float newY = Mathf.Sin(Time.time * speed) * height + height;
+        float newY = Mathf.Sin(Time.time * speed) * height + height + 0.5f;
         //set the object's Y to the new calculated Y
         mover.transform.position = new Vector3(transform.position.x, newY, transform.position.z);
     }
@@ -47,18 +47,13 @@ public class VerticalMovementSpawner : MonoBehaviour
             var spawnDir = new Vector3(horizontal, 0, vertrical);
             // Get the spawn position
             var spawnPos = center + spawnDir * radius; // Radius is just the distance away from the point
-            var obj = Instantiate(PrimitiveTypeCreator(), spawnPos, Quaternion.identity);
-            // Rotate the objects to face towards center point
-            obj.transform.LookAt(center);
-            // Adjust height
-            obj.transform.Translate(new Vector3(0, obj.transform.localScale.y / 2, 0));
-            obj.transform.parent = mover.transform;
+            PrimitiveTypeCreator(spawnPos, center);
         }
     }
 
-    GameObject PrimitiveTypeCreator()
+    GameObject PrimitiveTypeCreator(Vector3 spawnPos, Vector3 center)
     {
-        PrimitiveType type = PrimitiveType.Cube;
+        PrimitiveType type;
         switch (Random.Range(0, 3))
         {
             case 0:
@@ -73,9 +68,19 @@ public class VerticalMovementSpawner : MonoBehaviour
             case 3:
                 type = PrimitiveType.Cylinder;
                 break;
+            default:
+                type = PrimitiveType.Cube;
+                break;
         }
         var obj = GameObject.CreatePrimitive(type);
+        obj.transform.position = spawnPos;
+        obj.transform.rotation = Quaternion.identity;
+        // Rotate the objects to face towards center point
+        obj.transform.LookAt(center);
+        // Adjust height
+        obj.transform.Translate(new Vector3(0, obj.transform.localScale.y / 2, 0));
         obj.GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+        obj.transform.parent = mover.transform;
         return obj;
     }
 

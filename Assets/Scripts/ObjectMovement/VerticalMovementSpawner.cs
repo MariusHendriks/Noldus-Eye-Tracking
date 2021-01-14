@@ -1,15 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class VerticalMovementSpawner : MonoBehaviour
 {
-    //public GameObject mover;
     private readonly List<GameObject> objects = new List<GameObject>();
     private bool lastOption;
-
+    
     public int seed;
-
+    public List<Mesh> customMesh;
+    public bool customObjectsEnabler;    
     public bool chaoticMovementEnabled;
 
     [Range(0, 25)]
@@ -29,7 +30,7 @@ public class VerticalMovementSpawner : MonoBehaviour
     public void Start()
     {
         Random.InitState(seed);
-        // Making sure the object don't go under the floor
+        // Making sure the object don't go under the floor or over the roof
         height /= 2;
         Center = new Vector3(0, height, 0);
         lastOption = chaoticMovementEnabled;
@@ -50,7 +51,6 @@ public class VerticalMovementSpawner : MonoBehaviour
             height = 7.5f;
             Start();
         }
-        
     }
 
     public void SpawnShapesAroundCenter(int num, float radius)
@@ -61,10 +61,31 @@ public class VerticalMovementSpawner : MonoBehaviour
                 radius = Random.Range(2f, 9f);
             var spawnDir = CalculateSpawnDirection(i, num);
             var spawnPos = Center + spawnDir * radius;
-            var obj = PrimitiveTypeCreator(spawnPos, Center);
+            GameObject obj;
+            if (customObjectsEnabler)
+                obj = CustomObjectSpawner(spawnPos, Center);
+            else 
+                obj = PrimitiveTypeCreator(spawnPos, Center);
             obj.name = $"{i}";
             objects.Add(obj);
         }
+    }
+
+    GameObject CustomObjectSpawner(Vector3 spawnPos, Vector3 center)
+    {
+        var i = Random.Range(0, 5);
+        var mesh = customMesh[i];
+        var obj = new GameObject();
+        obj.AddComponent<MeshFilter>();
+        obj.AddComponent<MeshRenderer>();
+        obj.AddComponent<MeshCollider>();
+        obj.GetComponent<MeshCollider>().sharedMesh = mesh;
+        obj.GetComponent<MeshFilter>().mesh = mesh;
+        DefaultGameObjectSettings(ref obj, spawnPos, center);
+        float scale = Random.Range(0, 3);
+        scale *= 1.5f;
+        obj.transform.localScale = new Vector3(scale, scale, scale);
+        return obj;
     }
 
     GameObject PrimitiveTypeCreator(Vector3 spawnPos, Vector3 center)
@@ -89,15 +110,7 @@ public class VerticalMovementSpawner : MonoBehaviour
                 break;
         }
         var obj = GameObject.CreatePrimitive(type);
-        obj.transform.position = spawnPos;
-        obj.transform.rotation = Quaternion.identity;
-        // Rotate the objects to face towards center point
-        obj.transform.LookAt(center);
-        // Adjust height
-        obj.transform.Translate(new Vector3(0, obj.transform.localScale.y / 2, 0));
-        obj.GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
-        obj.AddComponent<VerticalMovementAdjuster>();
-        obj.transform.parent = transform;
+        DefaultGameObjectSettings(ref obj, spawnPos, center);
         return obj;
     }
 
@@ -108,6 +121,20 @@ public class VerticalMovementSpawner : MonoBehaviour
         var vertrical = Mathf.Sin(radians);
         var horizontal = Mathf.Cos(radians);
         return new Vector3(horizontal, 0, vertrical);
-        // Get the spawn position
+    }
+
+    void DefaultGameObjectSettings(ref GameObject obj, Vector3 spawnPos, Vector3 center)
+    {
+        obj.transform.position = spawnPos;
+        obj.transform.rotation = Quaternion.identity;
+        // Rotate the objects to face towards center point
+        obj.transform.LookAt(center);
+        // Adjust height
+        obj.transform.Translate(new Vector3(0, obj.transform.localScale.y / 2, 0));
+        obj.GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+        obj.GetComponent<Renderer>().material.SetFloat("_Metallic", 0.97f);
+        obj.GetComponent<Renderer>().material.SetFloat("_Glossiness", 1);
+        obj.AddComponent<VerticalMovementAdjuster>();
+        obj.transform.parent = transform;
     }
 }

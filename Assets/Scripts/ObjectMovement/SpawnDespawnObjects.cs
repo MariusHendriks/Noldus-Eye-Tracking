@@ -5,9 +5,16 @@ using UnityEngine;
 public class SpawnDespawnObjects : MonoBehaviour
 {
 
+    public bool start;
+
     public int seed;
     public GameObject prefab;
-    [Range(0, 100)]
+    public float speed = 5f;
+    public MeshTypes meshType;
+    public Mesh[] meshes;
+    public List<GameObject> objects;
+
+    [Range(0, 200)]
     public int objectCount;
     [Range(0, 18)]
     public float minHeight;
@@ -17,15 +24,8 @@ public class SpawnDespawnObjects : MonoBehaviour
     public float minRadius;
     [Range(0, 10)]
     public float maxRadius;
-    public float objectHalfWidth;
-    public float objectHalfHeight;
 
-    public bool start;
-    public float speed = 5f;
-    public Mesh[] meshes;
-    public List<GameObject> objects;
     
-    private int meshGroup;
     private float timer;
     private int density;
 
@@ -63,13 +63,23 @@ public class SpawnDespawnObjects : MonoBehaviour
             Vector3 position = direction * Random.Range(minRadius, maxRadius) + new Vector3(0, Random.Range(minHeight, maxHeight), 0);
             objects.Add(Instantiate(prefab, position, Quaternion.identity, transform));
             SetObjectMesh(objects[i]);
+
+            // Scaling the shape to normal size, depending on the mesh types
+            if (meshType == MeshTypes.SimpleShapes)
+                objects[i].transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            else if (meshType == MeshTypes.KitchenProps)
+                objects[i].transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+            else if (meshType == MeshTypes.Furniture)
+                objects[i].transform.localScale = new Vector3(100, 100, 100);
+
+            objects[i].transform.localScale *= Random.Range(0.2f, 2.5f);
             if(Random.Range(0, 100) > 40)
             {
                 objects[i].SetActive(false);
             }
         }
-        StopCoroutine(WaitToDespawn());
-        StartCoroutine(WaitToDespawn());
+        StopCoroutine(WaitToSpawnDespawn());
+        StartCoroutine(WaitToSpawnDespawn());
     }
 
     public void DestroyObjects(int amount)
@@ -81,18 +91,18 @@ public class SpawnDespawnObjects : MonoBehaviour
             Destroy(obj);
             amount--;
         }
-        StopCoroutine(WaitToDespawn());
-        StartCoroutine(WaitToDespawn());
+        StopCoroutine(WaitToSpawnDespawn());
+        StartCoroutine(WaitToSpawnDespawn());
     }
 
     private void SetObjectMesh(GameObject obj)
     {
-        int meshNr = Random.Range(0, meshes.Length - 1);
-        meshGroup = meshNr / 4;
+        int meshNr = Random.Range((int)meshType * 4 , ((int)meshType + 1) * 4);
         obj.GetComponent<MeshFilter>().mesh = meshes[meshNr];
+        obj.GetComponent<MeshCollider>().sharedMesh = meshes[meshNr];
         obj.GetComponent<MeshRenderer>().material.color = new Color(Random.Range(0F, 1F), Random.Range(0, 1F), Random.Range(0, 1F));
-        obj.GetComponent<MeshRenderer>().material.SetFloat("_Metallic", 0.85f);
-        obj.GetComponent<MeshRenderer>().material.SetFloat("_Glossiness", 0.75f);
+        obj.GetComponent<MeshRenderer>().material.SetFloat("_Metallic", Random.Range(0, 1));
+        obj.GetComponent<MeshRenderer>().material.SetFloat("_Glossiness", Random.Range(0, 1));
     }
 
     public Vector3 CalculateDirection()
@@ -104,7 +114,7 @@ public class SpawnDespawnObjects : MonoBehaviour
         return new Vector3(x, 0, z);
     }
 
-    public IEnumerator WaitToDespawn()
+    public IEnumerator WaitToSpawnDespawn()
     {
         while (start)
         {
@@ -114,7 +124,7 @@ public class SpawnDespawnObjects : MonoBehaviour
                     {
                         obj.SetActive(!obj.activeSelf);
                     }
-                    if (speed == 0)
+                    if (speed <= 0)
                         speed = 0.1f;
                 yield return new WaitForSeconds(0.5f / speed);
                 }
@@ -134,4 +144,11 @@ public class SpawnDespawnObjects : MonoBehaviour
             density = objectCount;
         }
     }
+}
+
+public enum MeshTypes
+{
+    SimpleShapes,
+    KitchenProps,
+    Furniture
 }

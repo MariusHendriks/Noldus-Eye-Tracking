@@ -4530,10 +4530,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carPrefabs:
   - {fileID: 8654528449493523812, guid: 8f7ae6ac1880d6d4a8e79bebe40684f3, type: 3}
+  - {fileID: 136524383789721800, guid: ab6f3091c69d24a4897a1d84c626168a, type: 3}
+  - {fileID: 8118177531523205066, guid: 263f51744e67d294bab59794af8bbe9e, type: 3}
   pathPrefabs:
   - {fileID: 20440172112094120, guid: 04148f52fc38f1b4cab87c89cf5e5cb4, type: 3}
-  spawnTimeMin: 3
-  spawnTimeMax: 4
+  spawnTimeMin: 40
+  spawnTimeMax: 41
 --- !u!1 &146384372
 GameObject:
   m_ObjectHideFlags: 0

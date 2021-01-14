@@ -48,11 +48,10 @@ public class CarPathMovement : MonoBehaviour
 
         if (resetOnLastWaypoint && destPoint == points.Count)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             Destroy(this);
             return;
         }
-
 
         // Set the agent to go to the currently selected destination.
         agent.destination = points[destPoint].position;

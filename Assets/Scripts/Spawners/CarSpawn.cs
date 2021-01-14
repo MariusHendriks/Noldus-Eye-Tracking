@@ -17,7 +17,7 @@ public class CarSpawn : MonoBehaviour
         pathObjects = new GameObject[pathPrefabs.Length];
         for (int i = 0; i < pathPrefabs.Length; i++)
         {
-            pathObjects[i] = Instantiate(pathPrefabs[i], new Vector3(0, 0, 0), Quaternion.identity);
+            pathObjects[i] = Instantiate(pathPrefabs[i], new Vector3(0, 0, 0), pathPrefabs[i].transform.rotation);
         }
 
         StartCoroutine(SpawnCar());

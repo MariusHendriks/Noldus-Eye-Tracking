@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 6670532882685079861}
   - component: {fileID: 924660926070806693}
   - component: {fileID: 387766601620822641}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: MidHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,6 +138,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isColliding: 0
+--- !u!1 &4795007821349177535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6888801385096385356}
+  - component: {fileID: 7359343894680592652}
+  - component: {fileID: 5686763801348731630}
+  m_Layer: 16
+  m_Name: PedestrianHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6888801385096385356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4795007821349177535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -0, z: -11.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8309386958591920094}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7359343894680592652
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4795007821349177535}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 117.82961, y: 12.591359, z: 65.829765}
+  m_Center: {x: 2.0056639, y: 17.758375, z: 102.60495}
+--- !u!114 &5686763801348731630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4795007821349177535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41df076339be862498a118bc82b7416a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isColliding: 0
 --- !u!1 &6356785231765952183
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +221,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6356785231765952183}
-  m_LocalRotation: {x: -0.00000023841858, y: 0.00000023841858, z: 3.2674736e-14, w: 1}
+  m_LocalRotation: {x: -0.00000032459565, y: 0.00000032459565, z: 4.4485113e-14, w: 1}
   m_LocalPosition: {x: -21.774416, y: 9.232273, z: -35.846237}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -228,7 +286,7 @@ GameObject:
   - component: {fileID: 2912510638806794160}
   - component: {fileID: 11525594651296946}
   - component: {fileID: 8960791616654171069}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: FrontHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6503424685521811772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: -0, z: -11.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8309386958591920094}
@@ -260,8 +318,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 69.816986, y: 12.591359, z: 62.238808}
-  m_Center: {x: 0.68768764, y: 17.758625, z: 84.17674}
+  m_Size: {x: 52.429054, y: 12.591359, z: 32.08494}
+  m_Center: {x: 0.18038788, y: 17.758553, z: 69.099686}
 --- !u!114 &8960791616654171069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,6 +531,7 @@ Transform:
   - {fileID: 2912510638806794160}
   - {fileID: 2573505028296287886}
   - {fileID: 6670532882685079861}
+  - {fileID: 6888801385096385356}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 91.832, z: 0}
@@ -537,7 +596,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 40
   m_Speed: 5
-  m_Acceleration: 8
+  m_Acceleration: 15
   avoidancePriority: 50
   m_AngularSpeed: 1000
   m_StoppingDistance: 0
@@ -566,6 +625,12 @@ MonoBehaviour:
   resetOnLastWaypoint: 1
   frontDetection: {fileID: 8960791616654171069}
   midDetection: {fileID: 387766601620822641}
+  pedestrianDetection: {fileID: 5686763801348731630}
+  wheels:
+  - {fileID: 6356785231765952183}
+  - {fileID: 7400344309289080373}
+  - {fileID: 8620391724195451841}
+  - {fileID: 987212138118183678}
 --- !u!54 &2275213455602154447
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -592,7 +657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2573505028296287886}
   - component: {fileID: 8246609791386051951}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: BackHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -624,5 +689,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 69.704185, y: 12.591359, z: 36.106926}
-  m_Center: {x: -1.0914845, y: 17.75871, z: 71.11095}
+  m_Size: {x: 69.704185, y: 12.591359, z: 60.76906}
+  m_Center: {x: -1.0914829, y: 17.758703, z: 83.4416}

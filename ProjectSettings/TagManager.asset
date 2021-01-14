@@ -19,10 +19,10 @@ TagManager:
   - MenuHover
   - Body
   - WristMenu
-  - 
-  - 
-  - 
-  - 
+  - CarFront
+  - CarMiddle
+  - CarBack
+  - CarFrontPedestrian
   - 
   - 
   - 

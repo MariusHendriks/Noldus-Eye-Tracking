@@ -17,10 +17,11 @@ public class CarPathMovement : MonoBehaviour
     private int destPoint = 0;
     private NavMeshAgent agent;
 
-    private int collisions = 0;
-
     public CarCollisionDetection frontDetection;
     public CarCollisionDetection midDetection;
+    public CarCollisionDetection pedestrianDetection;
+
+    public GameObject[] wheels;
 
     void Start()
     {
@@ -65,17 +66,26 @@ public class CarPathMovement : MonoBehaviour
 
     void Update()
     {
-        if (frontDetection.isColliding)
+        if (frontDetection.isColliding || pedestrianDetection.isColliding)
         {
             agent.speed = 0;
         } else
         {
             agent.speed = 5f;
+            SpinWheels();
         }
 
         // Choose the next destination point when the agent gets
         // close to the current one.
         if (!agent.pathPending && agent.remainingDistance < distanceToPoint)
             GotoNextPoint();
+    }
+
+    private void SpinWheels()
+    {
+        foreach (var wheel in wheels)
+        {
+            wheel.transform.Rotate(agent.speed * 80 * Time.deltaTime, 0, 0);
+        }
     }
 }

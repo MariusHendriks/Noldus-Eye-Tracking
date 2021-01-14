@@ -46,6 +46,12 @@ public class WristUISlider : WristUIElement
         }
     }
 
+    private IEnumerator OnTriggerExit(Collider other)
+    {
+        yield return new WaitForFixedUpdate();
+        Debug.Log("Send current value of slider");
+    }
+
     private float lastSound;
 
     public void OnValueChange(float value)

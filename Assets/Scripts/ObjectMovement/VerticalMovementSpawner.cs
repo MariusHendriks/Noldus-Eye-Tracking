@@ -154,4 +154,9 @@ public class VerticalMovementSpawner : MonoBehaviour
         obj.AddComponent<VerticalMovementAdjuster>();
         obj.transform.parent = transform;
     }
+
+    public void Play()
+    {
+        startScript = !startScript;
+    }
 }

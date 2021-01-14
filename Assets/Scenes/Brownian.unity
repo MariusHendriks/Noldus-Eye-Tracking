@@ -762,7 +762,7 @@ RectTransform:
   m_GameObject: {fileID: 1350621924}
   m_LocalRotation: {x: -2.5122265e-14, y: -0.0000000037201744, z: -0.000000007621566,
     w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.06399731}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1156144021}
@@ -771,7 +771,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -300}
+  m_AnchoredPosition: {x: 0, y: -600}
   m_SizeDelta: {x: 0, y: 250}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1350621926
@@ -789,12 +789,12 @@ MonoBehaviour:
   onButtonPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1442159534}
-        m_MethodName: 
+      - m_Target: {fileID: 1442159535}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -907,8 +907,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 250, y: 250, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1000, y: 250, z: 0.01}
+  m_Center: {x: 0, y: -125, z: 0}
 --- !u!114 &1350621929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1084,7 +1084,7 @@ RectTransform:
   m_GameObject: {fileID: 1381352636}
   m_LocalRotation: {x: -2.5122265e-14, y: -0.0000000037201744, z: -0.000000007621566,
     w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.06399731}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 535326592}
@@ -1093,7 +1093,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -600}
+  m_AnchoredPosition: {x: 0, y: -1000}
   m_SizeDelta: {x: 0, y: 250}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1381352638
@@ -1229,8 +1229,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 250, y: 250, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1000, y: 250, z: 0.01}
+  m_Center: {x: 0, y: -125, z: 0}
 --- !u!114 &1381352641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1299,6 +1299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seed: 5
   customMesh: []
+  startScript: 0
   customObjectsEnabler: 0
   chaoticMovementEnabled: 0
   numberOfObjects: 25
@@ -1349,7 +1350,7 @@ RectTransform:
   m_GameObject: {fileID: 1791941681}
   m_LocalRotation: {x: -2.5122265e-14, y: -0.0000000037201744, z: -0.000000007621566,
     w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.06399732}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1951680563}
@@ -1358,7 +1359,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00018310547, y: 0}
+  m_AnchoredPosition: {x: 0, y: -200}
   m_SizeDelta: {x: 0, y: 250}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1791941683
@@ -1494,8 +1495,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 250, y: 250, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1000, y: 250, z: 0.01}
+  m_Center: {x: 0, y: -125, z: 0}
 --- !u!114 &1791941686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15407,7 +15408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6520397250068313339
 Transform:
   m_ObjectHideFlags: 0

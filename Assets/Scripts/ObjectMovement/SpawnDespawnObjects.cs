@@ -147,7 +147,7 @@ public class SpawnDespawnObjects : MonoBehaviour
 
     public void Play()
     {
-        start = true;
+        start = !start;
     }
 }
 

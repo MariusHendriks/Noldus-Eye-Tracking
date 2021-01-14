@@ -117,6 +117,6 @@ public class Manager : MonoBehaviour
 
     public void Play()
     {
-        IsRunning = true;
+        IsRunning = !IsRunning;
     }
 }

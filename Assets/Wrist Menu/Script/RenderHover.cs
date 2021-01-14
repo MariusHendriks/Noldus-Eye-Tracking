@@ -20,6 +20,13 @@ public class RenderHover : MonoBehaviour
         colliding = true;
 
     }
+
+    private IEnumerator OnTriggerExit(Collider other)
+    {
+        yield return new WaitForFixedUpdate();
+        Debug.Log("Send current value of slider");
+    }
+
     private void FixedUpdate()
     {
         fingerTap.GetComponent<MeshRenderer>().enabled = colliding;

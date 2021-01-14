@@ -114,4 +114,9 @@ public class Manager : MonoBehaviour
             objects = null;
         }
     }
+
+    public void Play()
+    {
+        IsRunning = true;
+    }
 }

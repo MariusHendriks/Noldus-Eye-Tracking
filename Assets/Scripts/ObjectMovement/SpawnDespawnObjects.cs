@@ -144,6 +144,11 @@ public class SpawnDespawnObjects : MonoBehaviour
             density = objectCount;
         }
     }
+
+    public void Play()
+    {
+        start = true;
+    }
 }
 
 public enum MeshTypes

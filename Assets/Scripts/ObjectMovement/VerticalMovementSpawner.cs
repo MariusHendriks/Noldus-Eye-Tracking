@@ -7,9 +7,11 @@ public class VerticalMovementSpawner : MonoBehaviour
 {
     private readonly List<GameObject> objects = new List<GameObject>();
     private bool lastOption;
+    private bool scriptIsWorking = false;
     
     public int seed;
     public List<Mesh> customMesh;
+    public bool startScript;
     public bool customObjectsEnabler;    
     public bool chaoticMovementEnabled;
 
@@ -27,7 +29,7 @@ public class VerticalMovementSpawner : MonoBehaviour
 
     public Vector3 Center { get; private set; }
 
-    public void Start()
+    void InitializeScript()
     {
         Random.InitState(seed);
         // Making sure the object don't go under the floor or over the roof
@@ -49,7 +51,22 @@ public class VerticalMovementSpawner : MonoBehaviour
             }
             lastOption = !chaoticMovementEnabled;
             height = 7.5f;
-            Start();
+            InitializeScript();
+        }
+        if (startScript && !scriptIsWorking)
+        {
+            InitializeScript();
+            height = 7.5f;
+            scriptIsWorking = true;
+        }
+        else if (!startScript && scriptIsWorking)
+        {
+            foreach (var obj in objects)
+            {
+                Destroy(obj);
+            }
+            height = 7.5f;
+            scriptIsWorking = false;
         }
     }
 

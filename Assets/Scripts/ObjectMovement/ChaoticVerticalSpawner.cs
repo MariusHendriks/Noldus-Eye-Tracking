@@ -39,7 +39,7 @@ public class ChaoticVerticalSpawner : MonoBehaviour
             InitializeScript();
             currentNumberOfObjects = numberOfObjects;
         }
-        if (customObjectsEnabler && !customObjectsPopulated)
+        if (customObjectsEnabler && !customObjectsPopulated && startScript)
         {
             DestroyAllObjects();
             InitializeScript();

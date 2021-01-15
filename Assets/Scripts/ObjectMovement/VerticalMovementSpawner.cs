@@ -86,7 +86,7 @@ public class VerticalMovementSpawner : MonoBehaviour
             DestroyAllObjects();
             scriptIsWorking = false;
         }
-        if (customObjectsEnabler && !customObjectsPopulated)
+        if (customObjectsEnabler && !customObjectsPopulated && startScript)
         {
             DestroyAllObjects();
             InitializeScript();

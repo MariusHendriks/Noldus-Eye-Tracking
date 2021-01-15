@@ -25,7 +25,9 @@ public class PathMovement : MonoBehaviour
     private int destPoint = 0;
     private NavMeshAgent agent;
     private Animator animator;
-
+    private bool didStopAnimation = false;
+    private bool restartAnimation = false;
+    public bool waitingForCrossing = false;
 
     public Vector3 destinationOfAgent;
 
@@ -78,6 +80,25 @@ public class PathMovement : MonoBehaviour
 
     void Update()
     {
+        if (waitingForCrossing)
+        {
+            if (!didStopAnimation)
+            {
+                didStopAnimation = true;
+                restartAnimation = false;
+                animator.SetBool("isMoving", false);
+                agent.speed = 0f;
+            }
+            return;
+        }
+
+        if (!restartAnimation)
+        {
+            animator.SetBool("isMoving", true);
+            didStopAnimation = false;
+            restartAnimation = true;
+        }
+
         agent.speed = 0.75f * Mathf.Pow(movementSpeed, 2) + 0.75f * movementSpeed;
 
         if (happiness < 0)

@@ -1422,6 +1422,7 @@ Transform:
   - {fileID: 5213206918946826971}
   - {fileID: 5213206917448488134}
   - {fileID: 5213206918161639540}
+  - {fileID: 2648396365769995311}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1462,6 +1463,7 @@ MonoBehaviour:
   movementSpeed: 1
   happiness: 0
   resetOnLastWaypoint: 1
+  waitingForCrossing: 0
   destinationOfAgent: {x: 0, y: 0, z: 0}
   debugPrefab: {fileID: 0}
 --- !u!195 &5213206918113099328
@@ -1497,8 +1499,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.2078925
+  m_Center: {x: 0, y: 0.06287372, z: -0.0020417273}
 --- !u!54 &-7811038700856655633
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2748,3 +2750,47 @@ Transform:
   m_Father: {fileID: 5213206917326531129}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5593444695154335211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2648396365769995311}
+  - component: {fileID: 5532758812205849188}
+  m_Layer: 0
+  m_Name: PedestrianCrossingHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2648396365769995311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5593444695154335211}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5752136239996158994}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5532758812205849188
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5593444695154335211}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.657198, z: 0.9130031}
+  m_Center: {x: 0, y: 0.8948345, z: 0.52358174}

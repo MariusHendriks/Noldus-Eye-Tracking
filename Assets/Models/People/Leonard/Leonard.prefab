@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &428321353556187001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7218560226035053553}
+  - component: {fileID: 2759795725592923576}
+  m_Layer: 0
+  m_Name: PedestrianCrossingHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7218560226035053553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428321353556187001}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8883082823926797818}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2759795725592923576
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428321353556187001}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.657198, z: 0.91358066}
+  m_Center: {x: 0, y: 0.8948345, z: 0.5238707}
 --- !u!1 &8993043860761639807
 GameObject:
   m_ObjectHideFlags: 0
@@ -2142,6 +2186,7 @@ Transform:
   - {fileID: 8993043861433937530}
   - {fileID: 8993043861895019383}
   - {fileID: 8993043861968348553}
+  - {fileID: 7218560226035053553}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2182,6 +2227,7 @@ MonoBehaviour:
   movementSpeed: 1
   happiness: 0
   resetOnLastWaypoint: 1
+  waitingForCrossing: 0
   destinationOfAgent: {x: 0, y: 0, z: 0}
   debugPrefab: {fileID: 0}
 --- !u!195 &8993043862147119897
@@ -2233,8 +2279,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.2078925
+  m_Center: {x: 0, y: 0.06287372, z: -0.0020417273}
 --- !u!1 &8993043862270274834
 GameObject:
   m_ObjectHideFlags: 0

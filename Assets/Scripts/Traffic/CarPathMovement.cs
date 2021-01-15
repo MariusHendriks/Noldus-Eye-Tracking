@@ -16,6 +16,7 @@ public class CarPathMovement : MonoBehaviour
 
     private int destPoint = 0;
     private NavMeshAgent agent;
+    public bool waitingForCrossing;
 
     public CarCollisionDetection frontDetection;
     public CarCollisionDetection midDetection;
@@ -66,7 +67,13 @@ public class CarPathMovement : MonoBehaviour
 
     void Update()
     {
-        if (frontDetection.isColliding || pedestrianDetection.isColliding)
+        if (waitingForCrossing)
+        {
+            agent.speed = 0;
+            return;
+        }
+
+        if (frontDetection.isColliding)
         {
             agent.speed = 0;
         } else

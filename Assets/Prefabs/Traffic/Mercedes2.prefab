@@ -131,6 +131,7 @@ MonoBehaviour:
   points: []
   distanceToPoint: 1
   resetOnLastWaypoint: 1
+  waitingForCrossing: 0
   frontDetection: {fileID: 8979236889085850887}
   midDetection: {fileID: 4035222820349287103}
   pedestrianDetection: {fileID: 6768450723297863492}
@@ -198,8 +199,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 120.90335, y: 12.591359, z: 65.82976}
-  m_Center: {x: 0.88818073, y: 17.75841, z: 102.60497}
+  m_Size: {x: 109.54802, y: 12.591359, z: 60.716545}
+  m_Center: {x: 0.65311193, y: 17.758276, z: 100.0482}
 --- !u!114 &6768450723297863492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,7 +463,7 @@ GameObject:
   - component: {fileID: 4035222820349287102}
   - component: {fileID: 4035222820349287103}
   m_Layer: 14
-  m_Name: MidHitbox
+  m_Name: CarHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -493,8 +494,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 84.26128, y: 12.591359, z: 96.66184}
-  m_Center: {x: 0.600079, y: 17.75869, z: 70.04633}
+  m_Size: {x: 55.77618, y: 12.591359, z: 129.17615}
+  m_Center: {x: 0.047922134, y: 17.758589, z: 66.8911}
 --- !u!114 &4035222820349287103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -674,8 +675,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 52.429054, y: 12.591359, z: 32.08494}
-  m_Center: {x: 0.18038788, y: 17.758553, z: 69.099686}
+  m_Size: {x: 52.42905, y: 12.591359, z: 35.364883}
+  m_Center: {x: 0.1803875, y: 17.75854, z: 70.73966}
 --- !u!114 &8979236889085850887
 MonoBehaviour:
   m_ObjectHideFlags: 0

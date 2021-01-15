@@ -4,40 +4,23 @@ using UnityEngine;
 
 public class VerticalMovementAdjuster : MonoBehaviour
 {
-    [Range(1.5f, 25.0f)]
+    [Range(0.1f, 25.0f)]
     public float speed;
 
     [Range(0, 7.5f)]
     public float height;
 
-    [Range(2, 9)]
+    [Range(2, 9f)]
     public float radius;
 
     private float lastRadius;
-    private int numberOfObjects;
-    private Vector3 center;
-    private bool chaoticMovementEnabled;
+    public int NrOfObjects { get; set; }
+    public Vector3 Center { get; set; }
 
     // Start is called before the first frame update
     void Start()
     {
-        if (speed == 0.0f || height == 0.0f || radius == 0.0f)
-        {
-            var script = GameObject.FindWithTag("VerticalMover").GetComponent<VerticalMovementSpawner>();
-            height = script.height;
-            radius = script.distance;
-            speed = script.speed;
-            numberOfObjects = script.numberOfObjects;
-            chaoticMovementEnabled = script.chaoticMovementEnabled;
-            lastRadius = radius;
-            center = script.Center;
-            chaoticMovementEnabled = script.chaoticMovementEnabled;
-            if (chaoticMovementEnabled)
-            { 
-                speed = Random.Range(1.5f, 7f);
-                height = Random.Range(0, 7.5f);
-            }
-        }
+        lastRadius = radius;
     }
 
     // Update is called once per frame
@@ -48,16 +31,13 @@ public class VerticalMovementAdjuster : MonoBehaviour
         if (radius != lastRadius)
         {
             var objectNr = System.Convert.ToInt32(name);
-            var spawnDir = VerticalMovementSpawner.CalculateSpawnDirection(objectNr, numberOfObjects);
-            var spawnPos = center + spawnDir * radius;
+            var spawnDir = VerticalMovementUltil.CalculateSpawnDirection(objectNr, NrOfObjects);
+            var spawnPos = Center + spawnDir * radius;
             x = spawnPos.x;
             z = spawnPos.z;
             lastRadius = radius;
         }
-        //calculate what the new Y position will be
-        float y = Mathf.Sin(Time.time * speed) * height + height + 1f;
-        //set the object's Y to the new calculated Y
+        var y = Mathf.Sin(Time.time * speed) * height + height + 1f;
         transform.position = new Vector3(x, y, z);
     }
-
 }

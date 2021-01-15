@@ -1278,6 +1278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1442159536}
   - component: {fileID: 1442159535}
+  - component: {fileID: 1442159537}
   m_Layer: 0
   m_Name: VerticalMovementManager
   m_TagString: VerticalMover
@@ -1298,14 +1299,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seed: 5
-  customMesh: []
+  customMeshes:
+  - {fileID: 4300000, guid: d8c8787ffb0f3b5468fd65d51731b7de, type: 3}
+  - {fileID: 4300006, guid: 817905816aef5fb48a1e7cbf50582155, type: 3}
+  - {fileID: 4300004, guid: bc8c29201cb724446a7429fabead425c, type: 3}
+  - {fileID: 4300000, guid: fd11bed7945d6f64fa54fd364acdd741, type: 3}
+  - {fileID: 4300000, guid: dbfd5a0d3687f5943866e159c822d788, type: 3}
+  - {fileID: 4300000, guid: 4e6db54670ea84d4298ec673c60ca3c7, type: 3}
+  - {fileID: 4300000, guid: 6c24037ad5bed7e428ade751ad02702c, type: 3}
+  - {fileID: 4300000, guid: a9a2fe8bb1566d04382f04d14066f8a9, type: 3}
+  - {fileID: 4300000, guid: 2faafd7c39cf18b4d83d3d729c4f9a04, type: 3}
   startScript: 0
   customObjectsEnabler: 0
-  chaoticMovementEnabled: 0
   numberOfObjects: 25
   distance: 9
   speed: 0.5
-  height: 15
+  height: 7.5
 --- !u!4 &1442159536
 Transform:
   m_ObjectHideFlags: 0
@@ -1320,6 +1329,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1442159537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442159534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e67c0d18a0e9843a7acfd0c7190e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seed: 5
+  customMeshes:
+  - {fileID: 4300000, guid: d8c8787ffb0f3b5468fd65d51731b7de, type: 3}
+  - {fileID: 4300002, guid: f662251454558504b9d7d576219f8a4b, type: 3}
+  - {fileID: 4300006, guid: 817905816aef5fb48a1e7cbf50582155, type: 3}
+  - {fileID: 4300004, guid: bc8c29201cb724446a7429fabead425c, type: 3}
+  - {fileID: 4300000, guid: fd11bed7945d6f64fa54fd364acdd741, type: 3}
+  - {fileID: 4300000, guid: dbfd5a0d3687f5943866e159c822d788, type: 3}
+  - {fileID: 4300000, guid: 4e6db54670ea84d4298ec673c60ca3c7, type: 3}
+  - {fileID: 4300000, guid: 6c24037ad5bed7e428ade751ad02702c, type: 3}
+  - {fileID: 4300000, guid: a9a2fe8bb1566d04382f04d14066f8a9, type: 3}
+  startScript: 0
+  customObjectsEnabler: 0
+  numberOfObjects: 25
 --- !u!1 &1791941681
 GameObject:
   m_ObjectHideFlags: 0

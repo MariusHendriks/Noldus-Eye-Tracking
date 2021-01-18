@@ -13,7 +13,11 @@ public class VerticalMovementAdjuster : MonoBehaviour
     [Range(2, 9f)]
     public float radius;
 
+    public bool makePriority;
+
+    private bool currentPriority;
     private float lastRadius;
+    private Material defaultMat;
     public int NrOfObjects { get; set; }
     public Vector3 Center { get; set; }
 
@@ -21,6 +25,7 @@ public class VerticalMovementAdjuster : MonoBehaviour
     void Start()
     {
         lastRadius = radius;
+        defaultMat = gameObject.GetComponent<MeshRenderer>().material;
     }
 
     // Update is called once per frame
@@ -39,5 +44,21 @@ public class VerticalMovementAdjuster : MonoBehaviour
         }
         var y = Mathf.Sin(Time.time * speed) * height + height + 1f;
         transform.position = new Vector3(x, y, z);
+        if (makePriority && !currentPriority)
+        {
+            var loadedMat = Resources.Load("Materials/RandomObjectMaterial") as Material;
+            ChangeMaterial(loadedMat);
+            currentPriority = true;
+        }
+        else if (!makePriority && currentPriority)
+        {
+            ChangeMaterial(defaultMat);
+            currentPriority = makePriority;
+        }
+    }
+
+    void ChangeMaterial(Material mat)
+    {
+        gameObject.GetComponent<MeshRenderer>().material = mat;
     }
 }

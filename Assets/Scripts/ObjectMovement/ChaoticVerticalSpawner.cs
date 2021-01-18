@@ -6,7 +6,7 @@ using static VerticalMovementUltil;
 public class ChaoticVerticalSpawner : MonoBehaviour
 {
     private readonly List<GameObject> objects = new List<GameObject>();
-    private bool scriptIsWorking = false;
+    private bool scriptIsWorking;
     private int currentNumberOfObjects;
     private float height;
     private bool customObjectsPopulated;
@@ -35,20 +35,17 @@ public class ChaoticVerticalSpawner : MonoBehaviour
     {
         if (numberOfObjects != currentNumberOfObjects && scriptIsWorking)
         {
-            DestroyAllObjects();
-            InitializeScript();
+            ResetScene();
             currentNumberOfObjects = numberOfObjects;
         }
         if (customObjectsEnabler && !customObjectsPopulated && startScript)
         {
-            DestroyAllObjects();
-            InitializeScript();
+            ResetScene();
             customObjectsPopulated = true;
         }
-        else if (!customObjectsEnabler && customObjectsPopulated)
+        else if (!customObjectsEnabler && customObjectsPopulated && startScript)
         {
-            DestroyAllObjects();
-            InitializeScript();
+            ResetScene();
             customObjectsPopulated = false;
         }
         if (startScript && !scriptIsWorking)
@@ -75,15 +72,16 @@ public class ChaoticVerticalSpawner : MonoBehaviour
                 obj = CustomMeshSpawner(spawnPos, Center, transform, customMeshes);
             else
                 obj = PrimitiveTypeCreator(spawnPos, Center, transform);
-            var script = obj.GetComponent<VerticalMovementAdjuster>();
-            script.radius = radius;
-            script.speed = Random.Range(1.5f, 7f);
-            script.height = Random.Range(0, 7.5f);
-            script.Center = Center;
-            script.NrOfObjects = num;
+            obj = SetVerticalAdjusterScriptParameters(obj, radius, num, Center, Random.Range(1.5f, 7f), Random.Range(0, 7.5f));
             obj.name = $"{i}";
             objects.Add(obj);
         }
+    }
+
+    void ResetScene()
+    {
+        DestroyAllObjects();
+        InitializeScript();
     }
 
     void DestroyAllObjects()

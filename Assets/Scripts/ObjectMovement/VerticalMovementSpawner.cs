@@ -6,7 +6,7 @@ using static VerticalMovementUltil;
 public class VerticalMovementSpawner : MonoBehaviour
 {
     private readonly List<GameObject> objects = new List<GameObject>();
-    private bool scriptIsWorking = false;
+    private bool scriptIsWorking;
     private float currentSpeed;
     private int currentNumberOfObjects;
     private float currentHight;
@@ -72,8 +72,7 @@ public class VerticalMovementSpawner : MonoBehaviour
         }
         if (numberOfObjects != currentNumberOfObjects && scriptIsWorking)
         {
-            DestroyAllObjects();
-            InitializeScript();
+            ResetScene();
             currentNumberOfObjects = numberOfObjects;
         }
         if (startScript && !scriptIsWorking)
@@ -88,14 +87,12 @@ public class VerticalMovementSpawner : MonoBehaviour
         }
         if (customObjectsEnabler && !customObjectsPopulated && startScript)
         {
-            DestroyAllObjects();
-            InitializeScript();
+            ResetScene();
             customObjectsPopulated = true;
         }
-        else if (!customObjectsEnabler && customObjectsPopulated)
+        else if (!customObjectsEnabler && customObjectsPopulated && startScript)
         {
-            DestroyAllObjects();
-            InitializeScript();
+            ResetScene();
             customObjectsPopulated = false;
         }
     }
@@ -111,15 +108,16 @@ public class VerticalMovementSpawner : MonoBehaviour
                 obj = CustomMeshSpawner(spawnPos, Center, transform, customMeshes);
             else 
                 obj = PrimitiveTypeCreator(spawnPos, Center, transform);
-            var script = obj.GetComponent<VerticalMovementAdjuster>();
-            script.speed = speed;
-            script.height = height;
-            script.radius = radius;
-            script.NrOfObjects = num;
-            script.Center = Center;
+            SetVerticalAdjusterScriptParameters(obj, radius, num, Center, speed, height);
             obj.name = $"{i}";
             objects.Add(obj);
         }
+    }
+
+    void ResetScene()
+    {
+        DestroyAllObjects();
+        InitializeScript();
     }
 
     void DestroyAllObjects()

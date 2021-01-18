@@ -89,4 +89,9 @@ public class ChaoticVerticalSpawner : MonoBehaviour
         objects.ForEach((obj) => Destroy(obj));
         objects.Clear();
     }
+
+    public void Play()
+    {
+        startScript = !startScript;
+    }
 }

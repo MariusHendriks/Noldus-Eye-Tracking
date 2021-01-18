@@ -50,9 +50,10 @@ public static class VerticalMovementUltil
         obj.transform.LookAt(center);
         obj.transform.Translate(new Vector3(0, obj.transform.localScale.y / 2, 0));
         obj.transform.parent = transform;
-        obj.GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
-        obj.GetComponent<Renderer>().material.SetFloat("_Metallic", 0.97f);
-        obj.GetComponent<Renderer>().material.SetFloat("_Glossiness", 1);
+        var material = obj.GetComponent<Renderer>().material;
+        material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+        material.SetFloat("_Metallic", 0.97f);
+        material.SetFloat("_Glossiness", 1);
         obj.AddComponent<VerticalMovementAdjuster>();
         return obj;
     }

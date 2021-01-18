@@ -24,7 +24,7 @@ public class VerticalMovementSpawner : MonoBehaviour
     [Range(2, 9)]
     public int distance;
     
-    [Range(0.1f, 25.0f)]
+    [Range(0.1f, 25f)]
     public float speed;
     
     [Range(0, 7.5f)]
@@ -46,54 +46,51 @@ public class VerticalMovementSpawner : MonoBehaviour
 
     public void Update()
     {
-        if (speed != currentSpeed && scriptIsWorking)
+        if (scriptIsWorking)
         {
-            foreach (var obj in objects)
+            if (speed != currentSpeed)
             {
-                obj.GetComponent<VerticalMovementAdjuster>().speed = speed;
+                foreach (var obj in objects)
+                    obj.GetComponent<VerticalMovementAdjuster>().speed = speed;
+                currentSpeed = speed;
             }
-            currentSpeed = speed;
-        }
-        if (height != currentHight && scriptIsWorking)
-        {
-            foreach (var obj in objects)
+            else if (height != currentHight)
             {
-                obj.GetComponent<VerticalMovementAdjuster>().height = height;
+                foreach (var obj in objects)
+                    obj.GetComponent<VerticalMovementAdjuster>().height = height;
+                currentHight = height;
             }
-            currentHight = height;
-        }
-        if (distance != currentRadius && scriptIsWorking)
-        {
-            foreach (var obj in objects)
+            else if (distance != currentRadius)
             {
-                obj.GetComponent<VerticalMovementAdjuster>().radius = distance;
+                foreach (var obj in objects)
+                    obj.GetComponent<VerticalMovementAdjuster>().radius = distance;
+                currentRadius = distance;
             }
-            currentRadius = distance;
+            else if (numberOfObjects != currentNumberOfObjects)
+            {
+                ResetScene();
+                currentNumberOfObjects = numberOfObjects;
+            }
+            else if (!startScript)
+            {
+                DestroyAllObjects();
+                scriptIsWorking = false;
+            }
+            else if (customObjectsEnabler && !customObjectsPopulated)
+            {
+                ResetScene();
+                customObjectsPopulated = true;
+            }
+            else if (!customObjectsEnabler && customObjectsPopulated)
+            {
+                ResetScene();
+                customObjectsPopulated = false;
+            }
         }
-        if (numberOfObjects != currentNumberOfObjects && scriptIsWorking)
-        {
-            ResetScene();
-            currentNumberOfObjects = numberOfObjects;
-        }
-        if (startScript && !scriptIsWorking)
+        else if (!scriptIsWorking && startScript)
         {
             InitializeScript();
             scriptIsWorking = true;
-        }
-        else if (!startScript && scriptIsWorking)
-        {
-            DestroyAllObjects();
-            scriptIsWorking = false;
-        }
-        if (customObjectsEnabler && !customObjectsPopulated && startScript)
-        {
-            ResetScene();
-            customObjectsPopulated = true;
-        }
-        else if (!customObjectsEnabler && customObjectsPopulated && startScript)
-        {
-            ResetScene();
-            customObjectsPopulated = false;
         }
     }
 

@@ -8,8 +8,10 @@ public class ChaoticVerticalSpawner : MonoBehaviour
     private readonly List<GameObject> objects = new List<GameObject>();
     private bool scriptIsWorking;
     private int currentNumberOfObjects;
-    private float height;
+    private float currentHeight;
     private bool customObjectsPopulated;
+    private float currentSpeed;
+    private float currentDistance;
 
     public int seed;
     public List<Mesh> customMeshes;
@@ -18,6 +20,12 @@ public class ChaoticVerticalSpawner : MonoBehaviour
 
     [Range(1, 25)]
     public int numberOfObjects;
+
+    public int distance;
+
+    public float speed;
+
+    public float height;
 
     public Vector3 Center { get; private set; }
 
@@ -28,36 +36,147 @@ public class ChaoticVerticalSpawner : MonoBehaviour
         Center = new Vector3(0, height, 0);
         currentNumberOfObjects = numberOfObjects;
         customObjectsPopulated = customObjectsEnabler;
+        currentHeight = height;
+        currentSpeed = speed;
+        currentDistance = distance;
         SpawnShapesAroundCenter(numberOfObjects);
     }
 
     public void Update()
     {
-        if (numberOfObjects != currentNumberOfObjects && scriptIsWorking)
+        if (scriptIsWorking)
         {
-            ResetScene();
-            currentNumberOfObjects = numberOfObjects;
+            if (numberOfObjects != currentNumberOfObjects)
+            {
+                ResetScene();
+                currentNumberOfObjects = numberOfObjects;
+            }
+            else if (height != currentHeight)
+            {
+                ChangeObjectHeight();
+            }
+            else if (speed != currentSpeed)
+            {
+                ChangeObjectSpeed();
+            }
+            else if (distance != currentDistance)
+            {
+                ChangeDistance();
+            }
+            else if (customObjectsEnabler && !customObjectsPopulated)
+            {
+                ResetScene();
+                customObjectsPopulated = true;
+            }
+            else if (!customObjectsEnabler && customObjectsPopulated)
+            {
+                ResetScene();
+                customObjectsPopulated = false;
+            }
+            else if (!startScript)
+            {
+                DestroyAllObjects();
+                scriptIsWorking = false;
+            }
         }
-        if (customObjectsEnabler && !customObjectsPopulated && startScript)
-        {
-            ResetScene();
-            customObjectsPopulated = true;
-        }
-        else if (!customObjectsEnabler && customObjectsPopulated && startScript)
-        {
-            ResetScene();
-            customObjectsPopulated = false;
-        }
-        if (startScript && !scriptIsWorking)
+        else if (!scriptIsWorking && startScript)
         {
             InitializeScript();
             scriptIsWorking = true;
         }
-        else if (!startScript && scriptIsWorking)
+    }
+
+    void ChangeDistance()
+    {
+        if (distance < currentDistance)
         {
-            DestroyAllObjects();
-            scriptIsWorking = false;
+            foreach (var obj in objects)
+            {
+                var d = obj.GetComponent<VerticalMovementAdjuster>().radius;
+                var percent = d * 0.1f;
+                var cal = d - percent;
+                if (cal > 2)
+                {
+                    obj.GetComponent<VerticalMovementAdjuster>().radius = cal;
+                }
+            }
         }
+        else
+        {
+            foreach (var obj in objects)
+            {
+                var d = obj.GetComponent<VerticalMovementAdjuster>().radius;
+                var percent = d * 0.1f;
+                var cal = d + percent;
+                if (cal < 9)
+                {
+                    obj.GetComponent<VerticalMovementAdjuster>().radius = cal;
+                }
+            }
+        }
+        currentDistance = distance;
+    }
+
+    void ChangeObjectHeight()
+    {
+        if (height < currentHeight)
+        {
+            foreach (var obj in objects)
+            {
+                var h = obj.GetComponent<VerticalMovementAdjuster>().height;
+                var percent = h * 0.1f;
+                var cal = h - percent;
+                if (cal > 0)
+                {
+                    obj.GetComponent<VerticalMovementAdjuster>().height = cal;
+                }
+            }
+        }
+        else
+        {
+            foreach (var obj in objects)
+            {
+                var h = obj.GetComponent<VerticalMovementAdjuster>().height;
+                var percent = h * 0.1f;
+                var cal = h + percent;
+                if (cal < 7.5f)
+                {
+                    obj.GetComponent<VerticalMovementAdjuster>().height = cal;
+                }
+            }
+        }
+        currentHeight = height;
+    }
+
+    void ChangeObjectSpeed()
+    {
+        if (speed < currentSpeed)
+        {
+            foreach (var obj in objects)
+            {
+                var s = obj.GetComponent<VerticalMovementAdjuster>().speed;
+                var percent = s * 0.1f;
+                var cal = s - percent;
+                if (cal > 0.1f)
+                {
+                    obj.GetComponent<VerticalMovementAdjuster>().speed = cal;
+                }
+            }
+        }
+        else
+        {
+            foreach (var obj in objects)
+            {
+                var s = obj.GetComponent<VerticalMovementAdjuster>().speed;
+                var percent = s * 0.1f;
+                var cal = s + percent;
+                if (cal < 25f)
+                {
+                    obj.GetComponent<VerticalMovementAdjuster>().speed = cal;
+                }
+            }
+        }
+        currentSpeed = speed;
     }
 
     public void SpawnShapesAroundCenter(int num)

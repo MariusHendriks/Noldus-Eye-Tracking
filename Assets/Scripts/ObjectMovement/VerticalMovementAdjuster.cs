@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class VerticalMovementAdjuster : MonoBehaviour
 {
-    [Range(0.1f, 25.0f)]
+    private bool currentPriority;
+    private float lastRadius;
+    private Material defaultMat;
+
+    [Range(0.1f, 25f)]
     public float speed;
 
     [Range(0, 7.5f)]
@@ -15,20 +19,15 @@ public class VerticalMovementAdjuster : MonoBehaviour
 
     public bool makePriority;
 
-    private bool currentPriority;
-    private float lastRadius;
-    private Material defaultMat;
     public int NrOfObjects { get; set; }
     public Vector3 Center { get; set; }
 
-    // Start is called before the first frame update
     void Start()
     {
         lastRadius = radius;
         defaultMat = gameObject.GetComponent<MeshRenderer>().material;
     }
 
-    // Update is called once per frame
     void Update()
     {
         var x = transform.position.x;

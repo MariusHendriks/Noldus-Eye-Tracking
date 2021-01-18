@@ -9,7 +9,7 @@ public class Manager : MonoBehaviour
     public bool IsRunning = false;
     public int NrOfObjects;
     public int seed;
-    public int MeshSet;
+    public MeshTypes meshType;
 
     private List<GameObject> objects = null;
     public GameObject Sablon;
@@ -77,18 +77,18 @@ public class Manager : MonoBehaviour
             instance.offsetInMicros = Random.Range(OffsetInMicros.x, OffsetInMicros.y);
 
             float scale = Random.Range(Scale.x, Scale.y);
-            if (MeshSet == 1)
+            if ((int) meshType == 1)
             {
                 scale+=3f;
             }
-            else if (MeshSet == 2)
+            else if ((int) meshType == 2)
             {
                 scale *= 200;
             }
             instance.transform.localScale = new Vector3(scale, scale, scale);
 
 
-            instance.Randomizer(MeshSet);
+            instance.Randomizer((int) meshType);
         }
     }
 
@@ -115,8 +115,12 @@ public class Manager : MonoBehaviour
         }
     }
 
-    public void Play()
+    public void Play(int nrOfObjects, float minSpeed, float maxSpeed, MeshTypes meshTypes, int seed)
     {
+        this.NrOfObjects = nrOfObjects;
+        this.Speed = new Vector2(minSpeed, maxSpeed);
+        this.meshType = meshTypes;
+        this.seed = seed;
         IsRunning = !IsRunning;
     }
 }

@@ -145,8 +145,13 @@ public class SpawnDespawnObjects : MonoBehaviour
         }
     }
 
-    public void Play()
+    public void Play(int nrOfObjects, float speed, float maximumRadius, MeshTypes meshType, int seed)
     {
+        this.objectCount = nrOfObjects;
+        this.speed = speed;
+        this.maxRadius = maximumRadius;
+        this.meshType = meshType;
+        this.seed = seed;
         start = !start;
     }
 }

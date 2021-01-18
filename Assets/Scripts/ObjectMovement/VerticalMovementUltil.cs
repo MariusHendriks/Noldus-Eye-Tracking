@@ -57,6 +57,17 @@ public static class VerticalMovementUltil
         return obj;
     }
 
+    public static GameObject SetVerticalAdjusterScriptParameters(GameObject obj, float radius, int num, Vector3 center, float speed, float height)
+    {
+        var script = obj.GetComponent<VerticalMovementAdjuster>();
+        script.radius = radius;
+        script.speed = speed;
+        script.height = height;
+        script.Center = center;
+        script.NrOfObjects = num;
+        return obj;
+    }
+
     public static Vector3 CalculateSpawnDirection(int objectNr, int nrOfObjects)
     {
         var radians = 2 * Mathf.PI / nrOfObjects * objectNr;

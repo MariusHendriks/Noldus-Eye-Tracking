@@ -6,14 +6,15 @@ using UnityEngine;
 
 public class Crossroads : MonoBehaviour
 {
-    private enum CrossroadProgress { Start, BeforeLooking, Looking, AfterLooking, UnlockTeleport, Done};
+    private enum CrossroadProgress { Start, BeforeLooking, Looking, AfterLooking, UnlockTeleport, FinishExercise, WrapUp, Done};
     private enum CrossroadTarget { Left, Right};
 
 
     public AudioClip[] audioFiles;
     public GameObject[] lookZones;
     public GameObject nextTeleportArea;
-
+    public GameObject nextHenk;
+    public bool finishExercise = false;
 
     private LipSync character;
     private Animator animator;
@@ -23,6 +24,7 @@ public class Crossroads : MonoBehaviour
     private int lookCounter = 0;
     private CrossroadTarget crossroadTarget = CrossroadTarget.Left;
     private RaycastHit hitInfo;
+
 
     // Start is called before the first frame update
     void Start()
@@ -103,14 +105,31 @@ public class Crossroads : MonoBehaviour
             }
         } else if (progress == CrossroadProgress.UnlockTeleport)
         {
+            progress = CrossroadProgress.FinishExercise;
+
+            if (finishExercise)
+            {
+
+                StartCoroutine(UpdateProgress(audioFiles[3], CrossroadProgress.WrapUp));
+            }else
+            {
+                StartCoroutine(UpdateProgress(audioFiles[1], CrossroadProgress.Done));
+            }
+        } else if (progress == CrossroadProgress.WrapUp)
+        {
             progress = CrossroadProgress.Done;
-            StartCoroutine(UpdateProgress(audioFiles[1], CrossroadProgress.Done));
+            this.gameObject.SetActive(false);
+
+        } else if (progress == CrossroadProgress.Done && !finishExercise)
+        {
             UnlockNextTeleportArea();
         }
     }
 
     private void UnlockNextTeleportArea()
     {
+        nextHenk.SetActive(true);
         nextTeleportArea.SetActive(true);
+        this.gameObject.SetActive(false);
     }
 }

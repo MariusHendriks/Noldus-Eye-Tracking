@@ -154,26 +154,18 @@ public class ChaoticVerticalSpawner : MonoBehaviour
         {
             foreach (var obj in objects)
             {
-                var s = obj.GetComponent<VerticalMovementAdjuster>().speed;
-                var percent = s * 0.1f;
-                var cal = s - percent;
-                if (cal > 0.1f)
-                {
-                    obj.GetComponent<VerticalMovementAdjuster>().speed = cal;
-                }
+                var script = obj.GetComponent<VerticalMovementAdjuster>();
+                script.speed = script.DefaultSpeed * speed / 5;
+                Debug.Log(script.speed);
             }
         }
         else
         {
             foreach (var obj in objects)
             {
-                var s = obj.GetComponent<VerticalMovementAdjuster>().speed;
-                var percent = s * 0.1f;
-                var cal = s + percent;
-                if (cal < 25f)
-                {
-                    obj.GetComponent<VerticalMovementAdjuster>().speed = cal;
-                }
+                var script = obj.GetComponent<VerticalMovementAdjuster>();
+                script.speed = script.DefaultSpeed * speed / 5;
+                Debug.Log(script.speed);
             }
         }
         currentSpeed = speed;

@@ -13,6 +13,11 @@ public class NPCSpawner : MonoBehaviour
     public int spawnTimeMin = 1;
     public int spawnTimeMax = 20;
 
+    public float happynessMin = -0.5f;
+    public float happynessMax = 0.5f;
+
+    public float speed = 3f;
+
     private int currentNPCSpawn = 0;
 
     // Start is called before the first frame update
@@ -36,8 +41,12 @@ public class NPCSpawner : MonoBehaviour
         GameObject path = pathObjects[Random.Range(0, pathObjects.Length)];
         GameObject npc = Instantiate(npcPrefab, this.transform.position, Quaternion.identity);
 
+        npc.layer = 19;
+
         PathMovement pathMovement = npc.GetComponent<PathMovement>();
         pathMovement.pointsParent = path;
+        pathMovement.movementSpeed = Random.Range(1, 1.4f);
+        pathMovement.happiness = Random.Range(happynessMin, happynessMax);
 
         currentNPCSpawn++;
 

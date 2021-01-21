@@ -45,12 +45,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  defaultSpeed: 0
   amplitude: 0
+  defaultAmplitude: 0
   elipsedX: 0
   elipsedZ: 0
   defaultAlt: 0
   verticalDelta: 0
   offsetInMicros: 0
+  highlighted: 0
 --- !u!1 &7940435913640725099
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,8 +65,8 @@ GameObject:
   - component: {fileID: 7940435913640725095}
   - component: {fileID: 7940435913640725092}
   - component: {fileID: 7940435913640725093}
-  - component: {fileID: 7940435913640725098}
   - component: {fileID: 7940435913640725094}
+  - component: {fileID: 2519032879833019295}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -132,19 +135,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &7940435913640725098
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7940435913640725099}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7940435913640725094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,4 +163,17 @@ MonoBehaviour:
   - {fileID: 4300000, guid: 49a09859e5b53d74b8038a042b0e7d3b, type: 3}
   - {fileID: 4300000, guid: 43dd9523f76f5d4448be24e15c4a347c, type: 3}
   - {fileID: 4300000, guid: 6a987db90277a804ca12763b4edaac0d, type: 3}
-  material: {fileID: 2100000, guid: 06c585e7039efff42864b0283216c6f6, type: 2}
+--- !u!64 &2519032879833019295
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7940435913640725099}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}

@@ -9,6 +9,13 @@ public class Manager : MonoBehaviour
     public bool IsRunning = false;
     public int NrOfObjects;
     public int seed;
+
+    private float previousSpeedMultiplier = 1;
+    public float SpeedMultiplier = 1;
+
+    private float previousAmplitudeMultiplier = 1;
+    public float AmplitudeMultiplier = 1;
+
     public MeshTypes meshType;
 
     private List<GameObject> objects = null;
@@ -41,56 +48,15 @@ public class Manager : MonoBehaviour
     public Vector2 Scale = new Vector2(0.2f, 1f);
 
 
-    public bool runMethod = false;
+    public bool addObj = false;
+    public bool rmObj = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
-    }
-
-    public void Generate()
-    {
-        objects = new List<GameObject>();
-        Random.InitState(seed);
-        for (int i = 0; i < NrOfObjects; i++)
-        {
-            objects.Add(Instantiate(Sablon));
-            var instance = (Movement)objects[i].GetComponent(typeof(Movement));
-
-            instance.speed = Random.Range(Speed.x, Speed.y);
-            instance.amplitude = Random.Range(Amplitude.x, Amplitude.y);
-
-            instance.elipsedX = Random.Range(ElipsedX.x, ElipsedX.y);
-            while ((instance.elipsedX < 0.3 && instance.elipsedX > -0.3) || (-2 < instance.amplitude * instance.elipsedX && instance.amplitude * instance.elipsedX < 2)) 
-            {
-                instance.elipsedX = Random.Range(ElipsedX.x, ElipsedX.y);
-            }
-
-            instance.elipsedZ = Random.Range(ElipsedZ.x, ElipsedZ.y);
-            while ((instance.elipsedZ < 0.3 && instance.elipsedZ > -0.3)|| (-2 < instance.amplitude * instance.elipsedZ && instance.amplitude * instance.elipsedZ < 2))
-            {
-                instance.elipsedZ = Random.Range(ElipsedZ.x, ElipsedZ.y);
-            }
-
-            instance.defaultAlt = Random.Range(DefaultAlt.x, DefaultAlt.y);
-            instance.verticalDelta = Random.Range(VerticalDelta.x, VerticalDelta.y);
-            instance.offsetInMicros = Random.Range(OffsetInMicros.x, OffsetInMicros.y);
-
-            float scale = Random.Range(Scale.x, Scale.y);
-            if ((int) meshType == 1)
-            {
-                scale+=3f;
-            }
-            else if ((int) meshType == 2)
-            {
-                scale *= 200;
-            }
-            instance.transform.localScale = new Vector3(scale, scale, scale);
-
-
-            instance.Randomizer((int) meshType);
-        }
+        StartCoroutine(WaitForAmplitudeMChange());
+        StartCoroutine(WaitForSppeedMChange());
     }
 
     // Update is called once per frame
@@ -100,18 +66,8 @@ public class Manager : MonoBehaviour
         if (IsRunning && objects == null)
         {
             this.Generate();
-            foreach (GameObject obj in objects)
-            {
-                var instance = (Movement)obj.GetComponent(typeof(Movement));
-                instance.StartMovement();
-                instance.defaultSpeed = instance.speed;
-                instance.speed = instance.defaultSpeed * 1;
-
-                instance.defaultAmplitude = instance.amplitude;
-                instance.amplitude = instance.defaultAmplitude * 1;
-            }
         }
-        if (!IsRunning && objects!= null)
+        if (!IsRunning && objects != null)
         {
             foreach (GameObject obj in objects)
             {
@@ -120,10 +76,108 @@ public class Manager : MonoBehaviour
             objects = null;
         }
 
-        if (runMethod)
+        if (addObj)
         {
-            ChangeAmplitude(2);
-            runMethod = false;
+            AddObjects(1);
+            addObj = false;
+        }
+
+        if (rmObj)
+        {
+            RemoveObjects(1);
+            rmObj = false;
+        }
+    }
+
+    public void Generate()
+    {
+        objects = new List<GameObject>();
+        Random.InitState(seed);
+        for (int i = 0; i < NrOfObjects; i++)
+        {
+            CreateObject(i);
+        }
+    }
+
+    private void CreateObject(int id)
+    {
+        GameObject gameObject = Instantiate(Sablon);
+        gameObject.name = (id + 1).ToString();
+        objects.Add(gameObject);
+        var instance = (Movement)objects[id].GetComponent(typeof(Movement));
+
+        instance.speed = Random.Range(Speed.x, Speed.y);
+        instance.amplitude = Random.Range(Amplitude.x, Amplitude.y);
+
+        instance.elipsedX = Random.Range(ElipsedX.x, ElipsedX.y);
+        while ((instance.elipsedX < 0.3 && instance.elipsedX > -0.3) || (-2 < instance.amplitude * instance.elipsedX && instance.amplitude * instance.elipsedX < 2))
+        {
+            instance.elipsedX = Random.Range(ElipsedX.x, ElipsedX.y);
+        }
+
+        instance.elipsedZ = Random.Range(ElipsedZ.x, ElipsedZ.y);
+        while ((instance.elipsedZ < 0.3 && instance.elipsedZ > -0.3) || (-2 < instance.amplitude * instance.elipsedZ && instance.amplitude * instance.elipsedZ < 2))
+        {
+            instance.elipsedZ = Random.Range(ElipsedZ.x, ElipsedZ.y);
+        }
+
+        instance.defaultSpeed = instance.speed;
+        instance.defaultAmplitude = instance.amplitude;
+        instance.speed *= SpeedMultiplier;
+        instance.amplitude *= AmplitudeMultiplier;
+        instance.defaultAlt = Random.Range(DefaultAlt.x, DefaultAlt.y);
+        instance.verticalDelta = Random.Range(VerticalDelta.x, VerticalDelta.y);
+        instance.offsetInMicros = Random.Range(OffsetInMicros.x, OffsetInMicros.y);
+
+        float scale = Random.Range(Scale.x, Scale.y);
+        if ((int)meshType == 1)
+        {
+            scale += 3f;
+        }
+        else if ((int)meshType == 2)
+        {
+            scale *= 200;
+        }
+        instance.transform.localScale = new Vector3(scale, scale, scale);
+
+        instance.Randomizer((int)meshType);
+        instance.StartMovement();
+    }
+
+    private void AddObjects(int NrObj)
+    {
+        for (int i = 0; i < NrObj; i++)
+        {
+            CreateObject(NrOfObjects);
+            NrOfObjects++;
+        }
+    }
+
+    private void RemoveObjects(int NrObj)
+    {
+        for (int i = 0; i < NrObj; i++)
+        {
+            Destroy(objects[objects.Count - 1]);
+            objects.RemoveAt(objects.Count - 1);
+            NrOfObjects=objects.Count;
+        }
+    }
+
+    public IEnumerator WaitForSppeedMChange()
+    {
+        while (true)
+        {
+            yield return new WaitUntil(() => SpeedMultiplier!=previousSpeedMultiplier);
+            ChangeSpeed(SpeedMultiplier);
+        }
+    }
+
+    public IEnumerator WaitForAmplitudeMChange()
+    {
+        while (true)
+        {
+            yield return new WaitUntil(() => AmplitudeMultiplier != previousAmplitudeMultiplier);
+            ChangeAmplitude(AmplitudeMultiplier);
         }
     }
 
@@ -132,26 +186,21 @@ public class Manager : MonoBehaviour
         this.NrOfObjects = nrOfObjects;
         this.meshType = meshType;
         this.seed = seed;
+        this.SpeedMultiplier = speed;
+        this.AmplitudeMultiplier = amplitude;
         IsRunning = !IsRunning;
-        if (IsRunning)
-        {
-            this.Generate();
-            foreach (GameObject obj in objects)
-            {
-                var instance = (Movement)obj.GetComponent(typeof(Movement));
-                instance.StartMovement();
-                instance.defaultSpeed = instance.speed;
-                instance.speed = instance.defaultSpeed * speed;
-
-                instance.defaultAmplitude = instance.amplitude;
-                instance.amplitude = instance.defaultAmplitude * amplitude;
-            }
-        }
     }
 
     public void ChangeNumberOfObjects(float numberOfObjects)
     {
-        this.NrOfObjects = (int) numberOfObjects;
+        if (this.NrOfObjects-numberOfObjects<0)
+        {
+            AddObjects((int)Mathf.Abs(this.NrOfObjects - numberOfObjects));
+        }
+        else
+        {
+            RemoveObjects((int)Mathf.Abs(this.NrOfObjects - numberOfObjects));
+        }
     }
 
     public void ChangeSpeed(float speed)

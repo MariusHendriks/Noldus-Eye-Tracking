@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class WristUISlider : WristUIElement
@@ -14,6 +16,12 @@ public class WristUISlider : WristUIElement
     private Transform indexTransform;
 
     private AudioSource audioSource;
+
+    [Serializable]
+    public class SliderEvent : UnityEvent<float> { }
+
+    [SerializeField]
+    private SliderEvent onSliderReleased = new SliderEvent();
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +57,7 @@ public class WristUISlider : WristUIElement
     private IEnumerator OnTriggerExit(Collider other)
     {
         yield return new WaitForFixedUpdate();
+        onSliderReleased.Invoke(float.Parse(transform.parent.GetChild(2).GetComponent<Text>().text));
         Debug.Log("Send current value of slider");
     }
 

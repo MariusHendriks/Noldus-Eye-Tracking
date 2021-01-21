@@ -24,7 +24,6 @@ public class RenderHover : MonoBehaviour
     private IEnumerator OnTriggerExit(Collider other)
     {
         yield return new WaitForFixedUpdate();
-        Debug.Log("Send current value of slider");
     }
 
     private void FixedUpdate()

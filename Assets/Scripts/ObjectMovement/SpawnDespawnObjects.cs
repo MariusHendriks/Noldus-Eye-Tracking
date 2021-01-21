@@ -9,7 +9,7 @@ public class SpawnDespawnObjects : MonoBehaviour
 
     public int seed;
     public GameObject prefab;
-    public float speed = 5f;
+    public float speed = 1f;
     public MeshTypes meshType;
     public Mesh[] meshes;
     public List<GameObject> objects;
@@ -20,10 +20,13 @@ public class SpawnDespawnObjects : MonoBehaviour
     public float minHeight;
     [Range(0, 18)]
     public float maxHeight;
-    [Range(0, 10)]
+    [Range(2, 9)]
     public float minRadius;
-    [Range(0, 10)]
+    [Range(2, 9)]
     public float maxRadius;
+
+    private float defaultRadius;
+    private float defaultSpeed;
 
     
     private float timer;
@@ -32,6 +35,8 @@ public class SpawnDespawnObjects : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        defaultSpeed = speed;
+        defaultRadius = maxRadius;
         density = objectCount;
         objects = new List<GameObject>();
         StartCoroutine(WaitForDensityChange());
@@ -51,6 +56,7 @@ public class SpawnDespawnObjects : MonoBehaviour
         else if (!start && objects != null && objects.Count > 0)
         {
             DestroyObjects(objectCount);
+            timer = 0;
         }
     }
 
@@ -62,6 +68,7 @@ public class SpawnDespawnObjects : MonoBehaviour
             Vector3 direction = CalculateDirection();
             Vector3 position = direction * Random.Range(minRadius, maxRadius) + new Vector3(0, Random.Range(minHeight, maxHeight), 0);
             objects.Add(Instantiate(prefab, position, Quaternion.identity, transform));
+            objects[i].name = "Object " + (i + 1);
             SetObjectMesh(objects[i]);
 
             // Scaling the shape to normal size, depending on the mesh types
@@ -124,7 +131,7 @@ public class SpawnDespawnObjects : MonoBehaviour
                     {
                         obj.SetActive(!obj.activeSelf);
                     }
-                    if (speed <= 0)
+                    if (speed < 0.1f)
                         speed = 0.1f;
                 yield return new WaitForSeconds(0.5f / speed);
                 }
@@ -145,14 +152,30 @@ public class SpawnDespawnObjects : MonoBehaviour
         }
     }
 
-    public void Play(int nrOfObjects, float speed, float maximumRadius, MeshTypes meshType, int seed)
+    public void Play(int nrOfObjects, float speed, float radius, MeshTypes meshType, int seed)
     {
         this.objectCount = nrOfObjects;
+        this.density = this.objectCount;
         this.speed = speed;
-        this.maxRadius = maximumRadius;
+        this.maxRadius = this.defaultRadius * radius;
         this.meshType = meshType;
         this.seed = seed;
         start = !start;
+    }
+
+    public void ChangeNumberOfObjects(float nrOfObjects)
+    {
+        objectCount = (int) nrOfObjects;
+    }
+
+    public void ChangeObjectSpeed(float speed)
+    {
+        this.speed = this.defaultSpeed * speed;
+    }
+
+    public void ChangeObjectRadius(float radius)
+    {
+        maxRadius = this.defaultRadius * radius;
     }
 }
 

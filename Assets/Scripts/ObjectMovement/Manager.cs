@@ -17,7 +17,7 @@ public class Manager : MonoBehaviour
     [MinMaxSlider(0,10)]
     public Vector2 Speed = new Vector2(0.5f, 3f);
 
-    [MinMaxSlider(0, 10)]
+    [MinMaxSlider(0, 5)]
     public Vector2 Amplitude = new Vector2(2f, 5f);
 
 
@@ -40,7 +40,6 @@ public class Manager : MonoBehaviour
     [MinMaxSlider(0, 3)]
     public Vector2 Scale = new Vector2(0.2f, 1f);
 
-    private Movement instance;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +54,7 @@ public class Manager : MonoBehaviour
         for (int i = 0; i < NrOfObjects; i++)
         {
             objects.Add(Instantiate(Sablon));
-            instance = (Movement)objects[i].GetComponent(typeof(Movement));
+            var instance = (Movement)objects[i].GetComponent(typeof(Movement));
 
             instance.speed = Random.Range(Speed.x, Speed.y);
             instance.amplitude = Random.Range(Amplitude.x, Amplitude.y);
@@ -101,7 +100,7 @@ public class Manager : MonoBehaviour
             this.Generate();
             foreach (GameObject obj in objects)
             {
-                instance = (Movement)obj.GetComponent(typeof(Movement));
+                var instance = (Movement)obj.GetComponent(typeof(Movement));
                 instance.StartMovement();
             }
         }
@@ -115,12 +114,42 @@ public class Manager : MonoBehaviour
         }
     }
 
-    public void Play(int nrOfObjects, float minSpeed, float maxSpeed, MeshTypes meshTypes, int seed)
+    public void Play(int nrOfObjects, float speed, float distance, MeshTypes meshType, int seed)
     {
         this.NrOfObjects = nrOfObjects;
-        this.Speed = new Vector2(minSpeed, maxSpeed);
-        this.meshType = meshTypes;
+        this.meshType = meshType;
         this.seed = seed;
         IsRunning = !IsRunning;
+        if (IsRunning)
+        {
+            this.Generate();
+            foreach (GameObject obj in objects)
+            {
+                var instance = (Movement)obj.GetComponent(typeof(Movement));
+                instance.StartMovement();
+                instance.defaultSpeed = instance.speed;
+                instance.speed = instance.defaultSpeed * speed;
+            }
+        }
+    }
+
+    public void ChangeNumberOfObjects(float numberOfObjects)
+    {
+        this.NrOfObjects = (int) numberOfObjects;
+    }
+
+    public void ChangeSpeed(float speed)
+    {
+        if(IsRunning)
+        foreach (GameObject obj in objects)
+        {
+            var instance = (Movement)obj.GetComponent(typeof(Movement));
+            instance.speed = instance.defaultSpeed * speed;
+        }
+    }
+
+    public void ChangeRadius(float radius)
+    {
+        Amplitude *= radius;
     }
 }

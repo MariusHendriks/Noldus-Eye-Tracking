@@ -9,7 +9,7 @@ public class VerticalMovementSpawner : MonoBehaviour
     private bool scriptIsWorking;
     private float currentSpeed;
     private int currentNumberOfObjects;
-    private float currentHight;
+    private float currentHeight;
     private float currentRadius;
     private bool customObjectsPopulated;
 
@@ -22,15 +22,24 @@ public class VerticalMovementSpawner : MonoBehaviour
     public int numberOfObjects;
     
     [Range(2, 9)]
-    public int distance;
+    public float radius;
     
-    [Range(0.1f, 25f)]
+    [Range(0.1f, 5f)]
     public float speed;
     
     [Range(0, 7.5f)]
     public float height;
 
+    private float defaultRadius;
+    private float defaultSpeed;
+
     public Vector3 Center { get; private set; }
+
+    private void Start()
+    {
+        defaultRadius = radius;
+        defaultSpeed = speed;
+    }
 
     void InitializeScript()
     {
@@ -38,10 +47,10 @@ public class VerticalMovementSpawner : MonoBehaviour
         Center = new Vector3(0, height, 0);
         currentSpeed = speed;
         currentNumberOfObjects = numberOfObjects;
-        currentHight = height;
-        currentRadius = distance;
+        currentHeight = height;
+        currentRadius = radius;
         customObjectsPopulated = customObjectsEnabler;
-        SpawnShapesAroundCenter(numberOfObjects, distance);
+        SpawnShapesAroundCenter(numberOfObjects, defaultRadius);
     }
 
     public void Update()
@@ -54,29 +63,29 @@ public class VerticalMovementSpawner : MonoBehaviour
                     obj.GetComponent<VerticalMovementAdjuster>().speed = speed;
                 currentSpeed = speed;
             }
-            else if (height != currentHight)
+            if (height != currentHeight)
             {
                 foreach (var obj in objects)
                     obj.GetComponent<VerticalMovementAdjuster>().height = height;
-                currentHight = height;
+                currentHeight = height;
             }
-            else if (distance != currentRadius)
+            if (radius != currentRadius)
             {
                 foreach (var obj in objects)
-                    obj.GetComponent<VerticalMovementAdjuster>().radius = distance;
-                currentRadius = distance;
+                    obj.GetComponent<VerticalMovementAdjuster>().radius = radius;
+                currentRadius = radius;
             }
-            else if (numberOfObjects != currentNumberOfObjects)
+            if (numberOfObjects != currentNumberOfObjects)
             {
                 ResetScene();
                 currentNumberOfObjects = numberOfObjects;
             }
-            else if (!startScript)
+            if (!startScript)
             {
                 DestroyAllObjects();
                 scriptIsWorking = false;
             }
-            else if (customObjectsEnabler && !customObjectsPopulated)
+            if (customObjectsEnabler && !customObjectsPopulated)
             {
                 ResetScene();
                 customObjectsPopulated = true;
@@ -106,7 +115,7 @@ public class VerticalMovementSpawner : MonoBehaviour
             else 
                 obj = PrimitiveTypeCreator(spawnPos, Center, transform);
             SetVerticalAdjusterScriptParameters(obj, radius, num, Center, speed, height);
-            obj.name = $"{i}";
+            obj.name = $"{i + 1}";
             objects.Add(obj);
         }
     }
@@ -123,8 +132,34 @@ public class VerticalMovementSpawner : MonoBehaviour
         objects.Clear();
     }
 
-    public void Play()
+    public void Play(int nrOfObjects, float speed, float distance, MeshTypes meshType, int seed)
     {
-        startScript = !startScript;
+        this.seed = seed;
+        this.numberOfObjects = nrOfObjects;
+        InitializeScript();
+        this.speed = this.defaultSpeed * speed;
+        this.radius = this.defaultRadius * distance;
+        startScript = true;
+        scriptIsWorking = true;
+    }
+
+    public void Stop()
+    {
+        startScript = false;
+    }
+
+    public void ChangeNumberOfObjects(int nrOfObjects)
+    {
+        numberOfObjects = nrOfObjects;
+    }
+
+    public void ChangeObjectSpeed(float speed)
+    {
+        this.speed = this.defaultSpeed * speed;
+    }
+
+    public void ChangeObjectRadius(float radius)
+    {
+        this.radius = this.defaultRadius * radius;
     }
 }

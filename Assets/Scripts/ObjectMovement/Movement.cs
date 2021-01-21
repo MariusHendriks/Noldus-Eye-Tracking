@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     private float time = 0;
     private bool starter = false;
     public float speed;
+    public float defaultSpeed;
     public float amplitude;
     public float elipsedX;
     public float elipsedZ;
@@ -28,7 +29,6 @@ public class Movement : MonoBehaviour
             time += Time.deltaTime;
             Vector3 nextPos = new Vector3((amplitude * elipsedX) * Mathf.Cos(speed * time), defaultAlt + verticalDelta * Mathf.Cos(speed * (time + (offsetInMicros / 1000))), (amplitude * elipsedZ) * Mathf.Sin(speed * time));
             this.transform.position = Vector3.MoveTowards(transform.position, nextPos, 999);
-
         }
         else
         {

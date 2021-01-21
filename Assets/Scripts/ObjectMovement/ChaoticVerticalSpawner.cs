@@ -7,11 +7,12 @@ public class ChaoticVerticalSpawner : MonoBehaviour
 {
     private readonly List<GameObject> objects = new List<GameObject>();
     private bool scriptIsWorking;
+
     private int currentNumberOfObjects;
     private float currentHeight;
     private bool customObjectsPopulated;
     private float currentSpeed;
-    private float currentDistance;
+    private float currentRadius;
 
     public int seed;
     public List<Mesh> customMeshes;
@@ -21,9 +22,9 @@ public class ChaoticVerticalSpawner : MonoBehaviour
     [Range(1, 25)]
     public int numberOfObjects;
 
-    public int distance;
+    public float radius = 1;
 
-    public float speed;
+    public float speed = 1;
 
     public float height;
 
@@ -38,7 +39,7 @@ public class ChaoticVerticalSpawner : MonoBehaviour
         customObjectsPopulated = customObjectsEnabler;
         currentHeight = height;
         currentSpeed = speed;
-        currentDistance = distance;
+        currentRadius = radius;
         SpawnShapesAroundCenter(numberOfObjects);
     }
 
@@ -51,17 +52,13 @@ public class ChaoticVerticalSpawner : MonoBehaviour
                 ResetScene();
                 currentNumberOfObjects = numberOfObjects;
             }
-            else if (height != currentHeight)
-            {
-                ChangeObjectHeight();
-            }
             else if (speed != currentSpeed)
             {
-                ChangeObjectSpeed();
+                ChangeObjectSpeed(speed);
             }
-            else if (distance != currentDistance)
+            else if (radius != currentRadius)
             {
-                ChangeDistance();
+                ChangeObjectRadius(radius);
             }
             else if (customObjectsEnabler && !customObjectsPopulated)
             {
@@ -86,96 +83,36 @@ public class ChaoticVerticalSpawner : MonoBehaviour
         }
     }
 
-    void ChangeDistance()
+    public void ChangeNumberOfObjects(int nrOfObjects)
     {
-        if (distance < currentDistance)
-        {
-            foreach (var obj in objects)
-            {
-                var d = obj.GetComponent<VerticalMovementAdjuster>().radius;
-                var percent = d * 0.1f;
-                var cal = d - percent;
-                if (cal > 2)
-                {
-                    obj.GetComponent<VerticalMovementAdjuster>().radius = cal;
-                }
-            }
-        }
-        else
-        {
-            foreach (var obj in objects)
-            {
-                var d = obj.GetComponent<VerticalMovementAdjuster>().radius;
-                var percent = d * 0.1f;
-                var cal = d + percent;
-                if (cal < 9)
-                {
-                    obj.GetComponent<VerticalMovementAdjuster>().radius = cal;
-                }
-            }
-        }
-        currentDistance = distance;
+        numberOfObjects = nrOfObjects;
     }
 
-    void ChangeObjectHeight()
+    public void ChangeObjectRadius(float radius)
     {
-        if (height < currentHeight)
+        foreach (var obj in objects)
         {
-            foreach (var obj in objects)
-            {
-                var h = obj.GetComponent<VerticalMovementAdjuster>().height;
-                var percent = h * 0.1f;
-                var cal = h - percent;
-                if (cal > 0)
-                {
-                    obj.GetComponent<VerticalMovementAdjuster>().height = cal;
-                }
-            }
+            var script = obj.GetComponent<VerticalMovementAdjuster>();
+            script.radius = script.DefaultRadius * radius;
         }
-        else
-        {
-            foreach (var obj in objects)
-            {
-                var h = obj.GetComponent<VerticalMovementAdjuster>().height;
-                var percent = h * 0.1f;
-                var cal = h + percent;
-                if (cal < 7.5f)
-                {
-                    obj.GetComponent<VerticalMovementAdjuster>().height = cal;
-                }
-            }
-        }
-        currentHeight = height;
+        this.radius = currentRadius = radius;
     }
 
-    void ChangeObjectSpeed()
+    public void ChangeObjectSpeed(float speed)
     {
-        if (speed < currentSpeed)
+        foreach (var obj in objects)
         {
-            foreach (var obj in objects)
-            {
-                var script = obj.GetComponent<VerticalMovementAdjuster>();
-                script.speed = script.DefaultSpeed * speed / 5;
-                Debug.Log(script.speed);
-            }
+            var script = obj.GetComponent<VerticalMovementAdjuster>();
+            script.speed = script.DefaultSpeed * speed;
         }
-        else
-        {
-            foreach (var obj in objects)
-            {
-                var script = obj.GetComponent<VerticalMovementAdjuster>();
-                script.speed = script.DefaultSpeed * speed / 5;
-                Debug.Log(script.speed);
-            }
-        }
-        currentSpeed = speed;
+        this.speed = currentSpeed = speed;
     }
 
     public void SpawnShapesAroundCenter(int num)
     {
         for (int i = 0; i < num; i++)
         {
-            var radius = Random.Range(2, 9f);
+            var radius = Random.Range(2, 9f) * this.radius;
             var spawnDir = CalculateSpawnDirection(i, num);
             var spawnPos = Center + spawnDir * radius;
             GameObject obj;
@@ -183,8 +120,8 @@ public class ChaoticVerticalSpawner : MonoBehaviour
                 obj = CustomMeshSpawner(spawnPos, Center, transform, customMeshes);
             else
                 obj = PrimitiveTypeCreator(spawnPos, Center, transform);
-            obj = SetVerticalAdjusterScriptParameters(obj, radius, num, Center, Random.Range(1.5f, 7f), Random.Range(0, 7.5f));
-            obj.name = $"{i}";
+            obj = SetVerticalAdjusterScriptParameters(obj, radius, num, Center, Random.Range(1.5f, 7f) * speed, Random.Range(0, 7.5f));
+            obj.name = $"{i + 1}";
             objects.Add(obj);
         }
     }
@@ -201,8 +138,18 @@ public class ChaoticVerticalSpawner : MonoBehaviour
         objects.Clear();
     }
 
-    public void Play()
+    public void Play(int nrOfObjects, float speed, float distance, MeshTypes meshType, int seed)
     {
-        startScript = !startScript;
+        numberOfObjects = nrOfObjects;
+        this.speed = speed;
+        radius = distance;
+        this.seed = seed;
+
+        startScript = true;
+    }
+
+    public void Stop()
+    {
+        startScript = false;
     }
 }

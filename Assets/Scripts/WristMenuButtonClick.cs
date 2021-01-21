@@ -9,19 +9,29 @@ public class WristMenuButtonClick : MonoBehaviour
 
     public UnityEngine.Events.UnityEvent onButtonPressed;
 
+    void Start()
+    {
+        if(GetComponent<Image>() != null)
+        color = GetComponent<Image>().color;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         Color transparentColor = color;
         transparentColor.a = 0.4f;
-        GetComponent<Image>().color = transparentColor;
-
-        GetComponent<AudioSource>().Play();
 
         onButtonPressed.Invoke();
+
+        if(GetComponent<Image>() != null)
+        GetComponent<Image>().color = transparentColor;
+
+        if(GetComponent<AudioSource>() != null)
+        GetComponent<AudioSource>().Play();
     }
 
     private void OnTriggerExit(Collider other)
     {
+        if(GetComponent<Image>() != null)
         GetComponent<Image>().color = color;
     }
 }

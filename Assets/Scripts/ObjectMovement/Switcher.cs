@@ -4,33 +4,75 @@ using UnityEngine;
 
 public class Switcher : MonoBehaviour
 {
-    private bool scriptIsWorking;
-    public bool orderedVerticalMovement;
-    public bool chaoticVerticalMovement;
+    private bool scriptIsWorking = false;
+    public bool isChaotic = false;
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Play(int nrOfObjects, float speed, float distance, MeshTypes meshType, int seed, bool isChaotic)
     {
-        if (orderedVerticalMovement && !scriptIsWorking)
+        this.isChaotic = isChaotic;
+        if (!scriptIsWorking)
         {
-            var script = gameObject.GetComponent<VerticalMovementSpawner>();
-            script.Play();
-            scriptIsWorking = true;
+            if (isChaotic)
+            {
+                gameObject.GetComponent<ChaoticVerticalSpawner>().Play(nrOfObjects, speed, distance, meshType, seed);
+            }
+            else
+            {
+                gameObject.GetComponent<VerticalMovementSpawner>().Play(nrOfObjects, speed, distance, meshType, seed);
+            }
         }
-        else if (chaoticVerticalMovement && !scriptIsWorking)
+        else
         {
-            var script = gameObject.GetComponent<ChaoticVerticalSpawner>();
-            script.Play();
-            scriptIsWorking = true;
+            if(isChaotic)
+            {
+                gameObject.GetComponent<ChaoticVerticalSpawner>().Stop();
+            }
+            else
+            {
+                gameObject.GetComponent<VerticalMovementSpawner>().Stop();
+            }
         }
-        else if ((!orderedVerticalMovement && !chaoticVerticalMovement) && scriptIsWorking)
+        scriptIsWorking = !scriptIsWorking;
+    }
+
+    public void ChangeNumberOfObjects(float numberOfObjects)
+    {
+        if(isChaotic)
         {
-            scriptIsWorking = false;
+            gameObject.GetComponent<ChaoticVerticalSpawner>().ChangeNumberOfObjects((int)numberOfObjects);
+        }
+        else
+        {
+            gameObject.GetComponent<VerticalMovementSpawner>().ChangeNumberOfObjects((int)numberOfObjects);
+        }
+    }
+
+    public void ChangeSpeed(float speed)
+    {
+        if(isChaotic)
+        {
+            gameObject.GetComponent<ChaoticVerticalSpawner>().ChangeObjectSpeed(speed);
+        }
+        else
+        {
+            gameObject.GetComponent<VerticalMovementSpawner>().ChangeObjectSpeed(speed);
+        }
+    }
+
+    public void ChangeRadius(float radius)
+    {
+        if (isChaotic)
+        {
+            gameObject.GetComponent<ChaoticVerticalSpawner>().ChangeObjectRadius(radius);
+        }
+        else
+        {
+            gameObject.GetComponent<VerticalMovementSpawner>().ChangeObjectRadius(radius);
         }
     }
 }

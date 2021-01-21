@@ -8,6 +8,8 @@ public class VerticalMovementAdjuster : MonoBehaviour
     private float lastRadius;
     private Material defaultMat;
     public float DefaultSpeed { get; set; }
+    public float DefaultRadius { get; set; }
+    public float DefaultHeight { get; set; }
 
     [Range(0.1f, 25f)]
     public float speed;
@@ -25,7 +27,7 @@ public class VerticalMovementAdjuster : MonoBehaviour
 
     void Start()
     {
-        lastRadius = radius;
+        DefaultRadius = lastRadius = radius;
         DefaultSpeed = speed;
         defaultMat = gameObject.GetComponent<MeshRenderer>().material;
     }

@@ -8,12 +8,9 @@ public class MovementStartHandler : MonoBehaviour
 {
     private int nrOfObjects;
 
-    private float minSpeed;
     private float speed;
 
-    private float maxSpeed;
     private float distance;
-    private float maximumRadius;
 
     private MeshTypes meshType;
     
@@ -33,19 +30,13 @@ public class MovementStartHandler : MonoBehaviour
         {
             case MovementType.Tornado:
                 GetMovementSettings(tornadoSettings);
-                minSpeed = int.Parse(tornadoSettings.GetChild(0).GetChild(1).GetChild(2).GetComponent<Text>().text);
-                maxSpeed = int.Parse(tornadoSettings.GetChild(0).GetChild(2).GetChild(2).GetComponent<Text>().text);
                 break;
             case MovementType.Vertical:
                 GetMovementSettings(verticalSettings);
-                speed = int.Parse(verticalSettings.GetChild(0).GetChild(1).GetChild(2).GetComponent<Text>().text);
-                distance = int.Parse(verticalSettings.GetChild(0).GetChild(2).GetChild(2).GetComponent<Text>().text);
-                isChaotic = verticalSettings.GetChild(0).GetChild(5).GetComponent<Toggle>().IsActive();
+                isChaotic = verticalSettings.GetChild(0).GetChild(5).GetComponent<Toggle>().isOn;
                 break;
             case MovementType.AppearingDisappearing:
                 GetMovementSettings(appearingDisappearingSettings);
-                speed = int.Parse(appearingDisappearingSettings.GetChild(0).GetChild(1).GetChild(2).GetComponent<Text>().text);
-                maximumRadius = int.Parse(appearingDisappearingSettings.GetChild(0).GetChild(2).GetChild(2).GetComponent<Text>().text);
                 break;
             default:
                 break;
@@ -56,6 +47,8 @@ public class MovementStartHandler : MonoBehaviour
     {
         Transform settings = movementType.GetChild(0);
         nrOfObjects = int.Parse(settings.GetChild(0).GetChild(2).GetComponent<Text>().text);
+        speed = float.Parse(settings.GetChild(1).GetChild(2).GetComponent<Text>().text);
+        distance = float.Parse(settings.GetChild(2).GetChild(2).GetComponent<Text>().text);
         meshType = (MeshTypes) settings.GetChild(3).GetChild(1).GetComponent<Dropdown>().value;
         seed = int.Parse(settings.GetChild(4).GetChild(1).GetComponent<InputField>().text);
 
@@ -63,17 +56,25 @@ public class MovementStartHandler : MonoBehaviour
 
     public void StartWithSettings()
     {
+        if(GetComponentInChildren<Text>().text == "Start")
+        {
+            GetComponentInChildren<Text>().text = "Stop";
+        }
+        else
+        {
+            GetComponentInChildren<Text>().text = "Start";
+        }
         GetValues();
         switch (movementType)
         {
             case MovementType.Tornado:
-                FindObjectOfType<Manager>().Play(nrOfObjects, minSpeed, maxSpeed, meshType, seed);
+                FindObjectOfType<Manager>().Play(nrOfObjects, speed, distance, meshType, seed);
                 break;
             case MovementType.Vertical:
-                FindObjectOfType<Manager>().Play(nrOfObjects, minSpeed, maxSpeed, meshType, seed);
+                FindObjectOfType<Switcher>().Play(nrOfObjects, speed, distance, meshType, seed, isChaotic);
                 break;
             case MovementType.AppearingDisappearing:
-                FindObjectOfType<SpawnDespawnObjects>().Play(nrOfObjects, speed, maximumRadius, meshType, seed);
+                FindObjectOfType<SpawnDespawnObjects>().Play(nrOfObjects, speed, distance, meshType, seed);
                 break;
             default:
                 break;

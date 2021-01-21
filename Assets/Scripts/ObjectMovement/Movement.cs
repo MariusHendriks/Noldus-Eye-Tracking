@@ -9,16 +9,21 @@ public class Movement : MonoBehaviour
     public float speed;
     public float defaultSpeed;
     public float amplitude;
+    public float defaultAmplitude;
     public float elipsedX;
     public float elipsedZ;
     public float defaultAlt;
     public float verticalDelta;
     public float offsetInMicros;
-    
+
+    public bool highlighted = false;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(WaitForBoolChange());
     }
 
     // Update is called once per frame
@@ -33,6 +38,23 @@ public class Movement : MonoBehaviour
         else
         {
             time = 0;
+        }
+
+    }
+
+    public IEnumerator WaitForBoolChange()
+    {
+        GameObject PrefObject = this.transform.GetChild(0).gameObject;
+        RotationAroundOwnAxis Cube;
+        Cube = (RotationAroundOwnAxis)PrefObject.GetComponent(typeof(RotationAroundOwnAxis));
+
+        while (true)
+        {
+            yield return new WaitUntil(() => highlighted);
+            Cube.HighlightObject(true);
+
+            yield return new WaitUntil(() => !highlighted);
+            Cube.HighlightObject(false);
         }
     }
 
@@ -54,4 +76,7 @@ public class Movement : MonoBehaviour
     {
         starter = false;
     }
+
+    
+
 }

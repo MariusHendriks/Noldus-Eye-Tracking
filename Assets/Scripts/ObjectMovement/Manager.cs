@@ -41,6 +41,8 @@ public class Manager : MonoBehaviour
     public Vector2 Scale = new Vector2(0.2f, 1f);
 
 
+    public bool runMethod = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -102,6 +104,11 @@ public class Manager : MonoBehaviour
             {
                 var instance = (Movement)obj.GetComponent(typeof(Movement));
                 instance.StartMovement();
+                instance.defaultSpeed = instance.speed;
+                instance.speed = instance.defaultSpeed * 1;
+
+                instance.defaultAmplitude = instance.amplitude;
+                instance.amplitude = instance.defaultAmplitude * 1;
             }
         }
         if (!IsRunning && objects!= null)
@@ -112,9 +119,15 @@ public class Manager : MonoBehaviour
             }
             objects = null;
         }
+
+        if (runMethod)
+        {
+            ChangeAmplitude(2);
+            runMethod = false;
+        }
     }
 
-    public void Play(int nrOfObjects, float speed, float distance, MeshTypes meshType, int seed)
+    public void Play(int nrOfObjects, float speed, float amplitude, MeshTypes meshType, int seed)
     {
         this.NrOfObjects = nrOfObjects;
         this.meshType = meshType;
@@ -129,6 +142,9 @@ public class Manager : MonoBehaviour
                 instance.StartMovement();
                 instance.defaultSpeed = instance.speed;
                 instance.speed = instance.defaultSpeed * speed;
+
+                instance.defaultAmplitude = instance.amplitude;
+                instance.amplitude = instance.defaultAmplitude * amplitude;
             }
         }
     }
@@ -147,6 +163,17 @@ public class Manager : MonoBehaviour
             instance.speed = instance.defaultSpeed * speed;
         }
     }
+
+    public void ChangeAmplitude(float amplitudeMultiplier)
+    {
+        if (IsRunning)
+            foreach (GameObject obj in objects)
+            {
+                var instance = (Movement)obj.GetComponent(typeof(Movement));
+                instance.amplitude = instance.defaultAmplitude * amplitudeMultiplier;
+            }
+    }
+
 
     public void ChangeRadius(float radius)
     {

@@ -14190,7 +14190,37 @@ PrefabInstance:
     - target: {fileID: 595193720676534602, guid: 81aae43e8f19e71479a394cb43f6dd81,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.79
+      value: 1.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 595193720676534602, guid: 81aae43e8f19e71479a394cb43f6dd81,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 598055661234189820, guid: 81aae43e8f19e71479a394cb43f6dd81,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 598055661359698873, guid: 81aae43e8f19e71479a394cb43f6dd81,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 598055662577535014, guid: 81aae43e8f19e71479a394cb43f6dd81,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 598055663177657353, guid: 81aae43e8f19e71479a394cb43f6dd81,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 665755360069868438, guid: 81aae43e8f19e71479a394cb43f6dd81,
+        type: 3}
+      propertyPath: m_Range
+      value: 45.28
       objectReference: {fileID: 0}
     - target: {fileID: 665755360069868438, guid: 81aae43e8f19e71479a394cb43f6dd81,
         type: 3}
@@ -14199,13 +14229,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 665755360480542163, guid: 81aae43e8f19e71479a394cb43f6dd81,
         type: 3}
+      propertyPath: m_Range
+      value: 45.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 665755360480542163, guid: 81aae43e8f19e71479a394cb43f6dd81,
+        type: 3}
       propertyPath: m_Intensity
       value: 6.03
       objectReference: {fileID: 0}
     - target: {fileID: 665755361413228108, guid: 81aae43e8f19e71479a394cb43f6dd81,
         type: 3}
+      propertyPath: m_Range
+      value: 45.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 665755361413228108, guid: 81aae43e8f19e71479a394cb43f6dd81,
+        type: 3}
       propertyPath: m_Intensity
       value: 6.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 665755362013332067, guid: 81aae43e8f19e71479a394cb43f6dd81,
+        type: 3}
+      propertyPath: m_Range
+      value: 45.28
       objectReference: {fileID: 0}
     - target: {fileID: 665755362013332067, guid: 81aae43e8f19e71479a394cb43f6dd81,
         type: 3}

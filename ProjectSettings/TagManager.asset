@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - EyeControllerTarget
   layers:
   - Default
   - TransparentFX
@@ -18,14 +19,14 @@ TagManager:
   - MenuHover
   - Body
   - WristMenu
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - CarFront
+  - CarMiddle
+  - CarBack
+  - CarFrontPedestrian
+  - Crossing
+  - CrossingGame
+  - NPC
+  - PedestrianCrossingHitbox
   - 
   - 
   - 

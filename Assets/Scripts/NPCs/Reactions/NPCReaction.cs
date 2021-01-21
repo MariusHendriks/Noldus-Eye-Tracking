@@ -17,6 +17,8 @@ public class NPCReaction : MonoBehaviour
 
     private Dictionary<string, float> playableAnimations = new Dictionary<string, float>();
 
+    private Dictionary<GameObject, Vector3> npcToRotate = new Dictionary<GameObject, Vector3>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,7 @@ public class NPCReaction : MonoBehaviour
 
         playableAnimations.Add("isAngry", 2f);
         playableAnimations.Add("isBowing", 2f);
+        playableAnimations.Add("isAcknowledging", 2f);
         playableAnimations.Add("isKnodding", 2f);
         playableAnimations.Add("isAnnoyed", 20f);
 
@@ -33,6 +36,34 @@ public class NPCReaction : MonoBehaviour
     void Update()
     {
         NPCHitLogic();
+        RotateNPC();
+    }
+
+    private void RotateNPC()
+    {
+        List<GameObject> toRemove = new List<GameObject>();
+
+        foreach (GameObject gameObject in npcToRotate.Keys)
+        {
+            Vector3 point = new Vector3();
+            if (npcToRotate.TryGetValue(gameObject, out Vector3 value))
+            {
+                point = value;
+            }
+
+            Quaternion targetRotation = Quaternion.LookRotation(-point, Vector3.up);
+            gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, targetRotation, Time.deltaTime * 2.0f);
+
+            if (Quaternion.Angle(gameObject.transform.rotation, targetRotation) <= 0.1f)
+            {
+                toRemove.Add(gameObject);
+            }
+        }
+
+        foreach (var gameobject in toRemove)
+        {
+            npcToRotate.Remove(gameobject);
+        }
     }
 
     private void NPCHitLogic()
@@ -51,11 +82,7 @@ public class NPCReaction : MonoBehaviour
             if (timeSpentLooking >= timeToLook && !triggeredNPC)
             {
                 triggeredNPC = true;
-
-                StartCoroutine(PlayAnimation());
-                Debug.Log("Play animation");
-                //Stop movement
-                //Trigger animation
+                StartCoroutine(PlayAnimation(npcLookingAt));
             }
 
 
@@ -69,11 +96,11 @@ public class NPCReaction : MonoBehaviour
 
 
 
-    private IEnumerator PlayAnimation()
+    private IEnumerator PlayAnimation(GameObject npc)
     {
-        Animator animator = npcLookingAt.GetComponentInParent<Animator>();
-        PathMovement pathMovement = npcLookingAt.GetComponentInParent<PathMovement>();
-        NavMeshAgent navAgent = npcLookingAt.GetComponentInParent<NavMeshAgent>();
+        Animator animator = npc.GetComponentInParent<Animator>();
+        PathMovement pathMovement = npc.GetComponentInParent<PathMovement>();
+        NavMeshAgent navAgent = npc.GetComponentInParent<NavMeshAgent>();
 
         bool isMoving = animator.GetBool("isMoving");
         string animationTrigger = RandomValues(playableAnimations).First();
@@ -88,6 +115,11 @@ public class NPCReaction : MonoBehaviour
         }
         animator.applyRootMotion = true;
 
+        StartNPCRotation(npc);
+
+        while (npcToRotate.ContainsKey(npc))
+            yield return null;
+
         animator.SetTrigger(animationTrigger);
 
         yield return new WaitForSeconds(animationDuration);
@@ -99,6 +131,16 @@ public class NPCReaction : MonoBehaviour
             animator.SetBool("isMoving", true);
             pathMovement.enabled = true;
         }
+    }
+
+    private void StartNPCRotation(GameObject npc)
+    {
+        Vector3 cameraPosition = new Vector3(cameraTransform.position.x, 0, cameraTransform.position.z);
+        Vector3 npcPosition = new Vector3(npc.transform.position.x, 0, npc.transform.position.z);
+
+        Vector3 targetDirection =  npcPosition - cameraPosition;
+
+        npcToRotate.Add(npc, targetDirection);
     }
 
     public IEnumerable<TKey> RandomValues<TKey, TValue>(IDictionary<TKey, TValue> dict)

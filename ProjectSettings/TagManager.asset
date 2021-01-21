@@ -4,7 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - VerticalMover
+  - EyeControllerTarget
   layers:
   - Default
   - TransparentFX
@@ -19,13 +19,13 @@ TagManager:
   - MenuHover
   - Body
   - WristMenu
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - CarFront
+  - CarMiddle
+  - CarBack
+  - CarFrontPedestrian
+  - Crossing
+  - CrossingGame
+  - NPC
   - 
   - 
   - 

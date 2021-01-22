@@ -50,6 +50,7 @@ public class Manager : MonoBehaviour
 
     public bool addObj = false;
     public bool rmObj = false;
+    public float timer = 0;
 
 
     // Start is called before the first frame update
@@ -65,6 +66,7 @@ public class Manager : MonoBehaviour
 
         if (IsRunning && objects == null)
         {
+            timer = 0;
             this.Generate();
         }
         if (!IsRunning && objects != null)
@@ -74,6 +76,11 @@ public class Manager : MonoBehaviour
                 Destroy(obj);
             }
             objects = null;
+            timer = 0;
+        }
+        if (IsRunning)
+        {
+            timer += Time.deltaTime;
         }
 
         if (addObj)
@@ -85,6 +92,8 @@ public class Manager : MonoBehaviour
         if (rmObj)
         {
             RemoveObjects(1);
+            Debug.Log(timer);
+
             rmObj = false;
         }
     }

@@ -10,11 +10,12 @@ public class OutputToJSON : MonoBehaviour
     private Transform mainCamera;
     private RaycastHit hitInfo;
     
-    private string prevObjHit = "";
+    private Collider prevObjHit = null;
     private float collisionTimer = 0;
 
     private Vector3 startLocation = new Vector3();
     private Vector3 cameraStartLocation = new Vector3();
+
 
     public void OnDestroy()
     {
@@ -53,14 +54,14 @@ public class OutputToJSON : MonoBehaviour
                     cameraStartLocation = mainCamera.transform.position;
                 }
 
-                if (prevObjHit == "")
+                if (prevObjHit == null)
                 {
-                    prevObjHit = hitInfo.collider.gameObject.name;
+                    prevObjHit = hitInfo.collider;
                 }
 
                 Debug.DrawRay(mainCamera.position, mainCamera.forward * 100.0f, Color.yellow);
 
-                if (hitInfo.collider.gameObject.name == prevObjHit)
+                if (hitInfo.collider == prevObjHit)
                 {
                     collisionTimer += Time.deltaTime;
                 }
@@ -68,24 +69,24 @@ public class OutputToJSON : MonoBehaviour
                 {
                     Debug.Log("User looked at object " + prevObjHit + " for " + collisionTimer + " seconds.");
                                         
-                    AddOutputData(new OutputData(prevObjHit, startLocation, hitInfo.transform.position, cameraStartLocation, mainCamera.transform.position, 0f, collisionTimer));
+                    AddOutputData(new OutputData(prevObjHit.gameObject.name, startLocation, prevObjHit.transform.position, cameraStartLocation, mainCamera.transform.position, FindObjectOfType<Manager>().timer, collisionTimer));
 
-                    prevObjHit = hitInfo.collider.gameObject.name;
+                    prevObjHit = hitInfo.collider;
                     collisionTimer = 0;
                     startLocation = new Vector3();
                     cameraStartLocation = new Vector3();
                 }
                   
             }
-            else if (prevObjHit!= "")
+            else if (prevObjHit!= null)
             {
                 Debug.Log("User looked at object " + prevObjHit + " for " + collisionTimer + " seconds.");
-                AddOutputData(new OutputData(prevObjHit, startLocation, hitInfo.transform.position, cameraStartLocation, mainCamera.transform.position, 0f, collisionTimer));
-                prevObjHit = hitInfo.collider.gameObject.name;
+                AddOutputData(new OutputData(prevObjHit.gameObject.name, startLocation, prevObjHit.transform.position, cameraStartLocation, mainCamera.transform.position, FindObjectOfType<Manager>().timer, collisionTimer));
+                prevObjHit = hitInfo.collider;
                 collisionTimer = 0;
                 startLocation = new Vector3();
                 cameraStartLocation = new Vector3();
-                prevObjHit = "";
+                prevObjHit = null;
             }
             
         }

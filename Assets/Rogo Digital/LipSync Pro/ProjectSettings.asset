@@ -23,5 +23,6 @@ MonoBehaviour:
   - {r: 0.74219066, g: 1, b: 0.39705884, a: 1}
   - {r: 0, g: 0.54509807, b: 1, a: 1}
   gestures:
-  - Sad
+  - Hello
+  - Bye
   phonemeSet: {fileID: 11400000, guid: ad5dc77f69c3ee14980347476da8fb6c, type: 2}

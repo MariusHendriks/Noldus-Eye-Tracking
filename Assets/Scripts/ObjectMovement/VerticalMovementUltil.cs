@@ -4,44 +4,57 @@ using UnityEngine;
 
 public static class VerticalMovementUltil
 {
-    public static GameObject CustomMeshSpawner(Vector3 spawnPos, Vector3 center, Transform transform, List<Mesh> customMeshes)
+    public static GameObject CreateMeshes(Vector3 spawnPos, Vector3 center, Transform transform, MeshTypes type, List<Mesh> customMeshes)
     {
-        var i = Random.Range(0, 5);
+        int i = 0;
         var obj = new GameObject();
         obj.AddComponent<MeshFilter>();
         obj.AddComponent<MeshRenderer>();
         obj.AddComponent<MeshCollider>();
+        switch (type)
+        {
+            case MeshTypes.SimpleShapes:
+                i = Random.Range(0, 3);
+                break;
+            case MeshTypes.KitchenProps:
+                i = Random.Range(4, 7);
+                break;
+            case MeshTypes.Furniture:
+                i = Random.Range(8, 11);
+                break;
+        }
         obj.GetComponent<MeshCollider>().sharedMesh = customMeshes[i];
         obj.GetComponent<MeshFilter>().mesh = customMeshes[i];
         obj = DefaultGameObjectSettings(obj, spawnPos, center, transform);
-        var scale = Random.Range(0f, 3f);
-        scale *= 1.5f;
-        obj.transform.localScale = new Vector3(scale, scale, scale);
+        if (type == MeshTypes.KitchenProps)
+            obj.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+        if (type == MeshTypes.Furniture)
+            obj.transform.localScale = new Vector3(100, 100, 100);
         return obj;
     }
 
-    public static GameObject PrimitiveTypeCreator(Vector3 spawnPos, Vector3 center, Transform transform)
-    {
-        PrimitiveType type;
-        switch (Random.Range(0, 3))
-        {
-            case 0:
-                type = PrimitiveType.Sphere;
-                break;
-            case 1:
-                type = PrimitiveType.Capsule;
-                break;
-            case 2:
-                type = PrimitiveType.Cube;
-                break;
-            default:
-                type = PrimitiveType.Cylinder;
-                break;
-        }
-        var obj = GameObject.CreatePrimitive(type);
-        obj = DefaultGameObjectSettings(obj, spawnPos, center, transform);
-        return obj;
-    }
+    //public static GameObject PrimitiveTypeCreator(Vector3 spawnPos, Vector3 center, Transform transform)
+    //{
+    //    PrimitiveType type;
+    //    switch (Random.Range(0, 3))
+    //    {
+    //        case 0:
+    //            type = PrimitiveType.Sphere;
+    //            break;
+    //        case 1:
+    //            type = PrimitiveType.Capsule;
+    //            break;
+    //        case 2:
+    //            type = PrimitiveType.Cube;
+    //            break;
+    //        default:
+    //            type = PrimitiveType.Cylinder;
+    //            break;
+    //    }
+    //    var obj = GameObject.CreatePrimitive(type);
+    //    obj = DefaultGameObjectSettings(obj, spawnPos, center, transform);
+    //    return obj;
+    //}
 
     public static GameObject DefaultGameObjectSettings(GameObject obj, Vector3 spawnPos, Vector3 center, Transform transform)
     {

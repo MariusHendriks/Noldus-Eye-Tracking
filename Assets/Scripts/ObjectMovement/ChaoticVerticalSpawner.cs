@@ -9,13 +9,13 @@ public class ChaoticVerticalSpawner : MonoBehaviour
     private bool scriptIsWorking;
 
     private int currentNumberOfObjects;
-    private float currentHeight;
-    private bool customObjectsPopulated;
     private float currentSpeed;
     private float currentRadius;
+    private MeshTypes currentType;
 
+    public MeshTypes type;
     public int seed;
-    public List<Mesh> customMeshes;
+    public List<Mesh> meshes;
     public bool startScript;
     public bool customObjectsEnabler;
 
@@ -36,10 +36,9 @@ public class ChaoticVerticalSpawner : MonoBehaviour
         height = Random.Range(0, 7.5f);
         Center = new Vector3(0, height, 0);
         currentNumberOfObjects = numberOfObjects;
-        customObjectsPopulated = customObjectsEnabler;
-        currentHeight = height;
         currentSpeed = speed;
         currentRadius = radius;
+        currentType = type;
         SpawnShapesAroundCenter(numberOfObjects);
     }
 
@@ -60,15 +59,10 @@ public class ChaoticVerticalSpawner : MonoBehaviour
             {
                 ChangeObjectRadius(radius);
             }
-            else if (customObjectsEnabler && !customObjectsPopulated)
+            else if (type != currentType)
             {
                 ResetScene();
-                customObjectsPopulated = true;
-            }
-            else if (!customObjectsEnabler && customObjectsPopulated)
-            {
-                ResetScene();
-                customObjectsPopulated = false;
+                currentType = type;
             }
             else if (!startScript)
             {
@@ -115,11 +109,7 @@ public class ChaoticVerticalSpawner : MonoBehaviour
             var radius = Random.Range(2, 9f) * this.radius;
             var spawnDir = CalculateSpawnDirection(i, num);
             var spawnPos = Center + spawnDir * radius;
-            GameObject obj;
-            if (customObjectsEnabler)
-                obj = CustomMeshSpawner(spawnPos, Center, transform, customMeshes);
-            else
-                obj = PrimitiveTypeCreator(spawnPos, Center, transform);
+            GameObject obj = CreateMeshes(spawnPos, Center, transform, type, meshes);
             obj = SetVerticalAdjusterScriptParameters(obj, radius, num, Center, Random.Range(1.5f, 7f) * speed, Random.Range(0, 7.5f));
             obj.name = $"{i + 1}";
             objects.Add(obj);
@@ -144,7 +134,6 @@ public class ChaoticVerticalSpawner : MonoBehaviour
         this.speed = speed;
         radius = distance;
         this.seed = seed;
-
         startScript = true;
     }
 

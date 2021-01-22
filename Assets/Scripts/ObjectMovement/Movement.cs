@@ -61,6 +61,7 @@ public class Movement : MonoBehaviour
     public void StartMovement()
     {
         starter = true;
+        transform.GetChild(0).name = gameObject.name;
     }
 
     public bool Randomizer(int MeshSet)

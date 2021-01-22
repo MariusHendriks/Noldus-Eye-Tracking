@@ -1001,7 +1001,7 @@ PrefabInstance:
     - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
         type: 3}
       propertyPath: IsRunning
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
         type: 3}
@@ -1036,7 +1036,7 @@ PrefabInstance:
     - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
         type: 3}
       propertyPath: NrOfObjects
-      value: 10
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
         type: 3}
@@ -14197,6 +14197,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -4.29
       objectReference: {fileID: 0}
+    - target: {fileID: 595193722012825846, guid: 81aae43e8f19e71479a394cb43f6dd81,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 598055661234189820, guid: 81aae43e8f19e71479a394cb43f6dd81,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -17545,6 +17550,7 @@ GameObject:
   - component: {fileID: 2382365423738227485}
   - component: {fileID: 2382365423738227484}
   - component: {fileID: 2382365423738227487}
+  - component: {fileID: 2382365423738227488}
   m_Layer: 0
   m_Name: VR Rig
   m_TagString: Untagged
@@ -17562,6 +17568,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7039d407dda5dbf45a0dfb875cb85638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2382365423738227488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2382365423738227486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cab6592098540804e9cffd071d06c917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &2382365423902243016

@@ -11,10 +11,11 @@ public class VerticalMovementSpawner : MonoBehaviour
     private int currentNumberOfObjects;
     private float currentHeight;
     private float currentRadius;
-    private bool customObjectsPopulated;
+    private MeshTypes currentType;
 
+    public MeshTypes type;
     public int seed;
-    public List<Mesh> customMeshes;
+    public List<Mesh> meshes;
     public bool startScript;
     public bool customObjectsEnabler;    
 
@@ -49,7 +50,7 @@ public class VerticalMovementSpawner : MonoBehaviour
         currentNumberOfObjects = numberOfObjects;
         currentHeight = height;
         currentRadius = radius;
-        customObjectsPopulated = customObjectsEnabler;
+        currentType = type;
         SpawnShapesAroundCenter(numberOfObjects, defaultRadius);
     }
 
@@ -85,15 +86,10 @@ public class VerticalMovementSpawner : MonoBehaviour
                 DestroyAllObjects();
                 scriptIsWorking = false;
             }
-            if (customObjectsEnabler && !customObjectsPopulated)
+            if (type != currentType)
             {
                 ResetScene();
-                customObjectsPopulated = true;
-            }
-            else if (!customObjectsEnabler && customObjectsPopulated)
-            {
-                ResetScene();
-                customObjectsPopulated = false;
+                currentType = type;
             }
         }
         else if (!scriptIsWorking && startScript)
@@ -109,11 +105,7 @@ public class VerticalMovementSpawner : MonoBehaviour
         {
             var spawnDir = CalculateSpawnDirection(i, num);
             var spawnPos = Center + spawnDir * radius;
-            GameObject obj;
-            if (customObjectsEnabler)
-                obj = CustomMeshSpawner(spawnPos, Center, transform, customMeshes);
-            else 
-                obj = PrimitiveTypeCreator(spawnPos, Center, transform);
+            GameObject obj = CreateMeshes(spawnPos, Center, transform, type, meshes);
             SetVerticalAdjusterScriptParameters(obj, radius, num, Center, speed, height);
             obj.name = $"{i + 1}";
             objects.Add(obj);

@@ -33,34 +33,10 @@ public static class VerticalMovementUltil
         return obj;
     }
 
-    //public static GameObject PrimitiveTypeCreator(Vector3 spawnPos, Vector3 center, Transform transform)
-    //{
-    //    PrimitiveType type;
-    //    switch (Random.Range(0, 3))
-    //    {
-    //        case 0:
-    //            type = PrimitiveType.Sphere;
-    //            break;
-    //        case 1:
-    //            type = PrimitiveType.Capsule;
-    //            break;
-    //        case 2:
-    //            type = PrimitiveType.Cube;
-    //            break;
-    //        default:
-    //            type = PrimitiveType.Cylinder;
-    //            break;
-    //    }
-    //    var obj = GameObject.CreatePrimitive(type);
-    //    obj = DefaultGameObjectSettings(obj, spawnPos, center, transform);
-    //    return obj;
-    //}
-
     public static GameObject DefaultGameObjectSettings(GameObject obj, Vector3 spawnPos, Vector3 center, Transform transform)
     {
         obj.transform.position = spawnPos;
         obj.transform.rotation = Quaternion.identity;
-        obj.transform.LookAt(center);
         obj.transform.Translate(new Vector3(0, obj.transform.localScale.y / 2, 0));
         obj.transform.parent = transform;
         var material = obj.GetComponent<Renderer>().material;

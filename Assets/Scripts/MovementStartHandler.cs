@@ -24,6 +24,8 @@ public class MovementStartHandler : MonoBehaviour
     public Transform verticalSettings;
     public Transform appearingDisappearingSettings;
 
+    public OutputToJSON Logger;
+
     public void GetValues()
     {
         switch (movementType)
@@ -58,10 +60,12 @@ public class MovementStartHandler : MonoBehaviour
     {
         if(GetComponentInChildren<Text>().text == "Start")
         {
+            Logger.simulationWorking = true;
             GetComponentInChildren<Text>().text = "Stop";
         }
         else
         {
+            Logger.simulationWorking = false;
             GetComponentInChildren<Text>().text = "Start";
         }
         GetValues();

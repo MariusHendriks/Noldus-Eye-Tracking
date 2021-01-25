@@ -83,19 +83,6 @@ public class Manager : MonoBehaviour
             timer += Time.deltaTime;
         }
 
-        if (addObj)
-        {
-            AddObjects(1);
-            addObj = false;
-        }
-
-        if (rmObj)
-        {
-            RemoveObjects(1);
-            Debug.Log(timer);
-
-            rmObj = false;
-        }
     }
 
     public void Generate()

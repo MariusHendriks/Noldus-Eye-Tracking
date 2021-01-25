@@ -2,9 +2,11 @@
 using System;
 using UnityEngine;
 using System.IO;
+using PupilLabs;
 
 public class OutputToJSON : MonoBehaviour
 {
+    public GazeController gazeController;
     private static List<OutputData> outputDatas = new List<OutputData>();
 
     private Transform mainCamera;
@@ -12,6 +14,8 @@ public class OutputToJSON : MonoBehaviour
     
     private Collider prevObjHit = null;
     private float collisionTimer = 0;
+    private float simulationTimer = 0;
+    public bool simulationWorking = false;
 
     private Vector3 startLocation = new Vector3();
     private Vector3 cameraStartLocation = new Vector3();
@@ -39,13 +43,30 @@ public class OutputToJSON : MonoBehaviour
     private void Start()
     {
         mainCamera = Camera.main.transform;
+        gazeController.OnReceive3dGaze += ReceiveGaze;
+
+    }
+
+    private void Update()
+    {
+        if(simulationWorking)
+        {
+            simulationTimer += Time.deltaTime;
+        }
+        else
+        {
+            simulationTimer = 0;
+        }
     }
 
     //TODO: Pass hitinfo data to Method AddOutputData
-    private void Update()
+    void ReceiveGaze(GazeData gazeData)
     {
-        if (Physics.Raycast(mainCamera.position, mainCamera.forward, out hitInfo, 100.0f))
+        Debug.DrawRay(mainCamera.position, mainCamera.TransformDirection(gazeData.GazeDirection) * 100.0f, Color.yellow);
+
+        if (Physics.Raycast(mainCamera.position, mainCamera.TransformDirection(gazeData.GazeDirection), out hitInfo, 100.0f))
         {
+
             if (hitInfo.collider.gameObject.layer == 20)
             {
                 if (startLocation==new Vector3())
@@ -59,7 +80,6 @@ public class OutputToJSON : MonoBehaviour
                     prevObjHit = hitInfo.collider;
                 }
 
-                Debug.DrawRay(mainCamera.position, mainCamera.forward * 100.0f, Color.yellow);
 
                 if (hitInfo.collider == prevObjHit)
                 {
@@ -69,7 +89,7 @@ public class OutputToJSON : MonoBehaviour
                 {
                     Debug.Log("User looked at object " + prevObjHit + " for " + collisionTimer + " seconds.");
                                         
-                    AddOutputData(new OutputData(prevObjHit.gameObject.name, startLocation, prevObjHit.transform.position, cameraStartLocation, mainCamera.transform.position, FindObjectOfType<Manager>().timer, collisionTimer));
+                    AddOutputData(new OutputData(prevObjHit.gameObject.name, startLocation, prevObjHit.transform.position, cameraStartLocation, mainCamera.transform.position, simulationTimer, collisionTimer));
 
                     prevObjHit = hitInfo.collider;
                     collisionTimer = 0;

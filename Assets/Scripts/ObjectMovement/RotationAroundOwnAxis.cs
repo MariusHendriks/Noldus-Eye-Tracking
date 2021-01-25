@@ -35,8 +35,8 @@ public class RotationAroundOwnAxis : MonoBehaviour
         SpeedZ = Random.Range(-200, 200);
         MeshFilter mesh = this.gameObject.GetComponent<MeshFilter>();
         mesh.sharedMesh = meshes[Random.Range((MeshSet*4), (MeshSet+1)*4)];
-        GetComponent<Renderer>().material.SetFloat("_Metallic", 0.97f);
-        GetComponent<Renderer>().material.SetFloat("_Glossiness", 1);
+        GetComponent<Renderer>().material.SetFloat("_Metallic", 0.5f);
+        GetComponent<Renderer>().material.SetFloat("_Glossiness", 0.5f);
         GetComponent<Renderer>().material.color = new Color(Random.Range(0F, 1F), Random.Range(0, 1F), Random.Range(0, 1F));
     }
 }

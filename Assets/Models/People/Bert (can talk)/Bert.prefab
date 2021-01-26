@@ -4268,8 +4268,8 @@ MonoBehaviour:
     bones: []
     verified: 1
     emotion: Sad
-  playOnAwake: 1
-  loop: 1
+  playOnAwake: 0
+  loop: 0
   defaultClip: {fileID: 11400000, guid: c003f5c3254331749915c80d6b3fdab4, type: 2}
   defaultDelay: 0
   scaleAudioSpeed: 1
@@ -4493,6 +4493,7 @@ MonoBehaviour:
   isReady: 1
   users:
   - {fileID: 9057894442364140602}
+  - {fileID: 1739418272}
   _blendables:
   - number: 0
     currentWeight: 0
@@ -4644,7 +4645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c3c6345ee104b4695e6f7a2c098f3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blendSystem: {fileID: 0}
+  blendSystem: {fileID: 1739418271}
   blinkingEnabled: 1
   blinkingControlMode: 0
   blinkingShape:

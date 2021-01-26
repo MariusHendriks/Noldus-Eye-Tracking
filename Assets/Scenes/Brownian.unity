@@ -1111,7 +1111,7 @@ PrefabInstance:
     - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
         type: 3}
       propertyPath: NrOfObjects
-      value: 25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
         type: 3}

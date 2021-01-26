@@ -85,6 +85,7 @@ public class Manager : MonoBehaviour
 
     private void CreateObject(int id)
     {
+
         GameObject gameObject = Instantiate(Sablon, transform);
         gameObject.name = (id + 1).ToString();
         objects.Add(gameObject);
@@ -130,10 +131,13 @@ public class Manager : MonoBehaviour
 
     private void AddObjects(int NrObj)
     {
-        for (int i = 0; i < NrObj; i++)
+        if (objects != null)
         {
-            CreateObject(NrOfObjects);
-            NrOfObjects++;
+            for (int i = 0; i < NrObj; i++)
+            {
+                CreateObject(NrOfObjects);
+                NrOfObjects++;
+            }
         }
     }
 

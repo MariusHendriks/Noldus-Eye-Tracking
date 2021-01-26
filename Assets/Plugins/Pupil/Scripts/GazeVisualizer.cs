@@ -174,6 +174,16 @@ namespace PupilLabs
 
             if (Physics.SphereCast(origin, sphereCastRadius, direction, out RaycastHit hit, Mathf.Infinity))
             {
+                if(hit.distance < 1)
+                {
+                    projectionMarker.gameObject.SetActive(false);
+                    gazeDirectionMarker.gameObject.SetActive(false);
+                }
+                else
+                {
+                    projectionMarker.gameObject.SetActive(true);
+                    gazeDirectionMarker.gameObject.SetActive(true);
+                }
                 //Debug.DrawRay(origin, direction * hit.distance, Color.yellow);
 
                 projectionMarker.position = hit.point;

@@ -3646,7 +3646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fd719ba4b015849828d863d9a3da28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotate: 0
+  rotation: 1
   start: 0
   seed: 469
   prefab: {fileID: 8381058730232103078, guid: d31f87e8e2cbc3344a27fcc870b90fa3, type: 3}
@@ -7323,7 +7323,7 @@ GameObject:
   - component: {fileID: 990632547}
   - component: {fileID: 990632546}
   m_Layer: 9
-  m_Name: Toggle (1)
+  m_Name: Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7446,7 +7446,18 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 464845536}
+        m_MethodName: ChangeRotation
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &1019435024
 GameObject:
@@ -7621,6 +7632,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5759569962675804800, guid: a9383f0f3aa209a4eb0119d3ad1daa1d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5759569962675804801, guid: a9383f0f3aa209a4eb0119d3ad1daa1d,
         type: 3}
       propertyPath: camera
@@ -7703,18 +7719,6 @@ PrefabInstance:
       objectReference: {fileID: 2382365424147498627}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
---- !u!114 &1025799427 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2480693394737437415, guid: a9383f0f3aa209a4eb0119d3ad1daa1d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1025799426}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 119ef25d5f6655b479aefea8a97eb73c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1047980340
 GameObject:
   m_ObjectHideFlags: 0
@@ -11686,7 +11690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e7d0481b62fe124d83526cb3b64c6d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  meshType: 0
   seed: 5
   meshes:
   - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -11733,7 +11737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94e67c0d18a0e9843a7acfd0c7190e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  meshType: 0
   seed: 5
   meshes:
   - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -18059,17 +18063,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2382365423738227486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cab6592098540804e9cffd071d06c917, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a0879c3f78772e4395849e7c954f249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gazeController: {fileID: 1025799427}
-  mainCamera: {fileID: 0}
-  prevObjHit: {fileID: 0}
-  collisionTimer: 0
-  simulationTimer: 0
+  gazeController: {fileID: 0}
   simulationWorking: 0
-  startLocation: {x: 0, y: 0, z: 0}
-  cameraStartLocation: {x: 0, y: 0, z: 0}
 --- !u!4 &2382365423902243016
 Transform:
   m_ObjectHideFlags: 0

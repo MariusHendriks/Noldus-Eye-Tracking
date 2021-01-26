@@ -20,7 +20,8 @@ public class Crossing : MonoBehaviour
         else if (other.name.Contains("Clone") || other.tag == "Player")
         {
             pedestriansOnCrossing++;
-        } else if (other.name == "PedestrianHitbox" && pedestriansOnCrossing > 0)
+        }
+        else if (other.name == "PedestrianHitbox" && pedestriansOnCrossing > 0)
         {
             if (!carsWaiting.Contains(other))
                 carsWaiting.Add(other);
@@ -81,17 +82,5 @@ public class Crossing : MonoBehaviour
                 carsWaiting.Clear();
             }
         }
-    }
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

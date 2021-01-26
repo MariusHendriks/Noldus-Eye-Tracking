@@ -2779,7 +2779,7 @@ GameObject:
   m_Component:
   - component: {fileID: 582653531479808780}
   - component: {fileID: 8628183458740090621}
-  m_Layer: 19
+  m_Layer: 20
   m_Name: PedestrianCrossingHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

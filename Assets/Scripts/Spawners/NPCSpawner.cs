@@ -13,9 +13,6 @@ public class NPCSpawner : MonoBehaviour
     public int spawnTimeMin = 1;
     public int spawnTimeMax = 20;
 
-    public float happynessMin = -0.5f;
-    public float happynessMax = 0.5f;
-
     public float speed = 3f;
 
     private int currentNPCSpawn = 0;
@@ -34,7 +31,7 @@ public class NPCSpawner : MonoBehaviour
 
     private IEnumerator SpawnNPC()
     {
-        
+
 
         GameObject npcPrefab = NPCPrefabs[Random.Range(0, NPCPrefabs.Length)];
 
@@ -45,21 +42,49 @@ public class NPCSpawner : MonoBehaviour
 
         PathMovement pathMovement = npc.GetComponent<PathMovement>();
         pathMovement.pointsParent = path;
-        pathMovement.movementSpeed = Random.Range(1, 1.4f);
-        pathMovement.happiness = Random.Range(happynessMin, happynessMax);
+        pathMovement.movementSpeed = RandomGaussian(0f, 2f);
+        if (pathMovement.movementSpeed <= 1)
+        {
+            pathMovement.movementSpeed = Random.Range(1f, 1.1f);
+        }
+        pathMovement.happiness = RandomGaussian(-1, 1);
 
         currentNPCSpawn++;
 
         yield return new WaitForSeconds(Random.Range(spawnTimeMin, spawnTimeMax));
 
-        if (currentNPCSpawn >= maxNPCSpawn){
+        if (currentNPCSpawn >= maxNPCSpawn)
+        {
             StopCoroutine(SpawnNPC());
 
         }
-        else {
+        else
+        {
             StartCoroutine(SpawnNPC());
         }
 
+    }
+
+    public static float RandomGaussian(float minValue = 0.0f, float maxValue = 1.0f)
+    {
+        float u, v, S;
+
+        do
+        {
+            u = 2.0f * UnityEngine.Random.value - 1.0f;
+            v = 2.0f * UnityEngine.Random.value - 1.0f;
+            S = u * u + v * v;
+        }
+        while (S >= 1.0f);
+
+        // Standard Normal Distribution
+        float std = u * Mathf.Sqrt(-2.0f * Mathf.Log(S) / S);
+
+        // Normal Distribution centered between the min and max value
+        // and clamped following the "three-sigma rule"
+        float mean = (minValue + maxValue) / 2.0f;
+        float sigma = (maxValue - mean) / 3.0f;
+        return Mathf.Clamp(std * sigma + mean, minValue, maxValue);
     }
 
     // Update is called once per frame
@@ -67,4 +92,5 @@ public class NPCSpawner : MonoBehaviour
     {
 
     }
+
 }

@@ -41,8 +41,8 @@ public static class VerticalMovementUltil
         obj.transform.parent = transform;
         var material = obj.GetComponent<Renderer>().material;
         material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
-        material.SetFloat("_Metallic", 0.97f);
-        material.SetFloat("_Glossiness", 1);
+        material.SetFloat("_Metallic", 0.5f);
+        material.SetFloat("_Glossiness", 0.5f);
         obj.AddComponent<VerticalMovementAdjuster>();
         return obj;
     }

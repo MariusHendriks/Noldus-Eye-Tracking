@@ -6,12 +6,6 @@ public class CarCollisionDetection : MonoBehaviour
 {
     public bool isColliding = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     private void OnTriggerStay(Collider other)
     {
         isColliding = true;
@@ -20,11 +14,5 @@ public class CarCollisionDetection : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         isColliding = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

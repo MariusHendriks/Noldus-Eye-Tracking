@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CarSpawn : MonoBehaviour
 {
+    public RoundaboutCarCounter RoundaboutCounter;
     public GameObject[] carPrefabs;
     public GameObject[] pathPrefabs;
     private GameObject[] pathObjects;
@@ -20,26 +21,29 @@ public class CarSpawn : MonoBehaviour
             pathObjects[i] = Instantiate(pathPrefabs[i], new Vector3(0, 0, 0), pathPrefabs[i].transform.rotation);
         }
 
+        StartCoroutine(StartSpawning());
+    }
+
+    private IEnumerator StartSpawning()
+    {
+        yield return new WaitForSeconds(Random.Range(0, 6));
         StartCoroutine(SpawnCar());
     }
 
     private IEnumerator SpawnCar()
     {
-        
-            GameObject carPrefab = carPrefabs[Random.Range(0, carPrefabs.Length)];
+        GameObject carPrefab = carPrefabs[Random.Range(0, carPrefabs.Length)];
 
-            GameObject path = pathObjects[Random.Range(0, pathObjects.Length)];
-            GameObject car = Instantiate(carPrefab, this.transform.position, Quaternion.identity);
+        GameObject path = pathObjects[Random.Range(0, pathObjects.Length)];
+        GameObject car = Instantiate(carPrefab, this.transform.position, Quaternion.identity);
 
-            CarPathMovement carPathMovement = car.GetComponent<CarPathMovement>();
-            carPathMovement.pointsParent = path;
+        CarPathMovement carPathMovement = car.GetComponent<CarPathMovement>();
+        carPathMovement.pointsParent = path;
 
-            yield return new WaitForSeconds(Random.Range(spawnTimeMin, spawnTimeMax));
+        yield return new WaitUntil(() => RoundaboutCounter.carAmount < 6);
+        yield return new WaitForSeconds(Random.Range(spawnTimeMin, spawnTimeMax));
 
-            StartCoroutine(SpawnCar());
-        
-
-        
+        StartCoroutine(SpawnCar());
     }
 
     // Update is called once per frame

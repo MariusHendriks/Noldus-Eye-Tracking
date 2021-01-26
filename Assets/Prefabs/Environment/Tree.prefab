@@ -43,7 +43,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 0
-  m_Extents: {x: 1.1, y: 1.64, z: 1.1}
+  m_Extents: {x: 0.9, y: 1.64, z: 0.9}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
@@ -115,6 +115,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tilia cordata (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: c5dd4b116f2dbb4429925d82104847b4,
+        type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.30382845
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: c5dd4b116f2dbb4429925d82104847b4,
+        type: 3}
+      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
+      value: 0.095012695
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5dd4b116f2dbb4429925d82104847b4, type: 3}

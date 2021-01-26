@@ -1775,8 +1775,6 @@ MonoBehaviour:
   maxNPCSpawn: 14
   spawnTimeMin: 2
   spawnTimeMax: 7
-  happynessMin: -0.5
-  happynessMax: 0.5
   speed: 3
 --- !u!1 &58242584
 GameObject:
@@ -8953,8 +8951,6 @@ MonoBehaviour:
   maxNPCSpawn: 14
   spawnTimeMin: 2
   spawnTimeMax: 7
-  happynessMin: -0.5
-  happynessMax: 0.5
   speed: 3
 --- !u!1 &275871612
 GameObject:
@@ -12772,8 +12768,6 @@ MonoBehaviour:
   maxNPCSpawn: 14
   spawnTimeMin: 2
   spawnTimeMax: 7
-  happynessMin: -0.5
-  happynessMax: 0.5
   speed: 3
 --- !u!1 &368986107
 GameObject:
@@ -20457,8 +20451,6 @@ MonoBehaviour:
   maxNPCSpawn: 14
   spawnTimeMin: 2
   spawnTimeMax: 7
-  happynessMin: -0.5
-  happynessMax: 0.5
   speed: 3
 --- !u!1001 &623619019
 PrefabInstance:
@@ -36352,8 +36344,6 @@ MonoBehaviour:
   maxNPCSpawn: 7
   spawnTimeMin: 2
   spawnTimeMax: 10
-  happynessMin: -0.5
-  happynessMax: 0.5
   speed: 3
 --- !u!1 &1055253765
 GameObject:
@@ -37235,8 +37225,6 @@ MonoBehaviour:
   maxNPCSpawn: 7
   spawnTimeMin: 2
   spawnTimeMax: 10
-  happynessMin: -0.5
-  happynessMax: 0.5
   speed: 3
 --- !u!1 &1081661025
 GameObject:
@@ -39075,8 +39063,6 @@ MonoBehaviour:
   maxNPCSpawn: 14
   spawnTimeMin: 2
   spawnTimeMax: 7
-  happynessMin: -0.5
-  happynessMax: 0.5
   speed: 3
 --- !u!1 &1130212782
 GameObject:
@@ -43169,8 +43155,6 @@ MonoBehaviour:
   maxNPCSpawn: 14
   spawnTimeMin: 2
   spawnTimeMax: 6
-  happynessMin: -0.5
-  happynessMax: 0.5
   speed: 3
 --- !u!4 &1259897883
 Transform:
@@ -45716,8 +45700,6 @@ MonoBehaviour:
   maxNPCSpawn: 14
   spawnTimeMin: 2
   spawnTimeMax: 7
-  happynessMin: -0.5
-  happynessMax: 0.5
   speed: 3
 --- !u!1 &1337111055
 GameObject:
@@ -48339,8 +48321,6 @@ MonoBehaviour:
   maxNPCSpawn: 7
   spawnTimeMin: 2
   spawnTimeMax: 10
-  happynessMin: -0.5
-  happynessMax: 0.5
   speed: 3
 --- !u!1 &1379634047
 GameObject:
@@ -62368,8 +62348,6 @@ MonoBehaviour:
   maxNPCSpawn: 14
   spawnTimeMin: 2
   spawnTimeMax: 7
-  happynessMin: -0.5
-  happynessMax: 0.5
   speed: 3
 --- !u!1001 &1805601655
 PrefabInstance:
@@ -70104,7 +70082,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 1
   m_VoxelSize: 0.05
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: daf99408cd83628469c8aa2e93ac853b, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: d5f8f10ecb011fd47ba6647bc89b9764, type: 2}
 --- !u!1 &2079770580
 GameObject:
   m_ObjectHideFlags: 0
@@ -72239,8 +72217,6 @@ MonoBehaviour:
   maxNPCSpawn: 14
   spawnTimeMin: 2
   spawnTimeMax: 7
-  happynessMin: -0.5
-  happynessMax: 0.5
   speed: 3
 --- !u!1 &2135509087
 GameObject:

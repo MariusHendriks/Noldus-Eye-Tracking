@@ -4325,6 +4325,7 @@ MonoBehaviour:
   movementSpeed: 1
   happiness: 0
   resetOnLastWaypoint: 1
+  waitingForCrossing: 0
   destinationOfAgent: {x: 0, y: 0, z: 0}
   debugPrefab: {fileID: 0}
 --- !u!195 &8165027325315442087

@@ -13,7 +13,7 @@ public class VerticalMovementSpawner : MonoBehaviour
     private float currentRadius;
     private MeshTypes currentType;
 
-    public MeshTypes type;
+    public MeshTypes meshType;
     public int seed;
     public List<Mesh> meshes;
     public bool startScript;
@@ -50,7 +50,7 @@ public class VerticalMovementSpawner : MonoBehaviour
         currentNumberOfObjects = numberOfObjects;
         currentHeight = height;
         currentRadius = radius;
-        currentType = type;
+        currentType = meshType;
         SpawnShapesAroundCenter(numberOfObjects, defaultRadius);
     }
 
@@ -86,10 +86,10 @@ public class VerticalMovementSpawner : MonoBehaviour
                 DestroyAllObjects();
                 scriptIsWorking = false;
             }
-            if (type != currentType)
+            if (meshType != currentType)
             {
                 ResetScene();
-                currentType = type;
+                currentType = meshType;
             }
         }
         else if (!scriptIsWorking && startScript)
@@ -105,7 +105,7 @@ public class VerticalMovementSpawner : MonoBehaviour
         {
             var spawnDir = CalculateSpawnDirection(i, num);
             var spawnPos = Center + spawnDir * radius;
-            GameObject obj = CreateMeshes(spawnPos, Center, transform, type, meshes);
+            GameObject obj = CreateMeshes(spawnPos, Center, transform, meshType, meshes);
             SetVerticalAdjusterScriptParameters(obj, radius, num, Center, speed, height);
             obj.name = $"{i + 1}";
             objects.Add(obj);
@@ -131,6 +131,7 @@ public class VerticalMovementSpawner : MonoBehaviour
         InitializeScript();
         this.speed = this.defaultSpeed * speed;
         this.radius = this.defaultRadius * distance;
+        this.meshType = meshType;
         startScript = true;
         scriptIsWorking = true;
     }

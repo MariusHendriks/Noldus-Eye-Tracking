@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnDespawnObjects : MonoBehaviour
 {
-
+    public bool rotation = true;
     public bool start;
 
     public int seed;
@@ -29,7 +29,6 @@ public class SpawnDespawnObjects : MonoBehaviour
     private float defaultSpeed;
 
     
-    private float timer;
     private int density;
 
     // Start is called before the first frame update
@@ -40,6 +39,7 @@ public class SpawnDespawnObjects : MonoBehaviour
         density = objectCount;
         objects = new List<GameObject>();
         StartCoroutine(WaitForDensityChange());
+        StartCoroutine(WaitForRotateChange());
     }
 
     // Update is called once per frame
@@ -51,12 +51,10 @@ public class SpawnDespawnObjects : MonoBehaviour
         }
         else if (start)
         {
-            timer += Time.deltaTime;
         }
         else if (!start && objects != null && objects.Count > 0)
         {
             DestroyObjects(objectCount);
-            timer = 0;
         }
     }
 
@@ -84,6 +82,9 @@ public class SpawnDespawnObjects : MonoBehaviour
             {
                 objects[i].SetActive(false);
             }
+            objects[i].transform.Rotate(Random.Range(-200, 200), Random.Range(-200, 200), Random.Range(-200, 200));
+            objects[i].GetComponent<ObjectRotation>().SetSpeed(Random.Range(-200, 200), Random.Range(-200, 200), Random.Range(-200, 200));
+            objects[i].GetComponent<ObjectRotation>().rotate = rotation;
         }
         StopCoroutine(WaitToSpawnDespawn());
         StartCoroutine(WaitToSpawnDespawn());
@@ -139,6 +140,23 @@ public class SpawnDespawnObjects : MonoBehaviour
         }
     }
 
+    public IEnumerator WaitForRotateChange()
+    {
+        while(true)
+        {
+            yield return new WaitUntil(() => !rotation);
+            foreach(var obj in objects)
+            {
+                obj.GetComponent<ObjectRotation>().rotate = false;
+            }
+            yield return new WaitUntil(() => rotation);
+            foreach(var obj in objects)
+            {
+                obj.GetComponent<ObjectRotation>().rotate = true;
+            }
+        }
+    }
+
     public IEnumerator WaitForDensityChange()
     {
         while (true)
@@ -152,7 +170,7 @@ public class SpawnDespawnObjects : MonoBehaviour
         }
     }
 
-    public void Play(int nrOfObjects, float speed, float radius, MeshTypes meshType, int seed)
+    public void Play(int nrOfObjects, float speed, float radius, MeshTypes meshType, int seed, bool rotation)
     {
         this.objectCount = nrOfObjects;
         this.density = this.objectCount;
@@ -160,6 +178,7 @@ public class SpawnDespawnObjects : MonoBehaviour
         this.maxRadius = this.defaultRadius * radius;
         this.meshType = meshType;
         this.seed = seed;
+        this.rotation = rotation;
         start = !start;
     }
 
@@ -176,6 +195,11 @@ public class SpawnDespawnObjects : MonoBehaviour
     public void ChangeObjectRadius(float radius)
     {
         maxRadius = this.defaultRadius * radius;
+    }
+
+    public void ChangeRotation(bool rotation)
+    {
+        this.rotation = rotation;
     }
 }
 

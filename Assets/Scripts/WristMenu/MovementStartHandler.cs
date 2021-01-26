@@ -17,6 +17,7 @@ public class MovementStartHandler : MonoBehaviour
     private int seed;
 
     private bool isChaotic;
+    private bool rotation;
 
     public MovementType movementType;
 
@@ -39,6 +40,7 @@ public class MovementStartHandler : MonoBehaviour
                 break;
             case MovementType.AppearingDisappearing:
                 GetMovementSettings(appearingDisappearingSettings);
+                rotation = appearingDisappearingSettings.GetChild(0).GetChild(5).GetComponent<Toggle>().isOn;
                 break;
             default:
                 break;
@@ -78,7 +80,7 @@ public class MovementStartHandler : MonoBehaviour
                 FindObjectOfType<Switcher>().Play(nrOfObjects, speed, distance, meshType, seed, isChaotic);
                 break;
             case MovementType.AppearingDisappearing:
-                FindObjectOfType<SpawnDespawnObjects>().Play(nrOfObjects, speed, distance, meshType, seed);
+                FindObjectOfType<SpawnDespawnObjects>().Play(nrOfObjects, speed, distance, meshType, seed, rotation);
                 break;
             default:
                 break;

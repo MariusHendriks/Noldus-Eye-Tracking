@@ -205,5 +205,10 @@ namespace PupilLabs
         {
             return Mathf.Lerp(minAlpha, maxAlpha, confidence);
         }
+
+        public Vector3 GetGazeDirection()
+        {
+            return localGazeDirection;
+        }
     }
 }

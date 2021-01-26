@@ -26,8 +26,6 @@ public class RotationAroundOwnAxis : MonoBehaviour
         transform.RotateAround(transform.position, Vector3.right, SpeedX * Time.deltaTime);
         transform.RotateAround(transform.position, Vector3.up, SpeedY * Time.deltaTime);
         transform.RotateAround(transform.position, Vector3.forward, SpeedZ * Time.deltaTime);
-        
-
     }
 
     public void Randomize(int MeshSet)

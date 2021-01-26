@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1143873326502747491}
   - component: {fileID: 6811034444857728990}
   - component: {fileID: 3408746154451539406}
+  - component: {fileID: 406954253305601973}
+  - component: {fileID: -6796470526361484642}
   m_Layer: 0
   m_Name: ObjectToSpawn
   m_TagString: Untagged
@@ -94,3 +96,32 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &406954253305601973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8381058730232103078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765d3f1aa857fdb4a9584b05d238ca32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlighted: 0
+--- !u!114 &-6796470526361484642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8381058730232103078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d66bf0ff712a4e47bbf323c542c2a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeedX: 0
+  SpeedY: 0
+  SpeedZ: 0
+  rotate: 1

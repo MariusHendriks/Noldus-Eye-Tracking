@@ -7,6 +7,7 @@ using PupilLabs;
 public class OutputToJSON : MonoBehaviour
 {
     public GazeController gazeController;
+    private Vector3 localGazeDirection;
     private static List<OutputData> outputDatas = new List<OutputData>();
 
     private Transform mainCamera;
@@ -43,7 +44,6 @@ public class OutputToJSON : MonoBehaviour
     private void Start()
     {
         mainCamera = Camera.main.transform;
-        gazeController.OnReceive3dGaze += ReceiveGaze;
 
     }
 
@@ -57,14 +57,17 @@ public class OutputToJSON : MonoBehaviour
         {
             simulationTimer = 0;
         }
+
+        localGazeDirection = gazeController.GetComponentInChildren<GazeVisualizer>().GetGazeDirection();
+        ReceiveGaze(localGazeDirection);
     }
 
     //TODO: Pass hitinfo data to Method AddOutputData
-    void ReceiveGaze(GazeData gazeData)
+    void ReceiveGaze(Vector3 localGazeDirection)
     {
-        Debug.DrawRay(mainCamera.position, mainCamera.TransformDirection(gazeData.GazeDirection) * 100.0f, Color.yellow);
+        Debug.DrawRay(mainCamera.position, mainCamera.TransformDirection(localGazeDirection) * 100.0f, Color.yellow);
 
-        if (Physics.Raycast(mainCamera.position, mainCamera.TransformDirection(gazeData.GazeDirection), out hitInfo, 100.0f))
+        if (Physics.Raycast(mainCamera.position, mainCamera.TransformDirection(localGazeDirection), out hitInfo, 100.0f))
         {
 
             if (hitInfo.collider.gameObject.layer == 20)
@@ -101,7 +104,7 @@ public class OutputToJSON : MonoBehaviour
             else if (prevObjHit!= null)
             {
                 Debug.Log("User looked at object " + prevObjHit + " for " + collisionTimer + " seconds.");
-                AddOutputData(new OutputData(prevObjHit.gameObject.name, startLocation, prevObjHit.transform.position, cameraStartLocation, mainCamera.transform.position, FindObjectOfType<Manager>().timer, collisionTimer));
+                AddOutputData(new OutputData(prevObjHit.gameObject.name, startLocation, prevObjHit.transform.position, cameraStartLocation, mainCamera.transform.position, simulationTimer, collisionTimer));
                 prevObjHit = hitInfo.collider;
                 collisionTimer = 0;
                 startLocation = new Vector3();

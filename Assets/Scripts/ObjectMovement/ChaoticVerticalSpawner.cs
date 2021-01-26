@@ -13,7 +13,7 @@ public class ChaoticVerticalSpawner : MonoBehaviour
     private float currentRadius;
     private MeshTypes currentType;
 
-    public MeshTypes type;
+    public MeshTypes meshType;
     public int seed;
     public List<Mesh> meshes;
     public bool startScript;
@@ -38,7 +38,7 @@ public class ChaoticVerticalSpawner : MonoBehaviour
         currentNumberOfObjects = numberOfObjects;
         currentSpeed = speed;
         currentRadius = radius;
-        currentType = type;
+        currentType = meshType;
         SpawnShapesAroundCenter(numberOfObjects);
     }
 
@@ -59,10 +59,10 @@ public class ChaoticVerticalSpawner : MonoBehaviour
             {
                 ChangeObjectRadius(radius);
             }
-            else if (type != currentType)
+            else if (meshType != currentType)
             {
                 ResetScene();
-                currentType = type;
+                currentType = meshType;
             }
             else if (!startScript)
             {
@@ -109,7 +109,7 @@ public class ChaoticVerticalSpawner : MonoBehaviour
             var radius = Random.Range(2, 9f) * this.radius;
             var spawnDir = CalculateSpawnDirection(i, num);
             var spawnPos = Center + spawnDir * radius;
-            GameObject obj = CreateMeshes(spawnPos, Center, transform, type, meshes);
+            GameObject obj = CreateMeshes(spawnPos, Center, transform, meshType, meshes);
             obj = SetVerticalAdjusterScriptParameters(obj, radius, num, Center, Random.Range(1.5f, 7f) * speed, Random.Range(0, 7.5f));
             obj.name = $"{i + 1}";
             objects.Add(obj);
@@ -130,10 +130,11 @@ public class ChaoticVerticalSpawner : MonoBehaviour
 
     public void Play(int nrOfObjects, float speed, float distance, MeshTypes meshType, int seed)
     {
-        numberOfObjects = nrOfObjects;
+        this.numberOfObjects = nrOfObjects;
         this.speed = speed;
-        radius = distance;
+        this.radius = distance;
         this.seed = seed;
+        this.meshType = meshType;
         startScript = true;
     }
 

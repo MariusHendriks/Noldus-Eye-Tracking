@@ -48,11 +48,6 @@ public class Manager : MonoBehaviour
     public Vector2 Scale = new Vector2(0.2f, 1f);
 
 
-    public bool addObj = false;
-    public bool rmObj = false;
-    public float timer = 0;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -66,7 +61,6 @@ public class Manager : MonoBehaviour
 
         if (IsRunning && objects == null)
         {
-            timer = 0;
             this.Generate();
         }
         if (!IsRunning && objects != null)
@@ -76,13 +70,7 @@ public class Manager : MonoBehaviour
                 Destroy(obj);
             }
             objects = null;
-            timer = 0;
         }
-        if (IsRunning)
-        {
-            timer += Time.deltaTime;
-        }
-
     }
 
     public void Generate()
@@ -97,7 +85,7 @@ public class Manager : MonoBehaviour
 
     private void CreateObject(int id)
     {
-        GameObject gameObject = Instantiate(Sablon);
+        GameObject gameObject = Instantiate(Sablon, transform);
         gameObject.name = (id + 1).ToString();
         objects.Add(gameObject);
         var instance = (Movement)objects[id].GetComponent(typeof(Movement));

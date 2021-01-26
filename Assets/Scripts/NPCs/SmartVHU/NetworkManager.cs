@@ -39,8 +39,7 @@ public class NetworkManager : MonoBehaviour
     private Dictionary<string, LipSyncData> rasaAnswers;
 
     public LipSyncData[] audioClips;
-    public LipSync lipSync;
-    public Animator anim;
+    private LipSync lipSync;
 
     private void Start()
     {
@@ -58,6 +57,7 @@ public class NetworkManager : MonoBehaviour
             { "I am a bot, powered by Rasa.", audioClips[9] },
             { "Hey! How are you?", audioClips[10] }
         };
+        lipSync = GetComponent<LipSync>();
     }
 
     public void SendMessageToRasa(string msg)
@@ -135,15 +135,6 @@ public class NetworkManager : MonoBehaviour
 
     void TTSCallback(LipSyncData audio)
     {
-        
-        
         lipSync.Play(audio);
-        //StartCoroutine(EndLipSyncPlay(audio.length, lipSync));
-    }
-
-    IEnumerator EndLipSyncPlay(float audioDuration, LipSync lipSync) 
-    {
-        yield return new WaitForSeconds(audioDuration);
-        lipSync.Stop(true);
     }
 }

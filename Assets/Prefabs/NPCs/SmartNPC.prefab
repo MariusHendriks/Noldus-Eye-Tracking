@@ -3397,6 +3397,7 @@ GameObject:
   - component: {fileID: 4922964644476130747}
   - component: {fileID: 4922964644476130748}
   - component: {fileID: 4922964644476130723}
+  - component: {fileID: 3960231827341062314}
   m_Layer: 18
   m_Name: SmartNPC
   m_TagString: Untagged
@@ -3679,6 +3680,7 @@ MonoBehaviour:
   isReady: 1
   users:
   - {fileID: 4922964644476130749}
+  - {fileID: 3960231827341062314}
   _blendables:
   - number: 0
     currentWeight: 0
@@ -3892,14 +3894,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 8300000, guid: 8fcb7f18b00f65f4ba21521b58fe4d19, type: 3}
-  - {fileID: 8300000, guid: 6657c51a1501c5d42b0796d3671e114d, type: 3}
-  - {fileID: 8300000, guid: 6482599b2b102fc4db489b8dc65f3dc9, type: 3}
-  - {fileID: 8300000, guid: 9209a7a786c2de04b82bb06b71307f5d, type: 3}
-  - {fileID: 8300000, guid: 65b93ffe68ff94a44a8367b3a89d3a80, type: 3}
-  - {fileID: 8300000, guid: fe35528caa21584489e6159f0a7b3ebd, type: 3}
-  lipSync: {fileID: 4922964644476130749}
-  anim: {fileID: 4922964644476130751}
+  - {fileID: 11400000, guid: b2f1c489395a3a64f9c8e53546fbf5f1, type: 2}
+  - {fileID: 11400000, guid: 3de268681376e0047bb992306781303a, type: 2}
+  - {fileID: 11400000, guid: 11bdb65d58fde74419e900b036f25e0b, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 3ff6e167fffde21498665c015620dbd2, type: 2}
+  - {fileID: 11400000, guid: 2ec2139d8d868b049acf249af977a985, type: 2}
+  - {fileID: 11400000, guid: bee2f1d02dfa99043b202a85f32bb27f, type: 2}
+  - {fileID: 11400000, guid: 56475c4df0acf334c8311440a59dc604, type: 2}
+  - {fileID: 11400000, guid: 0438c2f49723c6149afd5ac24f252ab4, type: 2}
+  - {fileID: 11400000, guid: bd5b733a2edf6bd4ba70f457fa2a28e5, type: 2}
+  - {fileID: 11400000, guid: da3f608aac9e9d845a5894e48eb11489, type: 2}
 --- !u!114 &4922964644476130748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4008,6 +4013,74 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3960231827341062314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4922964644476130741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c3c6345ee104b4695e6f7a2c098f3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blendSystem: {fileID: 4922964644476130750}
+  blinkingEnabled: 1
+  blinkingControlMode: 0
+  blinkingShape:
+    blendShapes: 
+    blendableNames: []
+    weights: []
+    bones: []
+    verified: 1
+  leftEyeBlinkBlendable: 17
+  rightEyeBlinkBlendable: 18
+  minimumBlinkGap: 1
+  maximumBlinkGap: 4
+  blinkDuration: 0.14
+  randomLookingEnabled: 1
+  lookingControlMode: 0
+  lookingUpShape:
+    blendShapes: 
+    blendableNames: []
+    weights: []
+    bones: []
+    verified: 1
+  lookingDownShape:
+    blendShapes: 
+    blendableNames: []
+    weights: []
+    bones: []
+    verified: 1
+  lookingLeftShape:
+    blendShapes: 
+    blendableNames: []
+    weights: []
+    bones: []
+    verified: 1
+  lookingRightShape:
+    blendShapes: 
+    blendableNames: []
+    weights: []
+    bones: []
+    verified: 1
+  _leftEyeLookAtBone: {fileID: 0}
+  _rightEyeLookAtBone: {fileID: 0}
+  eyeRotationRangeX: {x: -20, y: 20}
+  eyeRotationRangeY: {x: -6.5, y: 6.5}
+  eyeLookOffset: {x: 0, y: 0, z: 0}
+  eyeForwardAxis: 3
+  eyeTurnSpeed: 18
+  minimumChangeDirectionGap: 3
+  maximumChangeDirectionGap: 10
+  targetEnabled: 1
+  autoTarget: 0
+  autoTargetTag: EyeControllerTarget
+  autoTargetDistance: 10
+  viewTarget: {fileID: 0}
+  targetWeight: 1
+  boneUpdateAnimation: 0
 --- !u!1 &4922964644490432277
 GameObject:
   m_ObjectHideFlags: 0

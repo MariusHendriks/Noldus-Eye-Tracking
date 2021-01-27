@@ -70,7 +70,7 @@ public class OutputToJSON : MonoBehaviour
         if (Physics.Raycast(mainCamera.position, mainCamera.TransformDirection(localGazeDirection), out hitInfo, 100.0f))
         {
 
-            if (hitInfo.collider.gameObject.layer == 20)
+            if (hitInfo.collider.gameObject.layer == 22)
             {
                 if (startLocation==new Vector3())
                 {

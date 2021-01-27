@@ -2159,7 +2159,6 @@ GameObject:
   - component: {fileID: 8993043862147119898}
   - component: {fileID: 8993043862147119897}
   - component: {fileID: 7149991886020665491}
-  - component: {fileID: 2918758121494332083}
   - component: {fileID: 4467437707034686243}
   m_Layer: 19
   m_Name: Leonard
@@ -2269,19 +2268,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &2918758121494332083
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8993043862147119900}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.2078925
-  m_Center: {x: 0, y: 0.06287372, z: -0.0020417273}
 --- !u!136 &4467437707034686243
 CapsuleCollider:
   m_ObjectHideFlags: 0

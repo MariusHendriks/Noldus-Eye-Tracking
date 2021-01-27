@@ -2014,7 +2014,6 @@ GameObject:
   - component: {fileID: 9082786181562666107}
   - component: {fileID: 9082786181562666084}
   - component: {fileID: -826352116772501525}
-  - component: {fileID: -3662679179074520175}
   - component: {fileID: 5543671381633986528}
   m_Layer: 19
   m_Name: Louise
@@ -2124,19 +2123,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &-3662679179074520175
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9082786181562666104}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.2078925
-  m_Center: {x: 0, y: 0.06287372, z: -0.0020417273}
 --- !u!136 &5543671381633986528
 CapsuleCollider:
   m_ObjectHideFlags: 0

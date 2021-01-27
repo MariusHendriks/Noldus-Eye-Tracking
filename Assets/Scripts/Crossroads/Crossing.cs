@@ -16,10 +16,12 @@ public class Crossing : MonoBehaviour
         if (other.name == "CarHitbox")
         {
             carsOnCrossing++;
+            other.GetComponentInParent<CarPathMovement>().crossing = this;
         }
         else if (other.name.Contains("Clone") || other.tag == "Player")
         {
             pedestriansOnCrossing++;
+            other.GetComponent<PathMovement>().crossing = this;
         }
         else if (other.name == "PedestrianHitbox" && pedestriansOnCrossing > 0)
         {
@@ -28,6 +30,19 @@ public class Crossing : MonoBehaviour
 
             CarPathMovement carPathMovement = other.GetComponentInParent<CarPathMovement>();
             carPathMovement.waitingForCrossing = true;
+        }
+    }
+
+
+    private void Update()
+    {
+        if(pedestriansOnCrossing == 0)
+        {
+            Debug.Log("There are 0 pedestrians");
+        }
+        if(carsOnCrossing == 0)
+        {
+            Debug.Log("There are 0 Cars");
         }
     }
 
@@ -56,6 +71,7 @@ public class Crossing : MonoBehaviour
     {
         if (other.name == "CarHitbox")
         {
+            other.GetComponentInParent<CarPathMovement>().crossing = null;
             carsOnCrossing--;
 
             if (carsOnCrossing <= 0)
@@ -70,6 +86,7 @@ public class Crossing : MonoBehaviour
         }
         else if (other.name.Contains("Clone") || other.tag == "Player")
         {
+            other.GetComponent<PathMovement>().crossing = null;
             pedestriansOnCrossing--;
 
             if (pedestriansOnCrossing <= 0)

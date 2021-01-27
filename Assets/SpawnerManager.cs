@@ -1,18 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SpawnerManager : MonoBehaviour
 {
     public List<CarSpawn> carSpawners;
     public List<NPCSpawner> NPCSpawners;
-    public Crossing crossing;
+    public List<PathMovement> NPCs;
+    public List<CarPathMovement> Cars;
 
     public void EnableCars(bool enabled)
     {
         foreach(CarSpawn cs in carSpawners)
         {
-            cs.enabled = enabled;
+            cs.gameObject.SetActive(enabled);
+        }
+        if(!enabled)
+        {
+            RemoveCars();
         }
     }
 
@@ -20,25 +26,48 @@ public class SpawnerManager : MonoBehaviour
     {
         foreach(NPCSpawner ns in NPCSpawners)
         {
-            ns.enabled = enabled;
+            ns.gameObject.SetActive(enabled);
+        }
+        if(!enabled)
+        {
+            RemoveNPCs();
         }
     }
 
     public void RemoveCars()
     {
-        foreach(CarSpawn cs in carSpawners)
+        Cars.Clear();
+        Cars.AddRange(FindObjectsOfType<CarPathMovement>());
+        foreach(CarPathMovement car in Cars)
         {
-            crossing.OnTriggerExit(cs.GetComponent<BoxCollider>());
-            Destroy(cs);
+            if (car.crossing != null)
+            {
+                BoxCollider collider = car.GetComponentsInChildren<BoxCollider>().First((box) => box.name == "CarHitbox");
+                car.crossing.OnTriggerExit(collider);
+            }
+            Destroy(car.gameObject);
         }
     }
 
     public void RemoveNPCs()
     {
-        foreach (NPCSpawner ns in NPCSpawners)
+        NPCs.Clear();
+        NPCs.AddRange(FindObjectsOfType<PathMovement>());
+        foreach (PathMovement npc in NPCs)
         {
-            crossing.OnTriggerExit(ns.GetComponent<CapsuleCollider>());
-            Destroy(ns);
+            if (npc.crossing != null)
+            {
+                npc.crossing.OnTriggerExit(npc.GetComponent<CapsuleCollider>());
+            }
+            Destroy(npc.gameObject);
+        }
+    }
+
+    public void AdjustMaxNPCS(int maxNPCs)
+    {
+        foreach(NPCSpawner ns in NPCSpawners)
+        {
+            ns.maxNPCSpawn = maxNPCs / NPCSpawners.Count();
         }
     }
 }

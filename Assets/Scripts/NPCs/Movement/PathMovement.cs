@@ -6,6 +6,8 @@ using System.Collections.Generic;
 
 public class PathMovement : MonoBehaviour
 {
+    public Crossing crossing;
+
     public GameObject pointsParent;
     public List<Transform> points;
 

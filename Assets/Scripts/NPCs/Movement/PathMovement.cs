@@ -14,7 +14,7 @@ public class PathMovement : MonoBehaviour
 
 
     //[Range(1.0f, 2.0f)]
-    [Range(1.0f, 10.0f)]
+    [Range(1.0f, 2.0f)]
     public float movementSpeed = 1f;
 
     [Range(-1.0f, 1.0f)]

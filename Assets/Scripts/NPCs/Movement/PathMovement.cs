@@ -14,7 +14,7 @@ public class PathMovement : MonoBehaviour
 
 
     //[Range(1.0f, 2.0f)]
-    [Range(1.0f, 10.0f)]
+    [Range(1.0f, 2.0f)]
     public float movementSpeed = 1f;
 
     [Range(-1.0f, 1.0f)]
@@ -69,7 +69,20 @@ public class PathMovement : MonoBehaviour
 
         // Set the agent to go to the currently selected destination.
 
-        agent.destination = points[destPoint].position;
+        float dist = Vector3.Distance(points[destPoint].position, agent.destination);
+        Vector3 destOffset = points[destPoint].position;
+        destOffset.x += Random.Range(-0.1f, 0.1f) * dist;
+        destOffset.z += Random.Range(-0.1f, 0.1f) * dist;
+
+        agent.destination = destOffset;
+
+        destinationOfAgent = destOffset;
+
+        if(debugPrefab != null)
+        {
+            GameObject debug = Instantiate(debugPrefab);
+            debug.transform.position = destOffset;
+        }
 
         // Choose the next point in the array as the destination,
         // cycling to the start if necessary.

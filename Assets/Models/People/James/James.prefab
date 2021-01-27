@@ -352,7 +352,6 @@ GameObject:
   - component: {fileID: 1650376580915788405}
   - component: {fileID: 1650376580915788404}
   - component: {fileID: 836809572007434593}
-  - component: {fileID: 3673115025801111121}
   - component: {fileID: 4351209466913577141}
   m_Layer: 19
   m_Name: James
@@ -456,19 +455,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &3673115025801111121
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650376580915788363}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.2078925
-  m_Center: {x: 0, y: 0.06287372, z: -0.0020417273}
 --- !u!136 &4351209466913577141
 CapsuleCollider:
   m_ObjectHideFlags: 0

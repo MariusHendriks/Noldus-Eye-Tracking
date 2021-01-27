@@ -214,7 +214,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2382365423764966997}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7039d407dda5dbf45a0dfb875cb85638, type: 3}
   m_Name: 
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 2382365423871265242}
   - component: {fileID: 2382365423871265243}
   - component: {fileID: 2382365423871265240}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Left Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 2382365423900558284}
   - component: {fileID: 2382365423900558285}
   - component: {fileID: 2382365423900558283}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VR Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -658,7 +658,7 @@ GameObject:
   - component: {fileID: 2382365423901670656}
   - component: {fileID: 2382365423901670658}
   - component: {fileID: 2382365423901670659}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Right Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6000,7 +6000,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2382365424016642837}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Camera Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}

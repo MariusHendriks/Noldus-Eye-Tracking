@@ -10380,7 +10380,7 @@ GameObject:
   - component: {fileID: 2428463263693334219}
   - component: {fileID: 53056675064178841}
   m_Layer: 11
-  m_Name: VR Rig 1
+  m_Name: VR Rig Traffic Scene
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

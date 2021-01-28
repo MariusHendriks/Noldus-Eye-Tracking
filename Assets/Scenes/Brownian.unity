@@ -783,7 +783,7 @@ PrefabInstance:
     - target: {fileID: 4997377038163600881, guid: 6e648d63ee5053d4ab245eeff978ae5d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4997377038163600881, guid: 6e648d63ee5053d4ab245eeff978ae5d,
         type: 3}
@@ -825,10 +825,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4997377038163600884, guid: 6e648d63ee5053d4ab245eeff978ae5d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4997377038163600888, guid: 6e648d63ee5053d4ab245eeff978ae5d,
         type: 3}
       propertyPath: m_Name
       value: VR Rig
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997377038163600889, guid: 6e648d63ee5053d4ab245eeff978ae5d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997377038458571728, guid: 6e648d63ee5053d4ab245eeff978ae5d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997377038496581882, guid: 6e648d63ee5053d4ab245eeff978ae5d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7229934688305328853, guid: 6e648d63ee5053d4ab245eeff978ae5d,
         type: 3}

@@ -1,26 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class SceneButton : MonoBehaviour
+public class SceneButton : MainUIButton
 {
-    public bool moveForward = false;
-    public float moveSpeed = 0.5f;
+    public SceneAsset sceneToLoad;
 
-    void FixedUpdate()
+    public override void Select()
     {
-        if (moveForward)
-        {
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(transform.localPosition.x, transform.localPosition.y, -30), moveSpeed);
-        }
-        else
-        {
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(transform.localPosition.x, transform.localPosition.y, -9), moveSpeed);
-        }
-    }
-
-    public void Select()
-    {
-        
+        SceneManager.LoadScene(sceneToLoad.name, LoadSceneMode.Single);
     }
 }

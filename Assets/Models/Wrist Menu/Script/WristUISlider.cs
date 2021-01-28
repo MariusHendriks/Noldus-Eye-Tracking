@@ -49,8 +49,9 @@ public class WristUISlider : WristUIElement
         if(indexTransform != null)
         {
             float d = startPoint.InverseTransformPoint(indexTransform.position).x - startPoint.InverseTransformPoint(startPoint.position).x;
-            float value = d * 0.66666f;
-            slider.value = value > 0 ? value : 0;
+            Debug.Log("distance: " + d);
+            float value = d * (2f/300f) * slider.maxValue - (d * (2f / 300f) - 1) * slider.minValue;
+            slider.value = value;
         }
     }
 

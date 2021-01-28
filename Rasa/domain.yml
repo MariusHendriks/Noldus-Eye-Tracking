@@ -1,0 +1,42 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_greet
+- mood_unhappy
+- bot_challenge
+- ask_location
+- ask_store
+- ask_traffic
+- ask_city
+- swearing
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_ask_location:
+  - text: We are in a virtual representation of London.
+  utter_ask_store:
+  - text: There is a jewelry store, a cookie store, a yachting shop and a spa center.
+  utter_ask_traffic:
+  - text: The cars are on the normal side of the road.
+  utter_ask_city:
+  - text: You could buy something nice from the jewelry store, help yourself with a cookie from the cookie store, see some luxurious rides at the yachting shop or just relax at the spa.
+  utter_cheer_up:
+  - text: Here is something to cheer you up. Not that you dirty mind!
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, to hear!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_swearing:
+  - text: Piss off
+actions:
+- utter_greet

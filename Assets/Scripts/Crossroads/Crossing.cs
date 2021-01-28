@@ -41,11 +41,11 @@ public class Crossing : MonoBehaviour
     {
         if(pedestriansOnCrossing == 0)
         {
-            Debug.Log("There are 0 pedestrians");
+            //Debug.Log("There are 0 pedestrians");
         }
         if(carsOnCrossing == 0)
         {
-            Debug.Log("There are 0 Cars");
+            //Debug.Log("There are 0 Cars");
         }
     }
 

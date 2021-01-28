@@ -11,7 +11,6 @@ public class CrossroadsStart : MonoBehaviour
 
 
     public AudioClip[] audioFiles;
-    public GameObject[] lookZones;
     public GameObject NPC;
     public GameObject teleportPoint;
     public GameObject firstCrossing;

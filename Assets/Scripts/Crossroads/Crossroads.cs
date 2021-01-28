@@ -9,10 +9,10 @@ public class Crossroads : MonoBehaviour
     private enum CrossroadProgress { Start, BeforeLooking, Looking, AfterLooking, UnlockTeleport, FinishExercise, WrapUp, Done};
     private enum CrossroadTarget { Left, Right};
 
+    public LayerMask layerMaskToIgnore;
 
     public AudioClip[] audioFiles;
     public GameObject[] lookZones;
-    public GameObject nextTeleportArea;
     public GameObject nextHenk;
     public bool finishExercise = false;
 
@@ -70,7 +70,7 @@ public class Crossroads : MonoBehaviour
         {
             Transform cameraTransform = Camera.main.transform;
 
-            if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hitInfo, 100.0f))
+            if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hitInfo, 100.0f, ~layerMaskToIgnore))
             {
                 if (crossroadTarget == CrossroadTarget.Left && lookCounter == 0 && hitInfo.transform == lookZones[0].transform)
                 {
@@ -122,14 +122,13 @@ public class Crossroads : MonoBehaviour
 
         } else if (progress == CrossroadProgress.Done && !finishExercise)
         {
-            UnlockNextTeleportArea();
+            UnlockNextArea();
         }
     }
 
-    private void UnlockNextTeleportArea()
+    private void UnlockNextArea()
     {
         nextHenk.SetActive(true);
-        nextTeleportArea.SetActive(true);
         this.gameObject.SetActive(false);
     }
 }

@@ -62,12 +62,16 @@ public class MovementStartHandler : MonoBehaviour
     {
         if(GetComponentInChildren<Text>().text == "Start")
         {
-            Logger.simulationWorking = true;
+            if(Logger != null)
+                Logger.simulationWorking = true;
+
             GetComponentInChildren<Text>().text = "Stop";
         }
         else
         {
-            Logger.simulationWorking = false;
+            if (Logger != null)
+                Logger.simulationWorking = false;
+
             GetComponentInChildren<Text>().text = "Start";
         }
         GetValues();

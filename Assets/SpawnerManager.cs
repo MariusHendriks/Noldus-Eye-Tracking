@@ -10,8 +10,8 @@ public class SpawnerManager : MonoBehaviour
     public List<PathMovement> NPCs;
     public List<CarPathMovement> Cars;
 
-    private bool npcsEnabled;
-    private bool carsEnabled;
+    private bool npcsEnabled = true;
+    private bool carsEnabled = true;
 
     public void EnableCars(bool enabled)
     {
@@ -25,7 +25,7 @@ public class SpawnerManager : MonoBehaviour
             }
             else
             {
-                StopCoroutine(cs.SpawnCar());
+                cs.StopAllCoroutines();
                 cs.gameObject.SetActive(false);
             }
         }
@@ -48,7 +48,7 @@ public class SpawnerManager : MonoBehaviour
             else
                 ns.gameObject.SetActive(false);
             {
-                StopCoroutine(ns.SpawnNPC());
+                ns.StopAllCoroutines();
             }
         }
         if(!enabled)
@@ -110,7 +110,7 @@ public class SpawnerManager : MonoBehaviour
                 SetSpawnerLimits(7, 15, 5, 15, 8);
                 break;
             case (4):
-                SetSpawnerLimits(5, 10, 4, 10, 15);
+                SetSpawnerLimits(5, 10, 3, 8, 15);
                 break;
             default:
                 break;
@@ -119,23 +119,27 @@ public class SpawnerManager : MonoBehaviour
 
     private void SetSpawnerLimits(int carMin, int carMax, int npcMin, int npcMax, int npcSpawnMax)
     {
-        foreach(NPCSpawner ns in NPCSpawners)
+        foreach (CarSpawn cs in carSpawners)
+        {
+            cs.spawnTimeMin = carMin;
+            cs.spawnTimeMax = carMax;
+            cs.StopAllCoroutines();
+            if (carsEnabled)
+            {
+                StartCoroutine(cs.SpawnCar());
+            }
+        }
+
+        foreach (NPCSpawner ns in NPCSpawners)
         {
             ns.spawnTimeMin = npcMin;
             ns.spawnTimeMax = npcMax;
             ns.maxNPCSpawn = npcSpawnMax;
-            StopCoroutine(ns.SpawnNPC());
-            if(npcsEnabled)
-            StartCoroutine(ns.SpawnNPC());
-        }
-
-        foreach(CarSpawn cs in carSpawners)
-        {
-            cs.spawnTimeMin = carMin;
-            cs.spawnTimeMax = carMax;
-            StopCoroutine(cs.SpawnCar());
-            if(carsEnabled)
-            StartCoroutine(cs.SpawnCar());
+            ns.StopAllCoroutines();
+            if (npcsEnabled)
+            {
+                StartCoroutine(ns.SpawnNPC());
+            }
         }
     }
 }

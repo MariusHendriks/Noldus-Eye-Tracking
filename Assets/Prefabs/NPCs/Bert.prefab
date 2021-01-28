@@ -2326,7 +2326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4717851714167822307}
   m_LocalRotation: {x: 1, y: 0.000010521234, z: 0.000034197852, w: 0.0000109186}
-  m_LocalPosition: {x: -0.002, y: -0.005, z: 0}
+  m_LocalPosition: {x: -0.002, y: -0.0015, z: 0}
   m_LocalScale: {x: 1.0000002, y: 1.0000001, z: 1}
   m_Children: []
   m_Father: {fileID: 5778416694269077243}
@@ -3162,7 +3162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6826020906850662814}
   m_LocalRotation: {x: 1, y: 0.0000024237875, z: -0.000097153046, w: -0.000080027756}
-  m_LocalPosition: {x: -0.0358, y: 0.0208, z: 0.0003}
+  m_LocalPosition: {x: -0.0358, y: 0.0168, z: 0.0003}
   m_LocalScale: {x: 0.9999999, y: 1.0000001, z: 1}
   m_Children: []
   m_Father: {fileID: 8429888525399966082}
@@ -3801,6 +3801,7 @@ GameObject:
   - component: {fileID: 700071926865830340}
   - component: {fileID: -3529792996775799657}
   - component: {fileID: 4661528379023173092}
+  - component: {fileID: 6794870600423800217}
   m_Layer: 19
   m_Name: Bert
   m_TagString: Untagged
@@ -3848,138 +3849,102 @@ MonoBehaviour:
   useBones: 1
   boneUpdateAnimation: 0
   phonemes:
-  - blendShapes: 0500000007000000
-    blendableNames:
-    - Open (0)
-    - Explosive (1)
-    weights:
-    - 54
-    - 82.3
+  - blendShapes: 
+    blendableNames: []
+    weights: []
     bones:
     - bone: {fileID: 8429888525399966082}
-      endPosition: {x: -0.01851105, y: 0.023657292, z: -0.00026421953}
-      endRotation: {x: -0.0013117217, y: 0.008195034, z: 266.01}
+      endPosition: {x: -0.016254254, y: 0.025565922, z: -0.00026259982}
+      endRotation: {x: -0.00135602, y: 0.008195033, z: 261.28088}
       endScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
       lockPosition: 0
       lockRotation: 0
       lockScale: 0
       neutralPosition: {x: -0.01851105, y: 0.023657292, z: -0.00026421953}
-      neutralRotation: {x: -0.0013117221, y: 0.008195033, z: 270.00247}
+      neutralRotation: {x: -0.001311722, y: 0.008195033, z: 270.00244}
       neutralScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
     verified: 1
     phonemeName: AI
     phoneme: 0
-  - blendShapes: 07000000
+  - blendShapes: 05000000
     blendableNames:
-    - Open (0)
+    - Wide (5)
     weights:
-    - 45.2
+    - 100
     bones:
     - bone: {fileID: 8429888525399966082}
       endPosition: {x: -0.01851105, y: 0.023657292, z: -0.00026421953}
-      endRotation: {x: -0.0013117226, y: 0.008195035, z: 266.6}
+      endRotation: {x: -0.0012812043, y: 0.008195033, z: 264.87924}
       endScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
       lockPosition: 0
       lockRotation: 0
       lockScale: 0
       neutralPosition: {x: -0.01851105, y: 0.023657292, z: -0.00026421953}
-      neutralRotation: {x: -0.0013117221, y: 0.008195034, z: 270.00244}
+      neutralRotation: {x: -0.001311722, y: 0.008195033, z: 270.00244}
       neutralScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
     verified: 1
     phonemeName: E
     phoneme: 0
-  - blendShapes: 0400000007000000
+  - blendShapes: 06000000
     blendableNames:
-    - Open (0)
-    - Explosive (1)
+    - Affricate (6)
     weights:
-    - 100
-    - 88.7
+    - 71.6
     bones:
     - bone: {fileID: 8429888525399966082}
-      endPosition: {x: -0.01851105, y: 0.023657292, z: -0.00026421953}
-      endRotation: {x: -0.0013117226, y: 0.008195033, z: 264}
+      endPosition: {x: -0.014073159, y: 0.023407226, z: -0.00026029014}
+      endRotation: {x: -0.0013117221, y: 0.008195033, z: 266.77832}
       endScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
       lockPosition: 0
       lockRotation: 0
       lockScale: 0
       neutralPosition: {x: -0.01851105, y: 0.023657292, z: -0.00026421953}
-      neutralRotation: {x: -0.0013117226, y: 0.008195034, z: 270.00244}
+      neutralRotation: {x: -0.001311722, y: 0.008195033, z: 270.00244}
       neutralScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
     verified: 1
     phonemeName: U
     phoneme: 0
   - blendShapes: 03000000
     blendableNames:
-    - Open (0)
+    - Tight-O (3)
     weights:
-    - 86.7
-    bones: []
-    verified: 1
-    phonemeName: O
-    phoneme: 0
-  - blendShapes: 05000000
-    blendableNames:
-    - Open (0)
-    weights:
-    - 74.8
+    - 100
     bones:
     - bone: {fileID: 8429888525399966082}
-      endPosition: {x: -0.01851105, y: 0.023657292, z: -0.00026421953}
-      endRotation: {x: -0.0013117228, y: 0.008195033, z: 266.18}
+      endPosition: {x: -0.01428124, y: 0.025349855, z: -0.0002608303}
+      endRotation: {x: -0.0013117223, y: 0.008195034, z: 262.789}
       endScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
       lockPosition: 0
       lockRotation: 0
       lockScale: 0
       neutralPosition: {x: -0.01851105, y: 0.023657292, z: -0.00026421953}
-      neutralRotation: {x: -0.0013117228, y: 0.008195033, z: 270.00244}
+      neutralRotation: {x: -0.001311722, y: 0.008195033, z: 270.00244}
+      neutralScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    verified: 1
+    phonemeName: O
+    phoneme: 0
+  - blendShapes: 07000000
+    blendableNames:
+    - Lip_Open (7)
+    weights:
+    - 55.2
+    bones:
+    - bone: {fileID: 8429888525399966082}
+      endPosition: {x: -0.01851105, y: 0.023657292, z: -0.00026421953}
+      endRotation: {x: -0.001311722, y: 0.008195033, z: 270.00244}
+      endScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+      lockPosition: 0
+      lockRotation: 0
+      lockScale: 0
+      neutralPosition: {x: -0.01851105, y: 0.023657292, z: -0.00026421953}
+      neutralRotation: {x: -0.001311722, y: 0.008195033, z: 270.00244}
       neutralScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
     verified: 1
     phonemeName: CDGKNRSThYZ
     phoneme: 0
   - blendShapes: 02000000
     blendableNames:
-    - Explosive (1)
-    weights:
-    - 100
-    bones: []
-    verified: 1
-    phonemeName: FV
-    phoneme: 0
-  - blendShapes: 0200000007000000
-    blendableNames:
-    - Open (0)
-    - Explosive (1)
-    weights:
-    - 46
-    - 71.2
-    bones:
-    - bone: {fileID: 8429888525399966082}
-      endPosition: {x: -0.01851105, y: 0.023657292, z: -0.00026421953}
-      endRotation: {x: -0.0013117229, y: 0.008195035, z: 267.96}
-      endScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
-      lockPosition: 0
-      lockRotation: 0
-      lockScale: 0
-      neutralPosition: {x: -0.01851105, y: 0.023657292, z: -0.00026421953}
-      neutralRotation: {x: -0.001311722, y: 0.008195032, z: 270.00244}
-      neutralScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
-    - bone: {fileID: 0}
-      endPosition: {x: -0, y: 0, z: 0}
-      endRotation: {x: 270, y: 10.720026, z: 0}
-      endScale: {x: 1, y: 2.56, z: 1}
-      lockPosition: 0
-      lockRotation: 0
-      lockScale: 0
-      neutralPosition: {x: -0, y: 0, z: 0}
-      neutralRotation: {x: 270, y: 0, z: 0}
-      neutralScale: {x: 1, y: 1, z: 1}
-    verified: 1
-    phonemeName: L
-    phoneme: 0
-  - blendShapes: 05000000
-    blendableNames:
-    - Open (0)
+    - Dental_Lip (2)
     weights:
     - 100
     bones:
@@ -3994,23 +3959,61 @@ MonoBehaviour:
       neutralRotation: {x: -0.001311722, y: 0.008195033, z: 270.00244}
       neutralScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
     verified: 1
-    phonemeName: MBP
+    phonemeName: FV
     phoneme: 0
-  - blendShapes: 04000000
-    blendableNames:
-    - Open (0)
-    weights:
-    - 89.9
+  - blendShapes: 
+    blendableNames: []
+    weights: []
     bones:
     - bone: {fileID: 8429888525399966082}
-      endPosition: {x: -0.01851105, y: 0.023657292, z: -0.00026421953}
-      endRotation: {x: -0.0013117221, y: 0.008195033, z: 262.8}
+      endPosition: {x: -0.017897634, y: 0.022341622, z: -0.00026344546}
+      endRotation: {x: -0.0013560198, y: 0.008195034, z: 267.96973}
       endScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
       lockPosition: 0
       lockRotation: 0
       lockScale: 0
       neutralPosition: {x: -0.01851105, y: 0.023657292, z: -0.00026421953}
-      neutralRotation: {x: -0.0013117223, y: 0.008195033, z: 270.00244}
+      neutralRotation: {x: -0.001311722, y: 0.008195033, z: 270.00244}
+      neutralScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    verified: 1
+    phonemeName: L
+    phoneme: 0
+  - blendShapes: 0100000028000000
+    blendableNames:
+    - Explosive (1)
+    - Mouth_Pucker (40)
+    weights:
+    - 100
+    - 10
+    bones:
+    - bone: {fileID: 8429888525399966082}
+      endPosition: {x: -0.017992795, y: 0.025728907, z: -0.000264157}
+      endRotation: {x: -0.001311722, y: 0.008195033, z: 270.00244}
+      endScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+      lockPosition: 0
+      lockRotation: 0
+      lockScale: 0
+      neutralPosition: {x: -0.01851105, y: 0.023657292, z: -0.00026421953}
+      neutralRotation: {x: -0.001311722, y: 0.008195033, z: 270.00244}
+      neutralScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    verified: 1
+    phonemeName: MBP
+    phoneme: 0
+  - blendShapes: 04000000
+    blendableNames:
+    - Tight (4)
+    weights:
+    - 100
+    bones:
+    - bone: {fileID: 8429888525399966082}
+      endPosition: {x: -0.01851105, y: 0.023657292, z: -0.00026421953}
+      endRotation: {x: -0.001311722, y: 0.008195033, z: 270.00244}
+      endScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+      lockPosition: 0
+      lockRotation: 0
+      lockScale: 0
+      neutralPosition: {x: -0.01851105, y: 0.023657292, z: -0.00026421953}
+      neutralRotation: {x: -0.001311722, y: 0.008195033, z: 270.00244}
       neutralScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
     verified: 1
     phonemeName: WQ
@@ -4023,27 +4026,67 @@ MonoBehaviour:
     phonemeName: Rest
     phoneme: 0
   emotions:
-  - blendShapes: 
-    blendableNames: []
-    weights: []
+  - blendShapes: 210000001500000016000000220000002300000007000000
+    blendableNames:
+    - Mouth_Smile (33)
+    - Eye_Squint_L (21)
+    - Eye_Squint_R (22)
+    - Mouth_Smile_L (34)
+    - Mouth_Smile_R (35)
+    - Lip_Open (7)
+    weights:
+    - 100
+    - 60
+    - 58.1
+    - 23.4
+    - 18.1
+    - 100
     bones: []
     verified: 1
     emotion: Happy
-  - blendShapes: 
-    blendableNames: []
-    weights: []
+  - blendShapes: 0c0000000d000000150000001600000024000000
+    blendableNames:
+    - Brow_Drop_L (12)
+    - Brow_Drop_R (13)
+    - Eye_Squint_L (21)
+    - Eye_Squint_R (22)
+    - Mouth_Frown (36)
+    weights:
+    - 100
+    - 100
+    - 19.7
+    - 17
+    - 9.8
     bones: []
     verified: 1
     emotion: Serious
-  - blendShapes: 
-    blendableNames: []
-    weights: []
+  - blendShapes: 0e0000000f0000000a0000000b0000001300000014000000
+    blendableNames:
+    - Brow_Raise_L (14)
+    - Brow_Raise_R (15)
+    - Brow_Raise_Outer_L (10)
+    - Brow_Raise_Outer_R (11)
+    - Eye_Wide_L (19)
+    - Eye_Wide_R (20)
+    weights:
+    - 100
+    - 100
+    - 13.5
+    - 13.5
+    - 29.5
+    - 30.3
     bones: []
     verified: 1
     emotion: Eyebrows Up
-  - blendShapes: 
-    blendableNames: []
-    weights: []
+  - blendShapes: 240000000800000009000000
+    blendableNames:
+    - Mouth_Frown (36)
+    - Brow_Raise_Inner_L (8)
+    - Brow_Raise_Inner_R (9)
+    weights:
+    - 70.8
+    - 47.9
+    - 46.9
     bones: []
     verified: 1
     emotion: Sad
@@ -4055,7 +4098,7 @@ MonoBehaviour:
   m_animationTimingMode: 0
   frameRate: 30
   restTime: 0.2
-  restHoldTime: 0.4
+  restHoldTime: 0.2
   phonemeCurveGenerationMode: 1
   emotionCurveGenerationMode: 0
   keepEmotionWhenFinished: 0
@@ -4489,6 +4532,20 @@ CapsuleCollider:
   m_Height: 1.939803
   m_Direction: 1
   m_Center: {x: -0.03, y: 0.9173157, z: 0.42}
+--- !u!136 &6794870600423800217
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8359592077586839382}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.9398029
+  m_Direction: 1
+  m_Center: {x: -0.03, y: 0.9173157, z: 0.42000002}
 --- !u!1 &8430864704349288353
 GameObject:
   m_ObjectHideFlags: 0

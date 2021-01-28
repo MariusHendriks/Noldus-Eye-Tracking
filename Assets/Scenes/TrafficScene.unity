@@ -9664,9 +9664,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1526793921035786629, guid: dea36836d710461429084fc8bdc58ab2,
         type: 3}
+      propertyPath: audioFiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: eff2c8707cb79c84689be821d35dec70,
+        type: 2}
+    - target: {fileID: 1526793921035786629, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
       propertyPath: audioFiles.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 752423e55afb1be47822d95a6389fee0, type: 3}
+      objectReference: {fileID: 11400000, guid: 59651e393d9959442ac8fd02cbd419d8,
+        type: 2}
+    - target: {fileID: 1526793921035786629, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: audioFiles.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e4e4a375dd5ef443824b77d7c9fe1fd,
+        type: 2}
     - target: {fileID: 1526793921035786629, guid: dea36836d710461429084fc8bdc58ab2,
         type: 3}
       propertyPath: layerMaskToIgnore.m_Bits
@@ -13301,9 +13314,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1526793921035786629, guid: dea36836d710461429084fc8bdc58ab2,
         type: 3}
+      propertyPath: audioFiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: eff2c8707cb79c84689be821d35dec70,
+        type: 2}
+    - target: {fileID: 1526793921035786629, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
       propertyPath: audioFiles.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 752423e55afb1be47822d95a6389fee0, type: 3}
+      objectReference: {fileID: 11400000, guid: 59651e393d9959442ac8fd02cbd419d8,
+        type: 2}
+    - target: {fileID: 1526793921035786629, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: audioFiles.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e4e4a375dd5ef443824b77d7c9fe1fd,
+        type: 2}
     - target: {fileID: 1526793921035786629, guid: dea36836d710461429084fc8bdc58ab2,
         type: 3}
       propertyPath: layerMaskToIgnore.m_Bits
@@ -13854,6 +13880,12 @@ MonoBehaviour:
   previousWaypoint: {fileID: 934017412}
   nextWaypoint: {fileID: 0}
   width: 1
+--- !u!1 &376350211 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6322171662830321759, guid: 5b617754ca861b942af4c803dff7a927,
+    type: 3}
+  m_PrefabInstance: {fileID: 8325632402704101534}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &377318075
 GameObject:
   m_ObjectHideFlags: 0
@@ -17300,11 +17332,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: City audio
-      objectReference: {fileID: 0}
-    - target: {fileID: 3198323268636922327, guid: 7f2f3bd0577f4024f895fb036ed362f0,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f2f3bd0577f4024f895fb036ed362f0, type: 3}
@@ -21051,14 +21078,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1526793921035786629, guid: dea36836d710461429084fc8bdc58ab2,
         type: 3}
+      propertyPath: audioFiles.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1526793921035786629, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: audioFiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: eff2c8707cb79c84689be821d35dec70,
+        type: 2}
+    - target: {fileID: 1526793921035786629, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
       propertyPath: audioFiles.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 752423e55afb1be47822d95a6389fee0, type: 3}
+      objectReference: {fileID: 11400000, guid: 59651e393d9959442ac8fd02cbd419d8,
+        type: 2}
     - target: {fileID: 1526793921035786629, guid: dea36836d710461429084fc8bdc58ab2,
         type: 3}
       propertyPath: audioFiles.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: 06b051917f10edd43b9a001c8cd5e3fb, type: 3}
+      objectReference: {fileID: 11400000, guid: 6e4e4a375dd5ef443824b77d7c9fe1fd,
+        type: 2}
+    - target: {fileID: 1526793921035786629, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: audioFiles.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 12f2fa41116e4b845852ea479d874e7e,
+        type: 2}
     - target: {fileID: 1526793921035786629, guid: dea36836d710461429084fc8bdc58ab2,
         type: 3}
       propertyPath: layerMaskToIgnore.m_Bits
@@ -22430,6 +22476,12 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &670542646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5924825024426602171, guid: 5b617754ca861b942af4c803dff7a927,
+    type: 3}
+  m_PrefabInstance: {fileID: 8325632402704101534}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &672595488
 GameObject:
   m_ObjectHideFlags: 0
@@ -49550,6 +49602,12 @@ Transform:
   m_Father: {fileID: 559224095}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1418061757 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7250660898403951700, guid: dea36836d710461429084fc8bdc58ab2,
+    type: 3}
+  m_PrefabInstance: {fileID: 5111785728204276877}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1421126698
 GameObject:
   m_ObjectHideFlags: 0
@@ -49688,6 +49746,92 @@ Transform:
   m_Father: {fileID: 45619481}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: -46.570004, z: 0}
+--- !u!1 &1432427214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1432427215}
+  - component: {fileID: 1432427219}
+  - component: {fileID: 1432427218}
+  - component: {fileID: 1432427217}
+  - component: {fileID: 1432427216}
+  m_Layer: 0
+  m_Name: TeleportBlock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1432427215
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432427214}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1709453380}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1432427216
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432427214}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 2, z: 64}
+  m_Center: {x: -62, y: -1, z: 0}
+--- !u!65 &1432427217
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432427214}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 2, z: 64}
+  m_Center: {x: 62, y: -1, z: 0}
+--- !u!65 &1432427218
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432427214}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 60, y: 2, z: 30}
+  m_Center: {x: 0, y: -1, z: 64}
+--- !u!65 &1432427219
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432427214}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 60, y: 2, z: 30}
+  m_Center: {x: 0, y: -1, z: -64}
 --- !u!1 &1432968760
 GameObject:
   m_ObjectHideFlags: 0
@@ -56883,26 +57027,6 @@ Transform:
   m_Father: {fileID: 292858090}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 114.26301, z: 0}
---- !u!1 &1658759284 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8359592077586839382, guid: 49a312a9d812ed840bfdd7cb6254ea4c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1828005181}
-  m_PrefabAsset: {fileID: 0}
---- !u!136 &1658759285
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658759284}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.9398029
-  m_Direction: 1
-  m_Center: {x: -0.03, y: 0.9173157, z: 0.42000002}
 --- !u!1 &1659607120
 GameObject:
   m_ObjectHideFlags: 0
@@ -58712,6 +58836,7 @@ Transform:
   - {fileID: 1898806965}
   - {fileID: 1342889095}
   - {fileID: 485712582}
+  - {fileID: 1432427215}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -64421,21 +64546,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088190469774725864, guid: f091aeaa5ee524148a7f1df605b5cc66,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.010000011
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088190469774725864, guid: f091aeaa5ee524148a7f1df605b5cc66,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.009999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088190469774725864, guid: f091aeaa5ee524148a7f1df605b5cc66,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.009999999
       objectReference: {fileID: 0}
     - target: {fileID: 8088190469774725864, guid: f091aeaa5ee524148a7f1df605b5cc66,
         type: 3}
@@ -86195,9 +86305,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1526793921035786629, guid: dea36836d710461429084fc8bdc58ab2,
         type: 3}
+      propertyPath: audioFiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: eff2c8707cb79c84689be821d35dec70,
+        type: 2}
+    - target: {fileID: 1526793921035786629, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
       propertyPath: audioFiles.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 752423e55afb1be47822d95a6389fee0, type: 3}
+      objectReference: {fileID: 11400000, guid: 59651e393d9959442ac8fd02cbd419d8,
+        type: 2}
+    - target: {fileID: 1526793921035786629, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: audioFiles.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e4e4a375dd5ef443824b77d7c9fe1fd,
+        type: 2}
     - target: {fileID: 1526793921035786629, guid: dea36836d710461429084fc8bdc58ab2,
         type: 3}
       propertyPath: layerMaskToIgnore.m_Bits
@@ -86547,6 +86670,1366 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].bones.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].bones.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].bones.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].weights.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[1].weights.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].weights.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[3].weights.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].weights.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].weights.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].weights.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].weights.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].weights.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].weights.Array.data[1]
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].weights.Array.data[2]
+      value: 58.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].weights.Array.data[3]
+      value: 23.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].weights.Array.data[4]
+      value: 18.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].weights.Array.data[5]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[1].weights.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[1].weights.Array.data[1]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[1].weights.Array.data[2]
+      value: 19.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[1].weights.Array.data[3]
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[1].weights.Array.data[4]
+      value: 9.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].weights.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].weights.Array.data[1]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].weights.Array.data[2]
+      value: 13.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].weights.Array.data[3]
+      value: 13.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].weights.Array.data[4]
+      value: 29.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].weights.Array.data[5]
+      value: 30.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[3].weights.Array.data[0]
+      value: 70.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[3].weights.Array.data[1]
+      value: 47.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[3].weights.Array.data[2]
+      value: 46.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].weights.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].weights.Array.data[0]
+      value: 71.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].weights.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].weights.Array.data[0]
+      value: 55.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].weights.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].weights.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].weights.Array.data[1]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[8].weights.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].blendShapes.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[1].blendShapes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].blendShapes.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[3].blendShapes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].blendShapes.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].blendShapes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].blendShapes.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].blendShapes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].bones.Array.data[0].bone
+      value: 
+      objectReference: {fileID: 1418061757}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].bones.Array.data[0].bone
+      value: 
+      objectReference: {fileID: 1418061757}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].blendShapes.Array.data[0]
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].blendShapes.Array.data[1]
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].blendShapes.Array.data[2]
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].blendShapes.Array.data[3]
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].blendShapes.Array.data[4]
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].blendShapes.Array.data[5]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].blendableNames.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[1].blendShapes.Array.data[0]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[1].blendShapes.Array.data[1]
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[1].blendShapes.Array.data[2]
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[1].blendShapes.Array.data[3]
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[1].blendShapes.Array.data[4]
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[1].blendableNames.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].blendShapes.Array.data[0]
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].blendShapes.Array.data[1]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].blendShapes.Array.data[2]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].blendShapes.Array.data[3]
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].blendShapes.Array.data[4]
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].blendShapes.Array.data[5]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].blendableNames.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[3].blendShapes.Array.data[0]
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[3].blendShapes.Array.data[1]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[3].blendShapes.Array.data[2]
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[3].blendableNames.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].blendableNames.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].blendShapes.Array.data[0]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].blendShapes.Array.data[0]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].blendableNames.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].blendShapes.Array.data[0]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].blendableNames.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].blendShapes.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].blendShapes.Array.data[1]
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].blendableNames.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].blendableNames.Array.data[0]
+      value: Mouth_Smile (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].blendableNames.Array.data[1]
+      value: Eye_Squint_L (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].blendableNames.Array.data[2]
+      value: Eye_Squint_R (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].blendableNames.Array.data[3]
+      value: Mouth_Smile_L (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].blendableNames.Array.data[4]
+      value: Mouth_Smile_R (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[0].blendableNames.Array.data[5]
+      value: Lip_Open (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[1].blendableNames.Array.data[0]
+      value: Brow_Drop_L (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[1].blendableNames.Array.data[1]
+      value: Brow_Drop_R (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[1].blendableNames.Array.data[2]
+      value: Eye_Squint_L (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[1].blendableNames.Array.data[3]
+      value: Eye_Squint_R (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[1].blendableNames.Array.data[4]
+      value: Mouth_Frown (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].blendableNames.Array.data[0]
+      value: Brow_Raise_L (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].blendableNames.Array.data[1]
+      value: Brow_Raise_R (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].blendableNames.Array.data[2]
+      value: Brow_Raise_Outer_L (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].blendableNames.Array.data[3]
+      value: Brow_Raise_Outer_R (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].blendableNames.Array.data[4]
+      value: Eye_Wide_L (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[2].blendableNames.Array.data[5]
+      value: Eye_Wide_R (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[3].blendableNames.Array.data[0]
+      value: Mouth_Frown (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[3].blendableNames.Array.data[1]
+      value: Brow_Raise_Inner_L (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: emotions.Array.data[3].blendableNames.Array.data[2]
+      value: Brow_Raise_Inner_R (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].blendableNames.Array.data[0]
+      value: Wide (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].blendableNames.Array.data[0]
+      value: Affricate (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].blendableNames.Array.data[0]
+      value: Tight-O (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].blendableNames.Array.data[0]
+      value: Lip_Open (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].blendableNames.Array.data[0]
+      value: Dental_Lip (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].blendableNames.Array.data[0]
+      value: Explosive (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].blendableNames.Array.data[1]
+      value: Mouth_Pucker (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[8].blendableNames.Array.data[0]
+      value: Tight (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].bones.Array.data[0].endScale.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].bones.Array.data[0].endScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].bones.Array.data[0].endScale.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].bones.Array.data[0].endScale.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].bones.Array.data[0].endScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].bones.Array.data[0].endScale.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].bones.Array.data[0].endScale.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].bones.Array.data[0].endScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].bones.Array.data[0].endScale.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].bones.Array.data[0].endScale.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].bones.Array.data[0].endScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].bones.Array.data[0].endScale.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].bones.Array.data[0].endScale.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].bones.Array.data[0].endScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].bones.Array.data[0].endScale.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].bones.Array.data[0].endScale.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].bones.Array.data[0].endScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].bones.Array.data[0].endScale.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].bones.Array.data[0].endScale.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].bones.Array.data[0].endScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].bones.Array.data[0].endScale.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].bones.Array.data[0].endScale.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].bones.Array.data[0].endScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].bones.Array.data[0].endScale.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[8].bones.Array.data[0].endScale.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[8].bones.Array.data[0].endScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[8].bones.Array.data[0].endScale.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].bones.Array.data[0].endPosition.x
+      value: -0.013049318
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].bones.Array.data[0].endPosition.y
+      value: 0.0276178
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].bones.Array.data[0].endPosition.z
+      value: 0.0000029720115
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].bones.Array.data[0].endRotation.x
+      value: 359.9986
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].bones.Array.data[0].endRotation.y
+      value: 0.008203589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].bones.Array.data[0].endRotation.z
+      value: 621.28076
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].bones.Array.data[0].endPosition.x
+      value: -0.015306113
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].bones.Array.data[0].endPosition.y
+      value: 0.025709169
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].bones.Array.data[0].endPosition.z
+      value: 0.0000013523033
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].bones.Array.data[0].endRotation.x
+      value: -0.0013364762
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].bones.Array.data[0].endRotation.y
+      value: 0.008203589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].bones.Array.data[0].endRotation.z
+      value: 624.879
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].bones.Array.data[0].endPosition.x
+      value: -0.010868222
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].bones.Array.data[0].endPosition.y
+      value: 0.025459103
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].bones.Array.data[0].endPosition.z
+      value: 0.0000052816913
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].bones.Array.data[0].endRotation.x
+      value: -0.0013669938
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].bones.Array.data[0].endRotation.y
+      value: 0.008203589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].bones.Array.data[0].endRotation.z
+      value: 626.77814
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].bones.Array.data[0].endPosition.x
+      value: -0.011076304
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].bones.Array.data[0].endPosition.y
+      value: 0.027401732
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].bones.Array.data[0].endPosition.z
+      value: 0.000004741524
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].bones.Array.data[0].endRotation.x
+      value: -0.0013669938
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].bones.Array.data[0].endRotation.y
+      value: 0.008203589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].bones.Array.data[0].endRotation.z
+      value: 622.7888
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].bones.Array.data[0].endPosition.x
+      value: -0.015306113
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].bones.Array.data[0].endPosition.y
+      value: 0.025709169
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].bones.Array.data[0].endPosition.z
+      value: 0.0000013523033
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].bones.Array.data[0].endRotation.x
+      value: -0.0013669938
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].bones.Array.data[0].endRotation.y
+      value: 0.008203589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].bones.Array.data[0].endRotation.z
+      value: 270.00226
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].bones.Array.data[0].endPosition.x
+      value: -0.015306113
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].bones.Array.data[0].endPosition.y
+      value: 0.025709169
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].bones.Array.data[0].endPosition.z
+      value: 0.0000013523033
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].bones.Array.data[0].endRotation.x
+      value: -0.0013669938
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].bones.Array.data[0].endRotation.y
+      value: 0.008203589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].bones.Array.data[0].endRotation.z
+      value: 270.00226
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].bones.Array.data[0].endPosition.x
+      value: -0.014692698
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].bones.Array.data[0].endPosition.y
+      value: 0.024393499
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].bones.Array.data[0].endPosition.z
+      value: 0.0000021263706
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].bones.Array.data[0].endRotation.x
+      value: 359.9986
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].bones.Array.data[0].endRotation.y
+      value: 0.008203589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].bones.Array.data[0].endRotation.z
+      value: 627.9695
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].bones.Array.data[0].endPosition.x
+      value: -0.014787859
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].bones.Array.data[0].endPosition.y
+      value: 0.027780784
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].bones.Array.data[0].endPosition.z
+      value: 0.0000014148402
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].bones.Array.data[0].endRotation.x
+      value: -0.0013669938
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].bones.Array.data[0].endRotation.y
+      value: 0.008203589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].bones.Array.data[0].endRotation.z
+      value: 270.00226
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[8].bones.Array.data[0].endPosition.x
+      value: -0.015306113
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[8].bones.Array.data[0].endPosition.y
+      value: 0.025709169
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[8].bones.Array.data[0].endPosition.z
+      value: 0.0000013523033
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[8].bones.Array.data[0].endRotation.x
+      value: -0.0013669938
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[8].bones.Array.data[0].endRotation.y
+      value: 0.008203589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[8].bones.Array.data[0].endRotation.z
+      value: 270.00226
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].bones.Array.data[0].neutralScale.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].bones.Array.data[0].neutralScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].bones.Array.data[0].neutralScale.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].bones.Array.data[0].neutralScale.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].bones.Array.data[0].neutralScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].bones.Array.data[0].neutralScale.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].bones.Array.data[0].neutralScale.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].bones.Array.data[0].neutralScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].bones.Array.data[0].neutralScale.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].bones.Array.data[0].neutralScale.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].bones.Array.data[0].neutralScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].bones.Array.data[0].neutralScale.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].bones.Array.data[0].neutralScale.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].bones.Array.data[0].neutralScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].bones.Array.data[0].neutralScale.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].bones.Array.data[0].neutralScale.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].bones.Array.data[0].neutralScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].bones.Array.data[0].neutralScale.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].bones.Array.data[0].neutralScale.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].bones.Array.data[0].neutralScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].bones.Array.data[0].neutralScale.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].bones.Array.data[0].neutralScale.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].bones.Array.data[0].neutralScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].bones.Array.data[0].neutralScale.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[8].bones.Array.data[0].neutralScale.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[8].bones.Array.data[0].neutralScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[8].bones.Array.data[0].neutralScale.z
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].bones.Array.data[0].neutralPosition.x
+      value: -0.015306113
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].bones.Array.data[0].neutralPosition.y
+      value: 0.025709169
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].bones.Array.data[0].neutralPosition.z
+      value: 0.0000013523033
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].bones.Array.data[0].neutralRotation.x
+      value: -0.0013669938
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].bones.Array.data[0].neutralRotation.y
+      value: 0.008203589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[0].bones.Array.data[0].neutralRotation.z
+      value: 270.00226
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].bones.Array.data[0].neutralPosition.x
+      value: -0.015306113
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].bones.Array.data[0].neutralPosition.y
+      value: 0.025709169
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].bones.Array.data[0].neutralPosition.z
+      value: 0.0000013523033
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].bones.Array.data[0].neutralRotation.x
+      value: -0.0013669938
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].bones.Array.data[0].neutralRotation.y
+      value: 0.008203589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[1].bones.Array.data[0].neutralRotation.z
+      value: 270.00226
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].bones.Array.data[0].neutralPosition.x
+      value: -0.015306113
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].bones.Array.data[0].neutralPosition.y
+      value: 0.025709169
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].bones.Array.data[0].neutralPosition.z
+      value: 0.0000013523033
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].bones.Array.data[0].neutralRotation.x
+      value: -0.0013669938
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].bones.Array.data[0].neutralRotation.y
+      value: 0.008203589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[2].bones.Array.data[0].neutralRotation.z
+      value: 270.00226
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].bones.Array.data[0].neutralPosition.x
+      value: -0.015306113
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].bones.Array.data[0].neutralPosition.y
+      value: 0.025709169
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].bones.Array.data[0].neutralPosition.z
+      value: 0.0000013523033
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].bones.Array.data[0].neutralRotation.x
+      value: -0.0013669938
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].bones.Array.data[0].neutralRotation.y
+      value: 0.008203589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[3].bones.Array.data[0].neutralRotation.z
+      value: 270.00226
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].bones.Array.data[0].neutralPosition.x
+      value: -0.015306113
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].bones.Array.data[0].neutralPosition.y
+      value: 0.025709169
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].bones.Array.data[0].neutralPosition.z
+      value: 0.0000013523033
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].bones.Array.data[0].neutralRotation.x
+      value: -0.0013669938
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].bones.Array.data[0].neutralRotation.y
+      value: 0.008203589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[4].bones.Array.data[0].neutralRotation.z
+      value: 270.00226
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].bones.Array.data[0].neutralPosition.x
+      value: -0.015306113
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].bones.Array.data[0].neutralPosition.y
+      value: 0.025709169
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].bones.Array.data[0].neutralPosition.z
+      value: 0.0000013523033
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].bones.Array.data[0].neutralRotation.x
+      value: -0.0013669938
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].bones.Array.data[0].neutralRotation.y
+      value: 0.008203589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[5].bones.Array.data[0].neutralRotation.z
+      value: 270.00226
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].bones.Array.data[0].neutralPosition.x
+      value: -0.015306113
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].bones.Array.data[0].neutralPosition.y
+      value: 0.025709169
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].bones.Array.data[0].neutralPosition.z
+      value: 0.0000013523033
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].bones.Array.data[0].neutralRotation.x
+      value: -0.0013669938
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].bones.Array.data[0].neutralRotation.y
+      value: 0.008203589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[6].bones.Array.data[0].neutralRotation.z
+      value: 270.00226
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].bones.Array.data[0].neutralPosition.x
+      value: -0.015306113
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].bones.Array.data[0].neutralPosition.y
+      value: 0.025709169
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].bones.Array.data[0].neutralPosition.z
+      value: 0.0000013523033
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].bones.Array.data[0].neutralRotation.x
+      value: -0.0013669938
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].bones.Array.data[0].neutralRotation.y
+      value: 0.008203589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[7].bones.Array.data[0].neutralRotation.z
+      value: 270.00226
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[8].bones.Array.data[0].neutralPosition.x
+      value: -0.015306113
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[8].bones.Array.data[0].neutralPosition.y
+      value: 0.025709169
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[8].bones.Array.data[0].neutralPosition.z
+      value: 0.0000013523033
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[8].bones.Array.data[0].neutralRotation.x
+      value: -0.0013669938
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[8].bones.Array.data[0].neutralRotation.y
+      value: 0.008203589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232855685452419718, guid: dea36836d710461429084fc8bdc58ab2,
+        type: 3}
+      propertyPath: phonemes.Array.data[8].bones.Array.data[0].neutralRotation.z
+      value: 270.00226
       objectReference: {fileID: 0}
     - target: {fileID: 7305697997154407031, guid: dea36836d710461429084fc8bdc58ab2,
         type: 3}
@@ -98669,7 +100152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6221114490915001012}
   m_LocalRotation: {x: 1, y: 0.000010463864, z: 0.00003419824, w: 0.000010785445}
-  m_LocalPosition: {x: -0.0018682599, y: -0.006586244, z: 0.000006791402}
+  m_LocalPosition: {x: -0.0019, y: -0.013, z: 0}
   m_LocalScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
   m_Children: []
   m_Father: {fileID: 5124521152419373996}
@@ -105747,9 +107230,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioFiles:
-  - {fileID: 8300000, guid: 70e292a0b97f8754f92540095f26fab5, type: 3}
-  - {fileID: 8300000, guid: 91ed91066b053a949810241a1877ed50, type: 3}
-  - {fileID: 8300000, guid: 92ca2c3522f565f4c9acace8f1aba8a0, type: 3}
+  - {fileID: 11400000, guid: edc16b0ed6f31174093a319bc1b09f2e, type: 2}
+  - {fileID: 11400000, guid: c7d18fc407013b2449a4b3311cf3a9ce, type: 2}
+  - {fileID: 11400000, guid: 980b1b44a7aea24499b8f87bcfd6a5af, type: 2}
   NPC: {fileID: 7147150196123464193}
   teleportPoint: {fileID: 1011454835}
   firstCrossing: {fileID: 5111785728204276879}
@@ -105770,17 +107253,13 @@ MonoBehaviour:
   useBones: 1
   boneUpdateAnimation: 0
   phonemes:
-  - blendShapes: 0500000007000000
-    blendableNames:
-    - Open (0)
-    - Explosive (1)
-    weights:
-    - 54
-    - 82.3
+  - blendShapes: 
+    blendableNames: []
+    weights: []
     bones:
     - bone: {fileID: 7192250233297667285}
-      endPosition: {x: -0.011355301, y: 0.025709502, z: 0.00000063888734}
-      endRotation: {x: -0.0013532217, y: 0.008206065, z: 267.6534}
+      endPosition: {x: -0.013049318, y: 0.0276178, z: 0.0000029720115}
+      endRotation: {x: -0.0014106617, y: 0.008203589, z: 261.2808}
       endScale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
       lockPosition: 0
       lockRotation: 0
@@ -105791,15 +107270,15 @@ MonoBehaviour:
     verified: 1
     phonemeName: AI
     phoneme: 0
-  - blendShapes: 07000000
+  - blendShapes: 05000000
     blendableNames:
-    - Open (0)
+    - Wide (5)
     weights:
-    - 45.2
+    - 100
     bones:
     - bone: {fileID: 7192250233297667285}
       endPosition: {x: -0.015306113, y: 0.025709169, z: 0.0000013523033}
-      endRotation: {x: -0.0013449579, y: 0.008207092, z: 266.2971}
+      endRotation: {x: -0.0013364762, y: 0.008203589, z: 264.87903}
       endScale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
       lockPosition: 0
       lockRotation: 0
@@ -105810,17 +107289,15 @@ MonoBehaviour:
     verified: 1
     phonemeName: E
     phoneme: 0
-  - blendShapes: 0400000007000000
+  - blendShapes: 06000000
     blendableNames:
-    - Open (0)
-    - Explosive (1)
+    - Affricate (6)
     weights:
-    - 77.5
-    - 51.4
+    - 71.6
     bones:
     - bone: {fileID: 7192250233297667285}
-      endPosition: {x: -0.015306113, y: 0.025709169, z: 0.0000013523033}
-      endRotation: {x: -0.001345486, y: 0.008202737, z: 262.6}
+      endPosition: {x: -0.010868222, y: 0.025459103, z: 0.0000052816913}
+      endRotation: {x: -0.0013669938, y: 0.008203589, z: 266.77817}
       endScale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
       lockPosition: 0
       lockRotation: 0
@@ -105833,13 +107310,13 @@ MonoBehaviour:
     phoneme: 0
   - blendShapes: 03000000
     blendableNames:
-    - Open (0)
+    - Tight-O (3)
     weights:
-    - 59.9
+    - 100
     bones:
     - bone: {fileID: 7192250233297667285}
-      endPosition: {x: -0.015306113, y: 0.025709169, z: 0.0000013523033}
-      endRotation: {x: -0.0013669948, y: 0.008203592, z: 261.14}
+      endPosition: {x: -0.011076304, y: 0.027401732, z: 0.000004741524}
+      endRotation: {x: -0.0013669933, y: 0.008203589, z: 262.78882}
       endScale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
       lockPosition: 0
       lockRotation: 0
@@ -105850,15 +107327,15 @@ MonoBehaviour:
     verified: 1
     phonemeName: O
     phoneme: 0
-  - blendShapes: 05000000
+  - blendShapes: 07000000
     blendableNames:
-    - Open (0)
+    - Lip_Open (7)
     weights:
-    - 74.8
+    - 55.2
     bones:
     - bone: {fileID: 7192250233297667285}
       endPosition: {x: -0.015306113, y: 0.025709169, z: 0.0000013523033}
-      endRotation: {x: -0.0013751142, y: 0.008202744, z: 268.0946}
+      endRotation: {x: -0.0013669938, y: 0.008203589, z: 270.00226}
       endScale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
       lockPosition: 0
       lockRotation: 0
@@ -105871,24 +107348,13 @@ MonoBehaviour:
     phoneme: 0
   - blendShapes: 02000000
     blendableNames:
-    - Explosive (1)
+    - Dental_Lip (2)
     weights:
-    - 90
-    bones: []
-    verified: 1
-    phonemeName: FV
-    phoneme: 0
-  - blendShapes: 0200000007000000
-    blendableNames:
-    - Open (0)
-    - Explosive (1)
-    weights:
-    - 36
-    - 70.6
+    - 100
     bones:
     - bone: {fileID: 7192250233297667285}
       endPosition: {x: -0.015306113, y: 0.025709169, z: 0.0000013523033}
-      endRotation: {x: -0.0013452434, y: 0.008205406, z: 265.8263}
+      endRotation: {x: -0.0013669938, y: 0.008203589, z: 270.00226}
       endScale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
       lockPosition: 0
       lockRotation: 0
@@ -105896,38 +107362,37 @@ MonoBehaviour:
       neutralPosition: {x: -0.015306113, y: 0.025709169, z: 0.0000013523033}
       neutralRotation: {x: -0.0013669938, y: 0.008203589, z: 270.00226}
       neutralScale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
-    - bone: {fileID: 8213515176161869673}
-      endPosition: {x: -0.031310808, y: 0.0112787355, z: 0.0000012540183}
-      endRotation: {x: 0.0002418971, y: 0.0025560267, z: 25.22789}
-      endScale: {x: 1.0000002, y: 1.0000005, z: 1.0000002}
+    verified: 1
+    phonemeName: FV
+    phoneme: 0
+  - blendShapes: 
+    blendableNames: []
+    weights: []
+    bones:
+    - bone: {fileID: 7192250233297667285}
+      endPosition: {x: -0.014692698, y: 0.024393499, z: 0.0000021263706}
+      endRotation: {x: -0.001410661, y: 0.008203589, z: 267.9695}
+      endScale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
       lockPosition: 0
       lockRotation: 0
       lockScale: 0
-      neutralPosition: {x: -0.031310808, y: 0.0112787355, z: 0.0000012540183}
-      neutralRotation: {x: 0.0002326059, y: 0.002558557, z: 5.1988187}
-      neutralScale: {x: 1.0000002, y: 1.0000005, z: 1.0000002}
-    - bone: {fileID: 4050277559976853820}
-      endPosition: {x: -0.011534112, y: -0.0000027298927, z: -1.9164872e-10}
-      endRotation: {x: 0.0005068328, y: -0.0004639981, z: 46.017277}
-      endScale: {x: 0.99999976, y: 0.9999997, z: 0.9999998}
-      lockPosition: 0
-      lockRotation: 0
-      lockScale: 0
-      neutralPosition: {x: -0.011534112, y: -0.0000027298927, z: -1.9164872e-10}
-      neutralRotation: {x: 0.0005291745, y: -0.00044873325, z: 352.32974}
-      neutralScale: {x: 0.99999976, y: 0.9999997, z: 0.9999998}
+      neutralPosition: {x: -0.015306113, y: 0.025709169, z: 0.0000013523033}
+      neutralRotation: {x: -0.0013669938, y: 0.008203589, z: 270.00226}
+      neutralScale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
     verified: 1
     phonemeName: L
     phoneme: 0
-  - blendShapes: 05000000
+  - blendShapes: 0100000028000000
     blendableNames:
-    - Open (0)
+    - Explosive (1)
+    - Mouth_Pucker (40)
     weights:
-    - 43.2
+    - 100
+    - 10
     bones:
     - bone: {fileID: 7192250233297667285}
-      endPosition: {x: -0.015306113, y: 0.025709169, z: 0.0000013523033}
-      endRotation: {x: -0.0013508307, y: 0.008209639, z: 275.54633}
+      endPosition: {x: -0.014787859, y: 0.027780784, z: 0.0000014148402}
+      endRotation: {x: -0.0013669938, y: 0.008203589, z: 270.00226}
       endScale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
       lockPosition: 0
       lockRotation: 0
@@ -105940,13 +107405,13 @@ MonoBehaviour:
     phoneme: 0
   - blendShapes: 04000000
     blendableNames:
-    - Open (0)
+    - Tight (4)
     weights:
-    - 63
+    - 100
     bones:
     - bone: {fileID: 7192250233297667285}
       endPosition: {x: -0.015306113, y: 0.025709169, z: 0.0000013523033}
-      endRotation: {x: -0.0013668675, y: 0.008208722, z: 266.2959}
+      endRotation: {x: -0.0013669938, y: 0.008203589, z: 270.00226}
       endScale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
       lockPosition: 0
       lockRotation: 0
@@ -105965,39 +107430,79 @@ MonoBehaviour:
     phonemeName: Rest
     phoneme: 0
   emotions:
-  - blendShapes: 
-    blendableNames: []
-    weights: []
+  - blendShapes: 210000001500000016000000220000002300000007000000
+    blendableNames:
+    - Mouth_Smile (33)
+    - Eye_Squint_L (21)
+    - Eye_Squint_R (22)
+    - Mouth_Smile_L (34)
+    - Mouth_Smile_R (35)
+    - Lip_Open (7)
+    weights:
+    - 100
+    - 60
+    - 58.1
+    - 23.4
+    - 18.1
+    - 100
     bones: []
     verified: 1
     emotion: Happy
-  - blendShapes: 
-    blendableNames: []
-    weights: []
+  - blendShapes: 0c0000000d000000150000001600000024000000
+    blendableNames:
+    - Brow_Drop_L (12)
+    - Brow_Drop_R (13)
+    - Eye_Squint_L (21)
+    - Eye_Squint_R (22)
+    - Mouth_Frown (36)
+    weights:
+    - 100
+    - 100
+    - 19.7
+    - 17
+    - 9.8
     bones: []
     verified: 1
     emotion: Serious
-  - blendShapes: 
-    blendableNames: []
-    weights: []
+  - blendShapes: 0e0000000f0000000a0000000b0000001300000014000000
+    blendableNames:
+    - Brow_Raise_L (14)
+    - Brow_Raise_R (15)
+    - Brow_Raise_Outer_L (10)
+    - Brow_Raise_Outer_R (11)
+    - Eye_Wide_L (19)
+    - Eye_Wide_R (20)
+    weights:
+    - 100
+    - 100
+    - 13.5
+    - 13.5
+    - 29.5
+    - 30.3
     bones: []
     verified: 1
     emotion: Eyebrows Up
-  - blendShapes: 
-    blendableNames: []
-    weights: []
+  - blendShapes: 240000000800000009000000
+    blendableNames:
+    - Mouth_Frown (36)
+    - Brow_Raise_Inner_L (8)
+    - Brow_Raise_Inner_R (9)
+    weights:
+    - 70.8
+    - 47.9
+    - 46.9
     bones: []
     verified: 1
     emotion: Sad
   playOnAwake: 0
-  loop: 0
-  defaultClip: {fileID: 11400000, guid: c003f5c3254331749915c80d6b3fdab4, type: 2}
+  loop: 1
+  defaultClip: {fileID: 11400000, guid: edc16b0ed6f31174093a319bc1b09f2e, type: 2}
   defaultDelay: 0
   scaleAudioSpeed: 1
   m_animationTimingMode: 0
   frameRate: 30
   restTime: 0.2
-  restHoldTime: 0.4
+  restHoldTime: 0.2
   phonemeCurveGenerationMode: 1
   emotionCurveGenerationMode: 0
   keepEmotionWhenFinished: 0
@@ -112809,21 +114314,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1766236966516320629, guid: 5b617754ca861b942af4c803dff7a927,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3013138946064676074, guid: 5b617754ca861b942af4c803dff7a927,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4186504207141104963, guid: 5b617754ca861b942af4c803dff7a927,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5924825024022257126, guid: 5b617754ca861b942af4c803dff7a927,
         type: 3}
       propertyPath: m_RootOrder
@@ -112884,31 +114374,111 @@ PrefabInstance:
       propertyPath: m_Name
       value: VR Rig
       objectReference: {fileID: 0}
-    - target: {fileID: 8302078379119447557, guid: 5b617754ca861b942af4c803dff7a927,
+    - target: {fileID: 6269190323093031730, guid: 5b617754ca861b942af4c803dff7a927,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269190323093031730, guid: 5b617754ca861b942af4c803dff7a927,
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1021261514}
-    - target: {fileID: 8302078379515248329, guid: 5b617754ca861b942af4c803dff7a927,
+    - target: {fileID: 6269190323093031730, guid: 5b617754ca861b942af4c803dff7a927,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnableCars
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269190323302131426, guid: 5b617754ca861b942af4c803dff7a927,
         type: 3}
       propertyPath: onButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1021261514}
-    - target: {fileID: 8302078379914365322, guid: 5b617754ca861b942af4c803dff7a927,
+    - target: {fileID: 6269190323440095649, guid: 5b617754ca861b942af4c803dff7a927,
         type: 3}
       propertyPath: onButtonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1021261514}
-    - target: {fileID: 8302078380255171353, guid: 5b617754ca861b942af4c803dff7a927,
+    - target: {fileID: 6269190323693688361, guid: 5b617754ca861b942af4c803dff7a927,
+        type: 3}
+      propertyPath: onButtonPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269190323693688361, guid: 5b617754ca861b942af4c803dff7a927,
+        type: 3}
+      propertyPath: onButtonPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269190323693688361, guid: 5b617754ca861b942af4c803dff7a927,
+        type: 3}
+      propertyPath: onButtonPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1021261514}
+    - target: {fileID: 6269190323693688361, guid: 5b617754ca861b942af4c803dff7a927,
+        type: 3}
+      propertyPath: onButtonPressed.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269190323693688361, guid: 5b617754ca861b942af4c803dff7a927,
+        type: 3}
+      propertyPath: onButtonPressed.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EnableNPCs
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269190323693688361, guid: 5b617754ca861b942af4c803dff7a927,
+        type: 3}
+      propertyPath: onButtonPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269190323693688361, guid: 5b617754ca861b942af4c803dff7a927,
+        type: 3}
+      propertyPath: onButtonPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269190323693688366, guid: 5b617754ca861b942af4c803dff7a927,
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1021261514}
-    - target: {fileID: 8325632403246947930, guid: 5b617754ca861b942af4c803dff7a927,
+    - target: {fileID: 6269190323693688366, guid: 5b617754ca861b942af4c803dff7a927,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnableNPCs
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322171663363180144, guid: 5b617754ca861b942af4c803dff7a927,
+        type: 3}
+      propertyPath: m_Value
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322171663363180144, guid: 5b617754ca861b942af4c803dff7a927,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322171663363180144, guid: 5b617754ca861b942af4c803dff7a927,
+        type: 3}
+      propertyPath: m_MinValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322171663363180145, guid: 5b617754ca861b942af4c803dff7a927,
+        type: 3}
+      propertyPath: rightHand
+      value: 
+      objectReference: {fileID: 670542646}
+    - target: {fileID: 6322171663363180145, guid: 5b617754ca861b942af4c803dff7a927,
+        type: 3}
+      propertyPath: onSliderReleased.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322171663363180145, guid: 5b617754ca861b942af4c803dff7a927,
         type: 3}
       propertyPath: onSliderReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1021261514}
+      objectReference: {fileID: 376350211}
+    - target: {fileID: 6322171663363180145, guid: 5b617754ca861b942af4c803dff7a927,
+        type: 3}
+      propertyPath: onSliderReleased.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b617754ca861b942af4c803dff7a927, type: 3}
 --- !u!33 &8389322250368670958
@@ -117779,8 +119349,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9168235787629778376}
-  m_LocalRotation: {x: -0, y: 0.00041871797, z: -0, w: 0.99999994}
-  m_LocalPosition: {x: 0.70350885, y: -2.348, z: 25.599358}
+  m_LocalRotation: {x: -0, y: 0.00022047183, z: -0, w: 1}
+  m_LocalPosition: {x: 0.734, y: -1.617, z: 25.521}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9168235787301566146}

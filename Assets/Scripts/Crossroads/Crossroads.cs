@@ -11,7 +11,7 @@ public class Crossroads : MonoBehaviour
 
     public LayerMask layerMaskToIgnore;
 
-    public AudioClip[] audioFiles;
+    public LipSyncData[] audioFiles;
     public GameObject[] lookZones;
     public GameObject nextHenk;
     public bool finishExercise = false;
@@ -43,7 +43,7 @@ public class Crossroads : MonoBehaviour
         }
     }
 
-    private IEnumerator UpdateProgress(AudioClip clip, CrossroadProgress crossroadProgress, float delay = 0, string animationTrigger = "None")
+    private IEnumerator UpdateProgress(LipSyncData clip, CrossroadProgress crossroadProgress, float delay = 0, string animationTrigger = "None")
     {
         Debug.Log("Previous progress: " + progress);
         yield return new WaitForSeconds(delay);
@@ -51,8 +51,8 @@ public class Crossroads : MonoBehaviour
         if (animationTrigger != "None")
             animator.SetTrigger(animationTrigger);
 
-        character.Play(character.defaultClip, 0);
-        character.audioSource.clip = clip;
+        character.Play(clip, 0);
+        character.audioSource.clip = clip.clip;
         character.audioSource.Play();
 
         yield return new WaitForSeconds(clip.length);

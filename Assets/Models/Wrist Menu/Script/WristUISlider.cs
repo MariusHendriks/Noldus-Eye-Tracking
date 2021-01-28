@@ -49,7 +49,6 @@ public class WristUISlider : WristUIElement
         if(indexTransform != null)
         {
             float d = startPoint.InverseTransformPoint(indexTransform.position).x - startPoint.InverseTransformPoint(startPoint.position).x;
-            Debug.Log("distance: " + d);
             float value = d * (2f/300f) * slider.maxValue - (d * (2f / 300f) - 1) * slider.minValue;
             slider.value = value;
         }
@@ -59,7 +58,6 @@ public class WristUISlider : WristUIElement
     {
         yield return new WaitForFixedUpdate();
         onSliderReleased.Invoke(float.Parse(transform.parent.GetChild(2).GetComponent<Text>().text));
-        Debug.Log("Send current value of slider");
     }
 
     private float lastSound;

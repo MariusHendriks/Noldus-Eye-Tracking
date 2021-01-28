@@ -2451,7 +2451,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4911756488839759125}
   m_LocalRotation: {x: 1, y: 0.000010463864, z: 0.00003419824, w: 0.000010785445}
-  m_LocalPosition: {x: -0.0018682599, y: -0.006586244, z: 0.000006791402}
+  m_LocalPosition: {x: -0.0019, y: -0.013, z: 0}
   m_LocalScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
   m_Children: []
   m_Father: {fileID: 6152536106293998605}
@@ -4319,6 +4319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78af285209ef8f84490024776e8d64aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crossing: {fileID: 0}
   pointsParent: {fileID: 0}
   points: []
   distanceToPoint: 0.2

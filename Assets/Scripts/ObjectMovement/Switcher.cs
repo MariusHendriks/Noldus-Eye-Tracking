@@ -33,9 +33,11 @@ public class Switcher : MonoBehaviour
             if(isChaotic)
             {
                 gameObject.GetComponent<ChaoticVerticalSpawner>().Stop();
+                gameObject.GetComponent<VerticalMovementSpawner>().Stop();
             }
             else
             {
+                gameObject.GetComponent<ChaoticVerticalSpawner>().Stop();
                 gameObject.GetComponent<VerticalMovementSpawner>().Stop();
             }
         }

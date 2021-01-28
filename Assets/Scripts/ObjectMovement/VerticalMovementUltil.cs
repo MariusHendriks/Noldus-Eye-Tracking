@@ -46,6 +46,7 @@ public static class VerticalMovementUltil
         material.SetFloat("_Metallic", 0.5f);
         material.SetFloat("_Glossiness", 0.5f);
         obj.AddComponent<VerticalMovementAdjuster>();
+        obj.AddComponent<ObjectHighlighter>();
         return obj;
     }
 

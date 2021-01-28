@@ -156,6 +156,7 @@ public class Manager : MonoBehaviour
         while (true)
         {
             yield return new WaitUntil(() => SpeedMultiplier!=previousSpeedMultiplier);
+            previousSpeedMultiplier = SpeedMultiplier;
             ChangeSpeed(SpeedMultiplier);
         }
     }
@@ -165,6 +166,7 @@ public class Manager : MonoBehaviour
         while (true)
         {
             yield return new WaitUntil(() => AmplitudeMultiplier != previousAmplitudeMultiplier);
+            previousAmplitudeMultiplier = AmplitudeMultiplier;
             ChangeAmplitude(AmplitudeMultiplier);
         }
     }

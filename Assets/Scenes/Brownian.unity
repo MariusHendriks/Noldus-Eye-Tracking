@@ -191,7 +191,7 @@ PrefabInstance:
     - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
         type: 3}
       propertyPath: Amplitude.y
-      value: 5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7050026797750305124, guid: c81ff9f841d53b042bc71c41e9dfd9a2,
         type: 3}
@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotation: 1
-  start: 0
+  isRunning: 0
   seed: 469
   prefab: {fileID: 8381058730232103078, guid: d31f87e8e2cbc3344a27fcc870b90fa3, type: 3}
   speed: 5

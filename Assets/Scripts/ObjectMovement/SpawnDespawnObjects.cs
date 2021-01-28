@@ -49,9 +49,6 @@ public class SpawnDespawnObjects : MonoBehaviour
         {
             GenerateObjects(objectCount);
         }
-        else if (IsRunning)
-        {
-        }
         else if (!IsRunning && objects != null && objects.Count > 0)
         {
             DestroyObjects(objectCount);
@@ -130,7 +127,7 @@ public class SpawnDespawnObjects : MonoBehaviour
         {
                 foreach (var obj in objects)
                 {
-                    if (Random.Range(0, 100) < 25)
+                    if (Random.Range(0, 100) < 40)
                     {
                         obj.SetActive(!obj.activeSelf);
                     }

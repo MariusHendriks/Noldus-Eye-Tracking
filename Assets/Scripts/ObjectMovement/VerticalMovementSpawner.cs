@@ -25,7 +25,7 @@ public class VerticalMovementSpawner : MonoBehaviour
     [Range(2, 9)]
     public float radius;
     
-    [Range(0.1f, 5f)]
+    [Range(0.1f, 4f)]
     public float speed;
     
     [Range(0, 7.5f)]

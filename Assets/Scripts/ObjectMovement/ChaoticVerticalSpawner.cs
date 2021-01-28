@@ -110,7 +110,7 @@ public class ChaoticVerticalSpawner : MonoBehaviour
             var spawnDir = CalculateSpawnDirection(i, num);
             var spawnPos = Center + spawnDir * radius;
             GameObject obj = CreateMeshes(spawnPos, Center, transform, meshType, meshes);
-            obj = SetVerticalAdjusterScriptParameters(obj, radius, num, Center, Random.Range(1.5f, 7f) * speed, Random.Range(0, 7.5f));
+            obj = SetVerticalAdjusterScriptParameters(obj, radius, num, Center, Random.Range(0.1f, 4f) * speed, Random.Range(0, 7.5f));
             obj.name = $"{i + 1}";
             objects.Add(obj);
         }

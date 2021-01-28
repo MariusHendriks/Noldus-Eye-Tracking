@@ -1,0 +1,55 @@
+version: "2.0"
+
+stories:
+
+- story: swearing at bot
+  steps:
+  - intent: swearing
+  - action: utter_swearing
+
+- story: loc
+  steps:
+  - intent: ask_location
+  - action: utter_ask_location
+
+- story: greet and ask about location
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_location
+  - action: utter_ask_location
+
+- story: greet and ask about stores
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_store
+  - action: utter_ask_store
+
+- story: greet and ask about traffic
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_traffic
+  - action: utter_ask_traffic
+
+- story: greet and ask about the city
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_city
+  - action: utter_ask_city
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_greet
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up

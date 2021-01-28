@@ -24,6 +24,8 @@ public static class VerticalMovementUltil
                 break;
         }
         obj.GetComponent<MeshCollider>().sharedMesh = customMeshes[i];
+        obj.GetComponent<MeshCollider>().convex = true;
+        obj.GetComponent<MeshCollider>().isTrigger = true;
         obj.GetComponent<MeshFilter>().mesh = customMeshes[i];
         obj = DefaultGameObjectSettings(obj, spawnPos, center, transform);
         if (type == MeshTypes.KitchenProps)

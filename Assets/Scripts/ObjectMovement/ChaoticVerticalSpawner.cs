@@ -6,7 +6,7 @@ using static VerticalMovementUltil;
 public class ChaoticVerticalSpawner : MonoBehaviour
 {
     private readonly List<GameObject> objects = new List<GameObject>();
-    private bool scriptIsWorking;
+    private bool isRunning;
 
     private int currentNumberOfObjects;
     private float currentSpeed;
@@ -44,7 +44,7 @@ public class ChaoticVerticalSpawner : MonoBehaviour
 
     public void Update()
     {
-        if (scriptIsWorking)
+        if (isRunning)
         {
             if (numberOfObjects != currentNumberOfObjects)
             {
@@ -67,13 +67,13 @@ public class ChaoticVerticalSpawner : MonoBehaviour
             else if (!startScript)
             {
                 DestroyAllObjects();
-                scriptIsWorking = false;
+                isRunning = false;
             }
         }
-        else if (!scriptIsWorking && startScript)
+        else if (!isRunning && startScript)
         {
             InitializeScript();
-            scriptIsWorking = true;
+            isRunning = true;
         }
     }
 

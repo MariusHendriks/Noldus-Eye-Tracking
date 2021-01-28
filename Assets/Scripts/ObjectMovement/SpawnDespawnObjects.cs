@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnDespawnObjects : MonoBehaviour
 {
     public bool rotation = true;
-    public bool start;
+    public bool isRunning;
 
     public int seed;
     public GameObject prefab;
@@ -45,14 +45,14 @@ public class SpawnDespawnObjects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(start && (objects == null || objects.Count == 0))
+        if(isRunning && (objects == null || objects.Count == 0))
         {
             GenerateObjects(objectCount);
         }
-        else if (start)
+        else if (isRunning)
         {
         }
-        else if (!start && objects != null && objects.Count > 0)
+        else if (!isRunning && objects != null && objects.Count > 0)
         {
             DestroyObjects(objectCount);
         }
@@ -108,9 +108,11 @@ public class SpawnDespawnObjects : MonoBehaviour
         int meshNr = Random.Range((int)meshType * 4 , ((int)meshType + 1) * 4);
         obj.GetComponent<MeshFilter>().mesh = meshes[meshNr];
         obj.GetComponent<MeshCollider>().sharedMesh = meshes[meshNr];
+        obj.GetComponent<MeshCollider>().convex = true;
+        obj.GetComponent<MeshCollider>().isTrigger = true;
         obj.GetComponent<MeshRenderer>().material.color = new Color(Random.Range(0F, 1F), Random.Range(0, 1F), Random.Range(0, 1F));
-        obj.GetComponent<MeshRenderer>().material.SetFloat("_Metallic", Random.Range(0, 1));
-        obj.GetComponent<MeshRenderer>().material.SetFloat("_Glossiness", Random.Range(0, 1));
+        obj.GetComponent<MeshRenderer>().material.SetFloat("_Metallic", Random.Range(0, 0.75f));
+        obj.GetComponent<MeshRenderer>().material.SetFloat("_Glossiness", Random.Range(0, 0.75f));
     }
 
     public Vector3 CalculateDirection()
@@ -124,7 +126,7 @@ public class SpawnDespawnObjects : MonoBehaviour
 
     public IEnumerator WaitToSpawnDespawn()
     {
-        while (start)
+        while (isRunning)
         {
                 foreach (var obj in objects)
                 {
@@ -179,7 +181,7 @@ public class SpawnDespawnObjects : MonoBehaviour
         this.meshType = meshType;
         this.seed = seed;
         this.rotation = rotation;
-        start = !start;
+        isRunning = !isRunning;
     }
 
     public void ChangeNumberOfObjects(float nrOfObjects)

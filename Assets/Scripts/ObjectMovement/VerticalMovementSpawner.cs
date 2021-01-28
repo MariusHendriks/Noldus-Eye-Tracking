@@ -6,7 +6,7 @@ using static VerticalMovementUltil;
 public class VerticalMovementSpawner : MonoBehaviour
 {
     private readonly List<GameObject> objects = new List<GameObject>();
-    private bool scriptIsWorking;
+    private bool isRunning;
     private float currentSpeed;
     private int currentNumberOfObjects;
     private float currentHeight;
@@ -56,7 +56,7 @@ public class VerticalMovementSpawner : MonoBehaviour
 
     public void Update()
     {
-        if (scriptIsWorking)
+        if (isRunning)
         {
             if (speed != currentSpeed)
             {
@@ -84,7 +84,7 @@ public class VerticalMovementSpawner : MonoBehaviour
             if (!startScript)
             {
                 DestroyAllObjects();
-                scriptIsWorking = false;
+                isRunning = false;
             }
             if (meshType != currentType)
             {
@@ -92,10 +92,10 @@ public class VerticalMovementSpawner : MonoBehaviour
                 currentType = meshType;
             }
         }
-        else if (!scriptIsWorking && startScript)
+        else if (!isRunning && startScript)
         {
             InitializeScript();
-            scriptIsWorking = true;
+            isRunning = true;
         }
     }
 
@@ -133,7 +133,7 @@ public class VerticalMovementSpawner : MonoBehaviour
         this.radius = this.defaultRadius * distance;
         this.meshType = meshType;
         startScript = true;
-        scriptIsWorking = true;
+        isRunning = true;
     }
 
     public void Stop()

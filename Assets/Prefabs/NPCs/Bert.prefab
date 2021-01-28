@@ -3793,15 +3793,14 @@ GameObject:
   - component: {fileID: 9171840231128428012}
   - component: {fileID: 8359592077586839390}
   - component: {fileID: 8359592077586839389}
-  - component: {fileID: 8359592077586839388}
   - component: {fileID: 8359592077586839379}
-  - component: {fileID: 8359592077586839378}
   - component: {fileID: 8359592077586839377}
   - component: {fileID: 8359592077586839376}
   - component: {fileID: 8359592077586839383}
   - component: {fileID: 700071926865830395}
   - component: {fileID: 700071926865830340}
   - component: {fileID: -3529792996775799657}
+  - component: {fileID: 4661528379023173092}
   m_Layer: 19
   m_Name: Bert
   m_TagString: Untagged
@@ -4093,19 +4092,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!135 &8359592077586839388
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8359592077586839382}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8359592077586839379
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4122,19 +4108,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &8359592077586839378
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8359592077586839382}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.3081238, y: 1, z: 2.9879558}
-  m_Center: {x: -0.06326259, y: 0, z: 0.99397856}
 --- !u!114 &8359592077586839377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4502,6 +4475,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889aa415efea8904999ad2dcd05dafcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &4661528379023173092
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8359592077586839382}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.939803
+  m_Direction: 1
+  m_Center: {x: -0.03, y: 0.9173157, z: 0.42}
 --- !u!1 &8430864704349288353
 GameObject:
   m_ObjectHideFlags: 0

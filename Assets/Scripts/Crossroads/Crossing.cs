@@ -21,7 +21,10 @@ public class Crossing : MonoBehaviour
         else if (other.name.Contains("Clone") || other.tag == "Player")
         {
             pedestriansOnCrossing++;
-            other.GetComponent<PathMovement>().crossing = this;
+            if (other.tag != "Player")
+            {
+                other.GetComponent<PathMovement>().crossing = this;
+            }
         }
         else if (other.name == "PedestrianHitbox" && pedestriansOnCrossing > 0)
         {
@@ -78,6 +81,10 @@ public class Crossing : MonoBehaviour
             {
                 foreach (var pedestrian in pedestriansWaiting)
                 {
+                    if(pedestrian == null)
+                    {
+                        continue;
+                    }
                     PathMovement pathMovement = pedestrian.GetComponentInParent<PathMovement>();
                     pathMovement.waitingForCrossing = false;
                 }
@@ -86,7 +93,10 @@ public class Crossing : MonoBehaviour
         }
         else if (other.name.Contains("Clone") || other.tag == "Player")
         {
-            other.GetComponent<PathMovement>().crossing = null;
+            if (other.tag != "Player")
+            {
+                other.GetComponent<PathMovement>().crossing = null;
+            }
             pedestriansOnCrossing--;
 
             if (pedestriansOnCrossing <= 0)

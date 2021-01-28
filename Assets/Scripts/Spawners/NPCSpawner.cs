@@ -29,40 +29,37 @@ public class NPCSpawner : MonoBehaviour
         StartCoroutine(SpawnNPC());
     }
 
-    private IEnumerator SpawnNPC()
+    public IEnumerator SpawnNPC()
     {
-
-
-        GameObject npcPrefab = NPCPrefabs[Random.Range(0, NPCPrefabs.Length)];
-
-        GameObject path = pathObjects[Random.Range(0, pathObjects.Length)];
-        GameObject npc = Instantiate(npcPrefab, this.transform.position, Quaternion.identity);
-
-        npc.layer = 19;
-
-        PathMovement pathMovement = npc.GetComponent<PathMovement>();
-        pathMovement.pointsParent = path;
-        pathMovement.movementSpeed = RandomGaussian(0f, 2f);
-        if (pathMovement.movementSpeed <= 1)
+        while (true)
         {
-            pathMovement.movementSpeed = Random.Range(1f, 1.1f);
+            yield return new WaitUntil(() => spawnTimeMax > 0);
+
+            GameObject npcPrefab = NPCPrefabs[Random.Range(0, NPCPrefabs.Length)];
+
+            GameObject path = pathObjects[Random.Range(0, pathObjects.Length)];
+            GameObject npc = Instantiate(npcPrefab, this.transform.position, Quaternion.identity);
+
+            npc.layer = 19;
+
+            PathMovement pathMovement = npc.GetComponent<PathMovement>();
+            pathMovement.pointsParent = path;
+            pathMovement.movementSpeed = RandomGaussian(0f, 2f);
+            if (pathMovement.movementSpeed <= 1)
+            {
+                pathMovement.movementSpeed = Random.Range(1f, 1.1f);
+            }
+            pathMovement.happiness = RandomGaussian(-1, 1);
+
+            currentNPCSpawn++;
+
+            yield return new WaitForSeconds(Random.Range(spawnTimeMin, spawnTimeMax));
+
+            if (currentNPCSpawn >= maxNPCSpawn)
+            {
+                StopCoroutine(SpawnNPC());
+            }
         }
-        pathMovement.happiness = RandomGaussian(-1, 1);
-
-        currentNPCSpawn++;
-
-        yield return new WaitForSeconds(Random.Range(spawnTimeMin, spawnTimeMax));
-
-        if (currentNPCSpawn >= maxNPCSpawn)
-        {
-            StopCoroutine(SpawnNPC());
-
-        }
-        else
-        {
-            StartCoroutine(SpawnNPC());
-        }
-
     }
 
     public static float RandomGaussian(float minValue = 0.0f, float maxValue = 1.0f)

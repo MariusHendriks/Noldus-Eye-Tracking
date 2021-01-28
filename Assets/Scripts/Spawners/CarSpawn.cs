@@ -30,20 +30,23 @@ public class CarSpawn : MonoBehaviour
         StartCoroutine(SpawnCar());
     }
 
-    private IEnumerator SpawnCar()
+    public IEnumerator SpawnCar()
     {
-        GameObject carPrefab = carPrefabs[Random.Range(0, carPrefabs.Length)];
+        while (true)
+        {
+            yield return new WaitUntil(() => spawnTimeMax > 0);
 
-        GameObject path = pathObjects[Random.Range(0, pathObjects.Length)];
-        GameObject car = Instantiate(carPrefab, this.transform.position, Quaternion.identity);
+            GameObject carPrefab = carPrefabs[Random.Range(0, carPrefabs.Length)];
 
-        CarPathMovement carPathMovement = car.GetComponent<CarPathMovement>();
-        carPathMovement.pointsParent = path;
+            GameObject path = pathObjects[Random.Range(0, pathObjects.Length)];
+            GameObject car = Instantiate(carPrefab, this.transform.position, Quaternion.identity);
 
-        yield return new WaitUntil(() => RoundaboutCounter.carAmount < 6);
-        yield return new WaitForSeconds(Random.Range(spawnTimeMin, spawnTimeMax));
+            CarPathMovement carPathMovement = car.GetComponent<CarPathMovement>();
+            carPathMovement.pointsParent = path;
 
-        StartCoroutine(SpawnCar());
+            yield return new WaitUntil(() => RoundaboutCounter.carAmount < 6);
+            yield return new WaitForSeconds(Random.Range(spawnTimeMin, spawnTimeMax));
+        }
     }
 
     // Update is called once per frame

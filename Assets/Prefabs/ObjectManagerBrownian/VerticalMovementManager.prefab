@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3841774132411243718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3841774132411243736}
+  - component: {fileID: 3841774132411243719}
+  - component: {fileID: 3841774132411243737}
+  - component: {fileID: 3841774132411243738}
+  m_Layer: 0
+  m_Name: VerticalMovementManager
+  m_TagString: VerticalMover
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3841774132411243736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3841774132411243718}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3841774132411243719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3841774132411243718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7d0481b62fe124d83526cb3b64c6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshType: 0
+  seed: 5
+  meshes:
+  - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 4300000, guid: d8c8787ffb0f3b5468fd65d51731b7de, type: 3}
+  - {fileID: 4300000, guid: 4e6db54670ea84d4298ec673c60ca3c7, type: 3}
+  - {fileID: 4300000, guid: 2faafd7c39cf18b4d83d3d729c4f9a04, type: 3}
+  - {fileID: 4300000, guid: 6c24037ad5bed7e428ade751ad02702c, type: 3}
+  - {fileID: 4300000, guid: b9a1c0a49b015804e83705d2e66fa591, type: 3}
+  - {fileID: 4300000, guid: 49a09859e5b53d74b8038a042b0e7d3b, type: 3}
+  - {fileID: 4300000, guid: 43dd9523f76f5d4448be24e15c4a347c, type: 3}
+  - {fileID: 4300000, guid: 6a987db90277a804ca12763b4edaac0d, type: 3}
+  startScript: 0
+  customObjectsEnabler: 0
+  numberOfObjects: 25
+  radius: 7
+  speed: 2
+  height: 7.5
+--- !u!114 &3841774132411243737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3841774132411243718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e67c0d18a0e9843a7acfd0c7190e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshType: 0
+  seed: 5
+  meshes:
+  - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 4300000, guid: d8c8787ffb0f3b5468fd65d51731b7de, type: 3}
+  - {fileID: 4300000, guid: 4e6db54670ea84d4298ec673c60ca3c7, type: 3}
+  - {fileID: 4300000, guid: 2faafd7c39cf18b4d83d3d729c4f9a04, type: 3}
+  - {fileID: 4300000, guid: 6c24037ad5bed7e428ade751ad02702c, type: 3}
+  - {fileID: 4300000, guid: b9a1c0a49b015804e83705d2e66fa591, type: 3}
+  - {fileID: 4300000, guid: 49a09859e5b53d74b8038a042b0e7d3b, type: 3}
+  - {fileID: 4300000, guid: 43dd9523f76f5d4448be24e15c4a347c, type: 3}
+  - {fileID: 4300000, guid: 6a987db90277a804ca12763b4edaac0d, type: 3}
+  startScript: 0
+  customObjectsEnabler: 0
+  numberOfObjects: 25
+  radius: 1
+  speed: 1
+  height: 0
+--- !u!114 &3841774132411243738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3841774132411243718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5717b901d4750e439eb82b4c4c4dd49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isChaotic: 0

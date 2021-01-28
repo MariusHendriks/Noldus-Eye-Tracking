@@ -94,7 +94,7 @@ public class SpawnerManager : MonoBehaviour
         }
     }
 
-    public void AdjustBusynessLeve(float mode)
+    public void AdjustBusynessLevel(float mode)
     {
         RemoveCars();
         RemoveNPCs();

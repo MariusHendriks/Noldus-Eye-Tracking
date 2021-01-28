@@ -7,6 +7,6 @@ public class SpeedValue : MonoBehaviour
 {
     public void ChangeAmount(float value)
     {
-        GetComponent<Text>().text = "" + (value/50);
+        GetComponent<Text>().text = "" + (value);
     }
 }

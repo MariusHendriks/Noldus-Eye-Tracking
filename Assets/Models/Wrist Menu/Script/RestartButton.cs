@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class RestartButton : WristUIButton
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }

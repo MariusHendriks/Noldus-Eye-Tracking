@@ -6,7 +6,7 @@ using static VerticalMovementUltil;
 public class VerticalMovementSpawner : MonoBehaviour
 {
     private readonly List<GameObject> objects = new List<GameObject>();
-    private bool isRunning;
+    private bool scriptIsWorking;
     private float currentSpeed;
     private int currentNumberOfObjects;
     private float currentHeight;
@@ -16,7 +16,7 @@ public class VerticalMovementSpawner : MonoBehaviour
     public MeshTypes meshType;
     public int seed;
     public List<Mesh> meshes;
-    public bool startScript;
+    public bool IsRunning;
     public bool customObjectsEnabler;    
 
     [Range(1, 25)]
@@ -56,7 +56,7 @@ public class VerticalMovementSpawner : MonoBehaviour
 
     public void Update()
     {
-        if (isRunning)
+        if (scriptIsWorking)
         {
             if (speed != currentSpeed)
             {
@@ -81,10 +81,10 @@ public class VerticalMovementSpawner : MonoBehaviour
                 ResetScene();
                 currentNumberOfObjects = numberOfObjects;
             }
-            if (!startScript)
+            if (!IsRunning)
             {
                 DestroyAllObjects();
-                isRunning = false;
+                scriptIsWorking = false;
             }
             if (meshType != currentType)
             {
@@ -92,10 +92,10 @@ public class VerticalMovementSpawner : MonoBehaviour
                 currentType = meshType;
             }
         }
-        else if (!isRunning && startScript)
+        else if (!scriptIsWorking && IsRunning)
         {
             InitializeScript();
-            isRunning = true;
+            scriptIsWorking = true;
         }
     }
 
@@ -132,13 +132,13 @@ public class VerticalMovementSpawner : MonoBehaviour
         this.speed = this.defaultSpeed * speed;
         this.radius = this.defaultRadius * distance;
         this.meshType = meshType;
-        startScript = true;
-        isRunning = true;
+        IsRunning = true;
+        scriptIsWorking = true;
     }
 
     public void Stop()
     {
-        startScript = false;
+        IsRunning = false;
     }
 
     public void ChangeNumberOfObjects(int nrOfObjects)

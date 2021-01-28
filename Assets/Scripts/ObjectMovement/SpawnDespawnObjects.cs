@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnDespawnObjects : MonoBehaviour
 {
     public bool rotation = true;
-    public bool isRunning;
+    public bool IsRunning;
 
     public int seed;
     public GameObject prefab;
@@ -45,14 +45,14 @@ public class SpawnDespawnObjects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isRunning && (objects == null || objects.Count == 0))
+        if(IsRunning && (objects == null || objects.Count == 0))
         {
             GenerateObjects(objectCount);
         }
-        else if (isRunning)
+        else if (IsRunning)
         {
         }
-        else if (!isRunning && objects != null && objects.Count > 0)
+        else if (!IsRunning && objects != null && objects.Count > 0)
         {
             DestroyObjects(objectCount);
         }
@@ -126,7 +126,7 @@ public class SpawnDespawnObjects : MonoBehaviour
 
     public IEnumerator WaitToSpawnDespawn()
     {
-        while (isRunning)
+        while (IsRunning)
         {
                 foreach (var obj in objects)
                 {
@@ -181,7 +181,7 @@ public class SpawnDespawnObjects : MonoBehaviour
         this.meshType = meshType;
         this.seed = seed;
         this.rotation = rotation;
-        isRunning = !isRunning;
+        IsRunning = !IsRunning;
     }
 
     public void ChangeNumberOfObjects(float nrOfObjects)

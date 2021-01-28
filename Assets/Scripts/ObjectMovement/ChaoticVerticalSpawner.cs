@@ -6,7 +6,7 @@ using static VerticalMovementUltil;
 public class ChaoticVerticalSpawner : MonoBehaviour
 {
     private readonly List<GameObject> objects = new List<GameObject>();
-    private bool isRunning;
+    private bool scriptIsWorking;
 
     private int currentNumberOfObjects;
     private float currentSpeed;
@@ -16,7 +16,7 @@ public class ChaoticVerticalSpawner : MonoBehaviour
     public MeshTypes meshType;
     public int seed;
     public List<Mesh> meshes;
-    public bool startScript;
+    public bool IsRunning;
     public bool customObjectsEnabler;
 
     [Range(1, 25)]
@@ -44,7 +44,7 @@ public class ChaoticVerticalSpawner : MonoBehaviour
 
     public void Update()
     {
-        if (isRunning)
+        if (scriptIsWorking)
         {
             if (numberOfObjects != currentNumberOfObjects)
             {
@@ -64,16 +64,16 @@ public class ChaoticVerticalSpawner : MonoBehaviour
                 ResetScene();
                 currentType = meshType;
             }
-            else if (!startScript)
+            else if (!IsRunning)
             {
                 DestroyAllObjects();
-                isRunning = false;
+                scriptIsWorking = false;
             }
         }
-        else if (!isRunning && startScript)
+        else if (!scriptIsWorking && IsRunning)
         {
             InitializeScript();
-            isRunning = true;
+            scriptIsWorking = true;
         }
     }
 
@@ -135,11 +135,11 @@ public class ChaoticVerticalSpawner : MonoBehaviour
         this.radius = distance;
         this.seed = seed;
         this.meshType = meshType;
-        startScript = true;
+        IsRunning = true;
     }
 
     public void Stop()
     {
-        startScript = false;
+        IsRunning = false;
     }
 }

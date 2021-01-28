@@ -19,10 +19,12 @@ public class Switcher : MonoBehaviour
         {
             if (isChaotic)
             {
+                gameObject.GetComponent<VerticalMovementSpawner>().Stop();
                 gameObject.GetComponent<ChaoticVerticalSpawner>().Play(nrOfObjects, speed, distance, meshType, seed);
             }
             else
             {
+                gameObject.GetComponent<ChaoticVerticalSpawner>().Stop();
                 gameObject.GetComponent<VerticalMovementSpawner>().Play(nrOfObjects, speed, distance, meshType, seed);
             }
         }

@@ -21,6 +21,8 @@ public class OutputToJSON : MonoBehaviour
     private Vector3 startLocation = new Vector3();
     private Vector3 cameraStartLocation = new Vector3();
 
+    public bool eyeTrackersWorking = false;
+
 
     public void OnDestroy()
     {
@@ -65,9 +67,19 @@ public class OutputToJSON : MonoBehaviour
     //TODO: Pass hitinfo data to Method AddOutputData
     void ReceiveGaze(Vector3 localGazeDirection)
     {
-        Debug.DrawRay(mainCamera.position, mainCamera.TransformDirection(localGazeDirection) * 100.0f, Color.yellow);
+        Vector3 direction;
+        if(eyeTrackersWorking)
+        {
+            direction = mainCamera.TransformDirection(localGazeDirection);
+        }
+        else
+        {
+            direction = mainCamera.forward;
+        }
 
-        if (Physics.Raycast(mainCamera.position, mainCamera.TransformDirection(localGazeDirection), out hitInfo, 100.0f))
+        Debug.DrawRay(mainCamera.position, direction * 50.0f, Color.yellow);
+
+        if (Physics.Raycast(mainCamera.position, direction, out hitInfo, 50.0f))
         {
 
             if (hitInfo.collider.gameObject.layer == 22)

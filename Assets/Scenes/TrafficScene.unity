@@ -13880,12 +13880,6 @@ MonoBehaviour:
   previousWaypoint: {fileID: 934017412}
   nextWaypoint: {fileID: 0}
   width: 1
---- !u!1 &376350211 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6322171662830321759, guid: 5b617754ca861b942af4c803dff7a927,
-    type: 3}
-  m_PrefabInstance: {fileID: 8325632402704101534}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &377318075
 GameObject:
   m_ObjectHideFlags: 0
@@ -69661,7 +69655,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 1
   m_VoxelSize: 0.05
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 365b1b5e48ee2a8489a963f2b436ee46, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: c1e2d2f9079f4f7488a842439a21472a, type: 2}
 --- !u!1 &2079770580
 GameObject:
   m_ObjectHideFlags: 0
@@ -114467,17 +114461,27 @@ PrefabInstance:
     - target: {fileID: 6322171663363180145, guid: 5b617754ca861b942af4c803dff7a927,
         type: 3}
       propertyPath: onSliderReleased.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322171663363180145, guid: 5b617754ca861b942af4c803dff7a927,
+        type: 3}
+      propertyPath: onSliderReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6322171663363180145, guid: 5b617754ca861b942af4c803dff7a927,
         type: 3}
       propertyPath: onSliderReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 376350211}
+      objectReference: {fileID: 1021261514}
     - target: {fileID: 6322171663363180145, guid: 5b617754ca861b942af4c803dff7a927,
         type: 3}
       propertyPath: onSliderReleased.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: AdjustBusynessLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322171663363180145, guid: 5b617754ca861b942af4c803dff7a927,
+        type: 3}
+      propertyPath: onSliderReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b617754ca861b942af4c803dff7a927, type: 3}

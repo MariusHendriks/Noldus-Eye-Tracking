@@ -5583,6 +5583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gazeController: {fileID: 0}
   simulationWorking: 0
+  eyeTrackersWorking: 0
 --- !u!1 &3727222307646123031
 GameObject:
   m_ObjectHideFlags: 0
